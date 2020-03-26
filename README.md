@@ -5,8 +5,11 @@ Velika frustracija za vozače (posebno u velikim gradovima) je **parkiranje**.
 Ogromna količina vremena i goriva se troši na traženje slobodnog parking
 mesta. Od 2016. godine u Beogradu je instalirano ***3600* parking senzora** koji pružaju informaciju o slobodnim parking mestima. Na osnovu ove informacije došli smo na ideju da svaki dan olakšamo vozačima. Koristeći ove senzore, pomogli bismo vozačima da se brže parkiraju, i samim tim sačuvaju vreme i gorivo. 
 ## Prototip
-Ukoliko želite da pogledate prototip, možete da kliknete na ovaj link:
-[https://djurdjevicfilip.github.io/prototip/index.html](https://djurdjevicfilip.github.io/prototip/index.html)
+Ukoliko želite da pogledate prototip, možete da koristite sledeće linkove:
+[Gost](https://djurdjevicfilip.github.io/prototip/index.html)
+[Korisnik](https://djurdjevicfilip.github.io/prototip/user.html)
+[Moderator](https://djurdjevicfilip.github.io/prototip/moderator.html)
+[Administrator](https://djurdjevicfilip.github.io/prototip/administrator.html)
 # Pokrivenost i senzori
 Veliki deo Beograda pokriven je zonama za parkiranje. Parkiraj! Beograd pomoći će korisnicima da nađu mesta pokrivena **senzorima**. Senzori za sada čine jedan manji deo ove pokrivenosti.
 ## Parking Zone u Beogradu
@@ -59,6 +62,7 @@ Testiranje je obavezno.
 ## Ograničenja
 Jedno ograničenje aplikacije javlja se kroz API za mape. Ograničenje je u tome što je broj zahteva ograničen na mesečnoj ili dnevnoj bazi. Ovo ograničenje nama trenutno ne predstavlja problem, ali može uticati na novčane resurse pri velikom porastu korisnika aplikacije. Takođe, nemamo pristup senzorima, tako da će oni biti simulirani.
 # Plan i prioriteti
+Osnovni plan je da aplikacija zadovoljava zahteve predmeta, da bude funkcionalna, brza i laka za korišćenje. Želimo da što više različitih tipova korisnika bude u mogućnosti da koristi našu aplikaciju. Iz tog razloga, u sklopu sekcije proširenja ćemo uključiti i opcije koje proširuju već postojeće funkcionalnosti, sa ciljem inkluzije većeg broja ljudi (na primer invalida).
 ## Osnovna verzija
 Lista najosnovnijih funkcionalnosti.
 ## Proširenja
