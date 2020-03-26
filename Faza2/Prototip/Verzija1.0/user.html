@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Pakiraj! Beograd (User) </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+      <link rel="stylesheet" href="style.css"> 
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+       
+    <script>
+      function f(){
+        document.getElementById("mapa").src = "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d11321.267444927093!2d20.456918188660833!3d44.81510906557635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x475a65499711997b%3A0x40464ac7b2ccc061!2sKalemegdan%2C%20Belgrade!3m2!1d44.823182599999996!2d20.4504791!4m5!1s0x475a7a9f5ee145d3%3A0x3ed89b5bb505d83!2sUniversity%20of%20Belgrade%20School%20of%20Electrical%20Engineering%2C%20Bulevar%20kralja%20Aleksandra%2073%2C%20Beograd!3m2!1d44.8055056!2d20.4761359!5e0!3m2!1sen!2srs!4v1583617017490!5m2!1sen!2srs";
+      
+      }
+      </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top"style="background-color:rgba(17,53,137);">
+        
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Parkiraj! Beograd <span class="sr-only">(current)</span></a>
+              
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#change">Promeni šifru</a>
+                
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#search">Pretraga mesta</a>
+                
+              </li>
+              
+              <li class="nav-item active logout">
+                <a class="nav-link" href="index.html">(Milan) Izloguj se</a>
+
+              </li>
+        </ul>
+    </nav>
+    <div class="container-fullwidth"style=" height:100vh">
+      <div class="row bannerRow">
+          
+          <div class="col-sm-12" style='background-color: rgba(17,53,137); '>
+              <h1 class="display-1" ><b>Parkiraj! Beograd</b></h1>
+          </div>
+         
+      </div>
+      <div class="row halfRow">
+          
+          <h2 class="display-3"><b>Pronadji svoje mesto.</b></h2>
+      </div>
+    </div>
+    
+    <div class="container-fullwidth"style=" height:100vh" id="search">
+      <div class="row" style="height:100vh;">
+        <div class="col-md-7 login-form-1" style="height:80vh; background-color: rgba(17,53,137);margin-top:10vh; margin-left: 5%; padding-top: 0;padding-left: 0;padding-right: 0;padding-bottom: 0;">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.788165965896!2d20.473947215498107!3d44.80550557909867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7a9f5ee145d3%3A0x3ed89b5bb505d83!2sUniversity%20of%20Belgrade%20School%20of%20Electrical%20Engineering!5e0!3m2!1sen!2srs!4v1583616822176!5m2!1sen!2srs" width="100%" height="100%" frameborder="0" id="mapa" style="border:0;margin-top: 0;margin-bottom: 0;padding-top: 0;padding-left: 0;" allowfullscreen=""></iframe>
+        
+        </div>
+              <div class="col-md-4 login-form-1" style="height:80vh; margin-top:10vh;">
+                <div style="margin-top: 15vh;">
+                  <h3>Pretraži slobodna mesta</h3>
+                  <form>
+                      <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Lokacija za pretragu" value="" />
+                          <button class="btnSubmit" value="Pronađi slobodno mesto" style="margin-left: 8vw; margin-top:0vw; height:4vw; margin-bottom:10px">Pronađi slobodno mesto</button>
+                          <button class="btnSubmit"onclick='f()' value="Prikaži rutu do najbližeg mesta" style="margin-left: 8vw; margin-top:0vw; height:4vw">Prikaži rutu do najbližeg mesta</button>
+                        </div>
+                  </form>
+                  </div>
+              </div>
+      </div>
+    </div>
+
+    <div class="login-container">
+      <div class="row">   
+        <div class="col-md-8 login-form-1" style="height:60vh; margin-top:10vh;">
+        <div style="margin-top: 0vh; margin-bottom: 0;">
+          <h3>Lorem ipsum</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+              </div>
+      </div>
+      <div class="col-md-4 login-form-2"style="height:60vh; margin-top:10vh;">
+        <h3>Promeni šifru</h3>
+        <form>
+            <div class="form-group" id="change">
+                <input type="password" class="form-control" placeholder="Nova šifra *" value="" >
+                <input type="password" class="form-control" placeholder="Potvrdi šifru *" value="" />
+                <input type="submit" class="btnSubmit" value="Promeni šifru" />
+                </form>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+</body>
+</html></html>
