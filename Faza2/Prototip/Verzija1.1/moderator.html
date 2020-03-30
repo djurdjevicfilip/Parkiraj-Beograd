@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Parkiraj! Beograd (Mod)</title>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styleModerator.css">
+  <script>
+	     window.onload = function() {
+  document.getElementById('1').style.color='#81bdfc';
+  
+  document.getElementById('1').onclick = function() {
+      const elements = document.querySelectorAll('a');
+
+          elements.forEach( el => {
+           el.style.color='white';
+          });
+      this.style.color = '#81bdfc';
+      
+  }
+  document.getElementById('2').onclick = function() {
+      const elements = document.querySelectorAll('a');
+
+      elements.forEach( el => {
+      el.style.color='white';
+      });
+      this.style.color = '#81bdfc';
+
+      }
+  
+  document.getElementById('3').onclick = function() {
+      const elements = document.querySelectorAll('a');
+
+      elements.forEach( el => {
+      el.style.color='white';
+      });
+      this.style.color = '#81bdfc';
+
+      }
+  
+  document.getElementById('4').onclick = function() {
+      const elements = document.querySelectorAll('a');
+
+      elements.forEach( el => {
+      el.style.color='white';
+      });
+      this.style.color = '#81bdfc';
+
+      }
+  }
+  </script>
+</head>
+<body>
+	<nav class="navbar navbar-expand fixed-top"style="background-color:rgba(17,53,137);">
+        
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" id="1"href="#"><h6>Parkiraj! Beograd</h6><span class="sr-only">(current)</span></a>
+              
+			</li>
+			<li class="nav-item active">
+                <a class="nav-link"id="2" href="#"><h6>Lista mesta</h6></a>
+                
+              </li>
+            <li class="nav-item active">
+                <a class="nav-link"id="3" href="#promeni"><h6>Promeni šifru</h6></a>
+                
+              </li>
+              <li class="nav-item active logout">
+                <a class="nav-link" ide="4"href="index.html"><h6>(Milan) Izloguj se</h6></a>
+
+              </li>
+        </ul>
+    </nav>
+	<div class="display-3">
+	<nav class="navbar navbar-expand-md"style="background-color:rgba(17,53,137);">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <h4 style="color:white;">Lista mesta<span class="sr-only">(current)</span></h4>
+                  
+            </ul>
+    </nav>
+	
+    <table class="table table-striped">
+	  <thead>
+		<tr>
+		  <th scope="col">Redni broj</th>
+		  <th scope="col">Mesto</th>
+		  <th scope="col">X</th>
+		  <th scope="col">Y</th>
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr>
+		  <th scope="row">1</th>
+		  <td>Visegradska_90</td>
+		  <td>44.801578</td>
+		  <td>20.454255</td>
+		  <td>  <img src="img/druga.jpg"> <img src="img/trash.jpg"></td>
+		</tr>
+		<tr>
+		  <th scope="row">2</th>
+		  <td>Visegradska_91</td>
+		  <td>44.801573</td>
+		  
+		  <td>20.454255</td>
+		  <td>  <img src="img/druga.jpg"> <img src="img/trash.jpg"></td>
+		</tr>
+		<tr>
+		  <th scope="row">3</th>
+		  <td>Visegradska_92</td>
+		  <td>44.801580</td>
+		  <td>20.454255</td>
+		  <td>  <img src="img/druga.jpg"> <img src="img/trash.jpg"></td>
+		</tr>
+		<tr>
+		  <th scope="row">4</th>
+		  <td>Visegradska_94</td>
+		  <td>44.801545</td>
+		  <td>20.454255</td>
+		  <td>  <img src="img/druga.jpg"> <img src="img/trash.jpg"></td>
+		</tr>
+		<tr>
+		  <th scope="row">5</th>
+		  <td>Visegradska_95</td>
+		  <td>44.801512</td>
+		  <td>20.454255</td>
+		  <td>  <img src="img/druga.jpg"> <img src="img/trash.jpg"></td>
+		</tr>
+		<tr>
+		  <th scope="row">6</th>
+		  <td>Visegradska_96</td>
+		  <td>44.801512</td>
+		  <td>20.454255</td>
+		  <td>  <img src="img/druga.jpg"> <img src="img/trash.jpg"></td>
+		</tr>
+		<tr>
+		  <th scope="row">7</th>
+		  <td>Visegradska_97</td>
+		  <td>44.801545</td>
+		  <td>20.454255</td>
+		  <td>  <img src="img/druga.jpg"> <img src="img/trash.jpg"></td>
+		</tr>
+	  </tbody>
+	</table>
+	<nav aria-label="...">
+		<ul class="pagination">
+		<li class="page-item">
+		  <span class="page-link">Prethodna</span>
+		</li>
+		<li class="page-item"><a class="page-link"style="background-color:rgba(17,53,137); color:white;" href="#">1</a></li>
+		<li class="page-item">
+		  <a class="page-link" href="#">
+			2
+		  </a>
+		</li>
+		<li class="page-item"><a class="page-link" href="#">3</a></li>
+		<li class="page-item">
+		  <a class="page-link" href="#">Sledeća</a>
+		</li>
+	  </ul>
+	</nav>
+	<form class="form-inline" style="padding-top:50px;padding-left:10%;">
+	  <div class="form-group mx-sm-3 mb-2" style="padding:0px">
+		<label for="inputPassword2" class="sr-only">Mesto</label>
+		<input type="text" class="form-control" id="inputPassword2" style="width:130px" placeholder="Mesto">
+	  </div>
+	  <div class="form-group mx-sm-3 mb-2">
+		<label for="inputPassword2" class="sr-only">X</label></label>
+		<input type="text" class="form-control" style="width:130px"id="inputPassword2" placeholder="X">
+	  </div>
+	  <div class="form-group mx-sm-3 mb-2">
+		<label for="inputPassword2" class="sr-only">Y</label>
+		<input type="text" class="form-control" style="width:130px" id="inputPassword2" placeholder="Y">
+	  </div>
+	  <button type="submit"style="background-color:rgba(17,53,137);" class="btn btn-primary mb-2" >Dodaj</button>
+	</form>
+	</div>
+	<div class="login-container" >
+      <div class="row">   
+        <div class="col-md-8 login-form-1 lorem" style=" margin-top:10vh;">
+        <div style="margin-top: 0vh; margin-bottom: 0;">
+          <h3>Lorem ipsum</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+              </div>
+      </div>
+      <div class="col-md-4 login-form-2"style="height:60vh; margin-top:10vh;">
+        <h3>Promeni šifru</h3>
+        <form>
+            <div class="form-group" id="promeni">
+                <input type="password" class="form-control" placeholder="Nova šifra *" value="" >
+                <input type="password" class="form-control" placeholder="Potvrdi šifru *" value="" />
+                <input type="submit" class="btnSubmit" value="Promeni šifru" />
+                </form>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+<script>
+function myFunction() {
+  confirm("Odvedi me");
+}
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Parkiraj! Beograd (Admin)</title>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styleAdmin.css">
+  <script>
+    window.onload = function() {
+  document.getElementById('1').style.color='#81bdfc';
+  
+  document.getElementById('1').onclick = function() {
+      const elements = document.querySelectorAll('a');
+
+          elements.forEach( el => {
+           el.style.color='white';
+          });
+      this.style.color = '#81bdfc';
+      
+  }
+  document.getElementById('2').onclick = function() {
+      const elements = document.querySelectorAll('a');
+
+      elements.forEach( el => {
+      el.style.color='white';
+      });
+      this.style.color = '#81bdfc';
+
+      }
+  
+  document.getElementById('3').onclick = function() {
+      const elements = document.querySelectorAll('a');
+
+      elements.forEach( el => {
+      el.style.color='white';
+      });
+      this.style.color = '#81bdfc';
+
+      }
+  
+  document.getElementById('4').onclick = function() {
+      const elements = document.querySelectorAll('a');
+
+      elements.forEach( el => {
+      el.style.color='white';
+      });
+      this.style.color = '#81bdfc';
+
+      }
+  }
+    function f(){
+      document.getElementById("mapa").src = "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d11321.267444927093!2d20.456918188660833!3d44.81510906557635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x475a65499711997b%3A0x40464ac7b2ccc061!2sKalemegdan%2C%20Belgrade!3m2!1d44.823182599999996!2d20.4504791!4m5!1s0x475a7a9f5ee145d3%3A0x3ed89b5bb505d83!2sUniversity%20of%20Belgrade%20School%20of%20Electrical%20Engineering%2C%20Bulevar%20kralja%20Aleksandra%2073%2C%20Beograd!3m2!1d44.8055056!2d20.4761359!5e0!3m2!1sen!2srs!4v1583617017490!5m2!1sen!2srs";
+    
+    }
+    
+    </script>
+</head>
+<body>
+	<nav class="navbar navbar-expand fixed-top"style="background-color:rgba(17,53,137);">
+        
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" id="1"href="#"><h6>Parkiraj! Beograd</h6></a>
+              </li>
+        <li class="nav-item active">
+            <a class="nav-link" id="2"href="#"><h6>Lista korisnika</h6></a>
+         </li>
+		 <li class="nav-item active">
+            <a class="nav-link" id="3"href="#places"><h6>Lista mesta</h6></a>
+         </li>
+			  <li class="nav-item active">
+                <a class="nav-link"id="4" href="#change"><h6>Promeni šifru</h6></a>
+                
+              </li>
+			   <li class="nav-item active logout">
+                <a class="nav-link"id="5" href="index.html"><h6>(Tamara) Izloguj se</h6></a>
+
+              </li>
+        </ul>
+    </nav>
+
+	<div class="display-3">
+		<nav class="navbar navbar-expand-md"style="background-color:rgba(17,53,137);">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <h4 style="color:white;">Lista korisnika<span class="sr-only">(current)</span></h4>
+                  
+            </ul>
+    </nav>
+    <table class="table table-striped">
+	  <thead>
+		<tr>
+		  <th scope="col">Redni broj</th>
+		  <th scope="col">Ime korisnika</th>
+		  <th scope="col">Prezime korisnika</th>
+          <th scope="col">E-mail adresa korisnika</th>
+          <th scope="col">Uloga korisnika</th>
+          <th scope="col">Promeni</th>
+		</tr>
+	  </thead>
+	  <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Drazen</td>
+            <td>Draskovic</td>
+            <td>drazendraskovic@gmail.com</td>
+            <td>Administrator</td>
+            <td></td>
+          </tr>
+		<tr>
+		  <th scope="row">2</th>
+		  <td>Milan</td>
+		  <td>Ciganovic</td>
+		  <td>mcg98@gmail.com</td>
+          <td>Moderator</td>
+          
+          <td style="width:120px"><img src="https://img.icons8.com/color/48/000000/up.png" style="height: 25px;">
+            <img src="https://img.icons8.com/color/48/000000/down.png"style="height: 25px;">
+            <img src="img/trash.jpg"style="height: 25px;"></td>
+		</tr>
+		<tr>
+            <th scope="row">3</th>
+            <td>Danilo</td>
+            <td>Dabovic</td>
+            <td>dd98@gmail.com</td>
+            <td>Moderator</td>
+            <td><img src="https://img.icons8.com/color/48/000000/up.png" style="height: 25px;">
+                <img src="https://img.icons8.com/color/48/000000/down.png"style="height: 25px;">
+                <img src="img/trash.jpg"style="height: 25px;"></td>
+        </tr>
+        <tr>
+            <th scope="row">4</th>
+            <td>Filip</td>
+            <td>Djurdjevic</td>
+            <td>fdj98@gmail.com</td>
+            <td>Moderator</td>
+            <td><img src="https://img.icons8.com/color/48/000000/up.png" style="height: 25px;">
+                <img src="https://img.icons8.com/color/48/000000/down.png"style="height: 25px;">
+                <img src="img/trash.jpg"style="height: 25px;"></td>
+        </tr>
+        <tr>
+            <th scope="row">5</th>
+            <td>Petar</td>
+            <td>Petrovic</td>
+            <td>pppppp@gmail.com</td>
+            <td>Korisnik</td>
+            <td><img src="https://img.icons8.com/color/48/000000/up.png" style="height: 25px;">
+              <img src="img/trash.jpg"style="height: 25px;"></td>
+        </tr>
+	  </tbody>
+	</table>
+
+		<nav id="places" aria-label="...">
+		<ul class="pagination">
+		<li class="page-item disabled">
+		  <span class="page-link">Prethodna</span>
+		</li>
+		<li class="page-item active">
+		  <span class="page-link" style="background-color:rgba(17,53,137);">
+			1
+			<span class="sr-only">(current)</span>
+		  </span>
+		</li>
+		<li class="page-item disabled">
+		  <a class="page-link" href="#">Sledeća</a>
+		</li>
+	  </ul>
+	</nav>
+	</div>
+	<div class="display-3">
+	<nav class="navbar navbar-expand-md"style="background-color:rgba(17,53,137);">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <h4 style="color:white;">Lista mesta<span class="sr-only">(current)</span></h4>
+                  
+            </ul>
+    </nav>
+	
+    <table class="table table-striped">
+	  <thead>
+		<tr>
+		  <th scope="col">Redni broj</th>
+		  <th scope="col">Mesto</th>
+		  <th scope="col">X</th>
+		  <th scope="col">Y</th>
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr>
+		  <th scope="row">1</th>
+		  <td>Visegradska_90</td>
+		  <td>44.801578</td>
+		  <td>20.454255</td>
+		  <td>  <img src="img/druga.jpg"> <img src="img/trash.jpg"></td>
+		</tr>
+		<tr>
+		  <th scope="row">2</th>
+		  <td>Visegradska_91</td>
+		  <td>44.801573</td>
+		  
+		  <td>20.454255</td>
+		  <td>  <img src="img/druga.jpg"> <img src="img/trash.jpg"></td>
+		</tr>
+		<tr>
+		  <th scope="row">3</th>
+		  <td>Visegradska_92</td>
+		  <td>44.801580</td>
+		  <td>20.454255</td>
+		  <td>  <img src="img/druga.jpg"> <img src="img/trash.jpg"></td>
+		</tr>
+		<tr>
+		  <th scope="row">4</th>
+		  <td>Visegradska_94</td>
+		  <td>44.801545</td>
+		  <td>20.454255</td>
+		  <td>  <img src="img/druga.jpg"> <img src="img/trash.jpg"></td>
+		</tr>
+		<tr>
+		  <th scope="row">5</th>
+		  <td>Visegradska_95</td>
+		  <td>44.801512</td>
+		  <td>20.454255</td>
+		  <td>  <img src="img/druga.jpg"> <img src="img/trash.jpg"></td>
+		</tr>
+		<tr>
+		  <th scope="row">6</th>
+		  <td>Visegradska_96</td>
+		  <td>44.801512</td>
+		  <td>20.454255</td>
+		  <td>  <img src="img/druga.jpg"> <img src="img/trash.jpg"></td>
+		</tr>
+		<tr>
+		  <th scope="row">7</th>
+		  <td>Visegradska_97</td>
+		  <td>44.801545</td>
+		  <td>20.454255</td>
+		  <td>  <img src="img/druga.jpg"> <img src="img/trash.jpg"></td>
+		</tr>
+	  </tbody>
+	</table>
+	<nav aria-label="...">
+		<ul class="pagination">
+		<li class="page-item">
+		  <span class="page-link">Prethodna</span>
+		</li>
+		<li class="page-item"><a class="page-link"style="background-color:rgba(17,53,137); color:white;" href="#">1</a></li>
+		<li class="page-item">
+		  <a class="page-link" href="#">
+			2
+		  </a>
+		</li>
+		<li class="page-item"><a class="page-link" href="#">3</a></li>
+		<li class="page-item">
+		  <a class="page-link" href="#">Sledeća</a>
+		</li>
+	  </ul>
+	</nav>
+	</div>
+ <div class="login-container">
+      <div class="row">   
+        <div class="col-md-8 login-form-1 lorem" style=" margin-top:10vh;">
+        <div style="margin-top: 0vh; margin-bottom: 0;">
+          <h3>Lorem ipsum</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+              </div>
+      </div>
+      <div class="col-md-4 login-form-2"style="height:60vh; margin-top:10vh;">
+        <h3>Promeni šifru</h3>
+        <form>
+            <div class="form-group" id="change">
+                <input type="password" class="form-control" placeholder="Nova šifra *" value="" >
+                <input type="password" class="form-control" placeholder="Potvrdi šifru *" value="" />
+                <input type="submit" class="btnSubmit" value="Promeni šifru" />
+                </form>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+<script>
+function myFunction() {
+  confirm("Odvedi me");
+}
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

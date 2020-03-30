@@ -1,0 +1,152 @@
+<!--AUTHOR: Filip Djurdjevic-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Parkiraj! Beograd</title>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+   window.onload = function() {
+    document.getElementById('1').style.color='#81bdfc';
+    
+    document.getElementById('1').onclick = function() {
+        const elements = document.querySelectorAll('a');
+
+            elements.forEach( el => {
+             el.style.color='white';
+            });
+        this.style.color = '#81bdfc';
+        
+    }
+    document.getElementById('2').onclick = function() {
+        const elements = document.querySelectorAll('a');
+
+        elements.forEach( el => {
+        el.style.color='white';
+        });
+        this.style.color = '#81bdfc';
+
+        }
+    
+    document.getElementById('3').onclick = function() {
+        const elements = document.querySelectorAll('a');
+
+        elements.forEach( el => {
+        el.style.color='white';
+        });
+        this.style.color = '#81bdfc';
+
+        }
+    
+    document.getElementById('4').onclick = function() {
+        const elements = document.querySelectorAll('a');
+
+        elements.forEach( el => {
+        el.style.color='white';
+        });
+        this.style.color = '#81bdfc';
+
+        }
+    }
+  </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand fixed-top"style="background-color:rgba(17,53,137);">
+        
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" id="1"href="#"><h6>Parkiraj! Beograd</h6></a>
+              
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link"id="2" href="#about"><h6>O nama</h6></a>
+                
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link"id="3" href="#login"><h6>Uloguj se</h6></a>
+                
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link"id="4" href="#register"><h6>Registruj se</h6></a>
+                
+              </li>
+              
+              <li class="nav-item active">
+                    <span class="badge badge-pill badge-light">Responsive</span>
+             </li>
+        </ul>
+    </nav>
+    <div class="container-fullwidth"style=" height:100vh">
+        <div class="row bannerRow">
+            
+            <div class="col-12 banner">
+                
+                <h1 class="display-1" ><b>Parkiraj! Beograd</b></h1>
+            </div>
+           
+        </div>
+        <div class="row halfRow">
+            
+            <h2 class="display-3"><b>Pronađi svoje mesto.</b></h2>
+        </div>
+        <div class="row fullRow">
+                <h2 class="display-4" id="about"><b>O nama</b></h2>
+                <div class='col-12 col-xl-6'>
+                    <br/>
+                    <br/>
+                     <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                </div>
+                <div class='col-12 col-xl-6 second' >
+                    <br/>
+                    <br/>
+                    <p class="lead">
+                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose.
+                    </p>
+                
+               </div>
+               
+        </div>
+        <h2 class="display-4 third"id="login" ><b>Započni putovanje</b></h2>
+                  
+               
+            <div class="login-container">
+                <div class="row">
+                    <div class="col-md-6 login-form-1" >
+                        <h3>Uloguj se</h3>
+                        <form>
+                            <div class="form-group">
+								
+                                <input type="text" class="form-control" placeholder="Email *" value="" />
+                                <input type="password" class="form-control" placeholder="Šifra *" value="" />
+                                <a class="btn btnSubmit" href="user.html">Uloguj se</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6 login-form-2"id="register">
+                        <h3>Registruj se</h3>
+                        <form>
+                            <div class="form-group">
+							
+                                <input type="text" class="form-control" placeholder="Ime *" value="" />
+                                <input type="text" class="form-control" placeholder="Prezime *" value="" />
+                                <input type="text" class="form-control" placeholder="Email *" value="" />
+                                <input type="password" class="form-control" placeholder="Šifra *" value="" >
+                                <input type="password" class="form-control" placeholder="Potvrdi Šifru *" value="" />
+                                <input type="submit" class="btnSubmit" value="Registruj se" />
+                                </form>
+                             </div>
+                        </form>
+                    </div>
+                </div>
+    </div>
+    
+        </div>
+     
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/main.js"></script> <!-- Resource jQuery -->
+</body>
+</html>

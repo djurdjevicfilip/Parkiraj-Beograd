@@ -1,0 +1,236 @@
+html,body {
+    padding:0;
+    margin:0;
+    height:100%;
+}
+@media screen and (min-width: 1001px) {
+    .display-1 {
+      font-size: 100px;
+    }
+    .badge{
+        margin-left:60vw;
+        margin-top:14px;
+        padding-right: 2px;
+        color: rgba(17,53,137);
+    }
+    h6{
+        font-size:20px;
+        
+    }
+    .logout{
+        margin-left:55vw;
+    }
+    .display-4{
+        padding-right: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding-top: 0px;
+        padding-bottom:0px;
+    }
+    .lead{
+        
+      height:74vh;
+    }
+    .mapSearch{
+        margin-top: 5%;
+        height:80vh;
+    }
+    .containter-fullwidth{
+        height:100vh;
+    }
+    .change{
+        margin-top:10vh;
+        height:60vh;
+    }
+    .ipsum{
+        height:60vh;    }
+    .btn{
+        height:8vh;
+        margin-left: 6vw;
+    }
+  }
+  
+  @media screen and (max-width: 1000px) {
+    .display-1 {
+      font-size: 50px;
+    }
+    .display-3 {
+        font-size: 40px;
+      }
+      .badge{
+          width:0px;
+          height:0px;
+          font-size: 0px;
+      }
+      h6{
+          font-size:15px;
+      }
+      .second{
+        margin-top:250px;
+      }
+      .lead{  
+         height:84vh;
+      }
+     .display-4{
+         margin-top: 80%;
+         margin-bottom: 0px;
+        padding-bottom:0px;
+        font-size: 40px;
+     }
+     .map{
+         width:91vw;
+         margin-bottom: 0px;
+         margin-left: 0px;
+     }
+     .mapSearch{
+         margin-left: 4vw;
+         margin-top: 0px;
+         height:50vh;
+     }
+     .ipsum{
+         height:100vh;
+     }
+     .change{
+         height:40vh;
+     }
+     .containter-fullwidth{
+        height:5vh;
+    }
+    .btn{
+        height:7vh;
+        margin-left: 22vw;
+    }
+  }
+.display-1{
+    color:white;
+    width:100%;
+    vertical-align: bottom;
+    text-align: center ;
+    
+    padding-top: 18vh;
+    padding-right: 0px;
+
+    margin-right: 0px;
+    margin-bottom: 0vw;
+    padding-bottom: 0vw;
+}
+.display-3{
+    color:rgb(17,53,137);
+    width:100%;
+    vertical-align: middle;
+    text-align: center;
+    padding-right: 0px;
+    margin-right: 0px;
+    
+    /*font-size:5vw;*/
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+.display-4{
+    color:rgb(17,53,137);
+    width:100%;
+    vertical-align: middle;
+    text-align: center;
+    
+    height:100px;
+}
+.bannerRow{
+    width:100vw; margin-left: 0; margin-right:0; height:calc(calc(100vh - 50px) / 2);
+    
+}
+.banner{
+    background-color: rgba(17,53,137); width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.halfRow{
+    width:100%;height:52%; margin-left: 0; margin-top:0;
+}
+.fullRow{
+    width:100%;margin-left: 0; margin-top:0;margin-bottom: 0px; padding-top: 0px;padding-bottom: 0px;
+}
+.lead{
+    font-size: 28px;
+    margin-left: 5%;
+    color: rgba(17,53,137);
+    font-weight: 400;
+}
+.nav-link{
+    color:white;
+    font-size: large;
+}
+.navbar{
+    height:60px;
+}
+.container{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    margin-right: 0px;
+    margin-left: 0px;
+    width:100%;
+}
+#about {
+    padding-top: 60px;
+    margin-top: -60px;
+}
+.form-control{
+    margin-bottom: 10px;
+}
+.login-container{
+    margin-top: 0;
+    margin-bottom: 5%;
+    width:90%; 
+    margin-left: 5%;
+    padding-top: 0;
+}
+.login-form-1{
+    padding: 5%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-1 h3{
+    text-align: center;
+    color: rgba(17,53,137);
+}
+.login-form-2{
+    padding: 5%;
+    background: rgba(17,53,137);
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-2 h3{
+    text-align: center;
+    color: #fff;
+
+}
+.login-container form{
+    padding: 10%;
+}
+.btnSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
+.login-form-1 .btnSubmit{
+    font-weight: 600;
+    color: #fff;
+    background-color: rgba(17,53,137);
+}
+.login-form-2 .btnSubmit{
+    font-weight: 600;
+    color: rgba(17,53,137);
+    background-color: #fff;
+}
+.login-form-1 .ForgetPwd{
+    color:rgba(17,53,137);
+    font-weight: 600;
+    text-decoration: none;
+}
+p{
+    padding-top: 2%;
+    font-weight: 400;
+    color:rgba(17,53,137);
+}

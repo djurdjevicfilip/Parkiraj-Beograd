@@ -6,7 +6,7 @@ Ogromna količina vremena i goriva se troši na traženje slobodnog parking
 mesta. Od 2016. godine u Beogradu je instalirano ***3600* parking senzora** koji pružaju informaciju o slobodnim parking mestima. Na osnovu ove informacije došli smo na ideju da svaki dan olakšamo vozačima. Koristeći ove senzore, pomogli bismo vozačima da se brže parkiraju, i samim tim sačuvaju vreme i gorivo. 
 ## Prototip
 Ukoliko želite da pogledate prototip, možete da koristite sledeće linkove:
-[Gost](https://djurdjevicfilip.github.io/prototip/index.html)
+[Gost](https://djurdjevicfilip.github.io/prototip/)
 [Korisnik](https://djurdjevicfilip.github.io/prototip/user.html)
 [Moderator](https://djurdjevicfilip.github.io/prototip/moderator.html)
 [Administrator](https://djurdjevicfilip.github.io/prototip/administrator.html)
