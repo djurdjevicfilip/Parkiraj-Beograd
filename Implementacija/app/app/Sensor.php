@@ -4,14 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Location extends Model
+class Sensor extends Model
 {
     // No timestamps
     public $timestamps = false;
 
-    protected $table='location';
+    protected $table='sensor';
 
     public function parkinglocation(){
-        return $this->belongsTo('App\ParkingLocation','idLoc','idLoc');
+        return $this->hasOne('App\ParkingLocation','idPar','idPar');
     }
+    
 }

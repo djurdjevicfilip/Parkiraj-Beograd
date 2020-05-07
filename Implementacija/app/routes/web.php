@@ -27,7 +27,7 @@ Route::put('users/{id}/{act?}', 'UsersController@update');
  * Made UserMiddleware and AdminMiddleware, and added it to Kernel.php 
 */
 Route::group(['middleware' => ['auth', 'user']], function() {
-    Route::get('/home', 'HomeController@user')->name('home');
+    Route::get('/home', 'LocationsController@convert')->name('home');
 });
 Route::group(['middleware' => ['auth', 'admin']], function() {
     Route::get('/admin', 'HomeController@admin')->name('admin');

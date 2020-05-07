@@ -368,6 +368,7 @@
     <!-- End Login and Registration Section -->
 
     <div class="credits">
+        {{$locations->idLoc}}
         Tim: <a>Sportaši</a>
     </div>
     <!-- Vendor JS Files -->

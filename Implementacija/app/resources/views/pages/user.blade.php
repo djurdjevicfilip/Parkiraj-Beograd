@@ -23,17 +23,19 @@
     <!-- Template Main CSS File -->
     <link href="/css/style.css" rel="stylesheet">
 
-    <!-- Pass locations to javascript -->
+    <!-- Pass locations data to javascript -->
     <script type="text/javascript">
-        var locations = ['1'];
+        var data = {!! $data !!};
     </script>
+   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>        
 
     <script src="/js/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBOr3eB1bffutoazOYCopJncLycz2DHik&callback=initMap&libraries=places"
+    async defer></script>
 
 </head>
 
 <body id="user-body">
-
     <!-- ======= Header ======= -->
     <header id="header" class="header-tops">
         <div class="container">
@@ -45,7 +47,7 @@
                 <ul>
                     <li class="active"><a href="#header">Parkiraj! Beograd</a></li>
                     <li><a href="#about">Moj Nalog</a></li>
-                    <li><a href="#map">Mapa</a></li>
+                    <li><a href="#mapSection">Mapa</a></li>
                     <li><a href="#login">Promeni šifru</a></li>
                 </ul>
             </nav>
@@ -155,19 +157,19 @@
 
         </div>
     </section>
+    
     <!-- End Change Password Section -->
 
     <!-- ======= Map Section ======= -->
-    <section id="map" class="col-12 services">
+    <section id="mapSection" class="col-12 services">
         <div class="section-title lft">
             <h2>Mapa</h2>
         </div>
-
+        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+        <div id="map" style="left:70px;height:660px;width:90%"></div>  
         <div class="container-fullwidth" id="search">
             <div class="row map">
-                <div class="col-11 map">
-                    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.788165965896!2d20.473947215498107!3d44.80550557909867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7a9f5ee145d3%3A0x3ed89b5bb505d83!2sUniversity%20of%20Belgrade%20School%20of%20Electrical%20Engineering!5e0!3m2!1sen!2srs!4v1583616822176!5m2!1sen!2srs" width="100%" height="100%" frameborder="0" id="mapa" style="border:0;margin-top: 0;margin-bottom: 0;padding-top: 0;padding-left: 0;" allowfullscreen=""></iframe>
-
+                <div class="col-12 map">
                 </div>
                
             </div>

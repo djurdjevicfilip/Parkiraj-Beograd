@@ -12,6 +12,9 @@ class ParkingLocation extends Model
     protected $table='parkinglocation';
 
     public function location(){
-        return $this->hasOne('App\Location');
+        return $this->hasOne('App\Location','idLoc','idLoc');
+    }
+    public function sensor(){
+        return $this->belongsTo('App\Sensor','idPar','idPar');
     }
 }

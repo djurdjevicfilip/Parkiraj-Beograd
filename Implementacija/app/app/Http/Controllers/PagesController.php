@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use App\Location;
+use App\ParkingLocation;
 use Illuminate\Http\Request;
 /**
  * FOR NON-AUTHENTICATED USERS (GUESTS)
  */
 class PagesController extends Controller
 {
-    
     //Guest index page
     public function index(){
-        return view('pages.index');
+        $locations = Location::all()->first()->parkinglocation;
+        return view('pages.index')->with('locations',$locations);
     }
     //Guest index page
     public function register(){
