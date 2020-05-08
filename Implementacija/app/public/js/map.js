@@ -86,7 +86,7 @@ function addCustomControls(){
 	centerControlDiv = document.createElement('div');
 	centerControl = new CenterControl(centerControlDiv, map, 'Route');
 	centerControlDiv.index = 1;
-	centerControlDiv.onclick=findNearest;
+	centerControlDiv.onclick=findNearestOSRM;
 	map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
 }
 function initMap() {
@@ -146,11 +146,11 @@ function initMap() {
 
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-	infoWindow.setPosition(pos);
+	/*infoWindow.setPosition(pos);
 	infoWindow.setContent(browserHasGeolocation ?
 						  'Error: The Geolocation service failed.' :
 						  'Error: Your browser doesn\'t support geolocation.');
-	infoWindow.open(map);
+	infoWindow.open(map);*/
   }
 
 //Find the location that the user searched for
@@ -234,11 +234,11 @@ function accessUserLocation(){
 		srcy=position.coords.longitude;
 		
 	  }, function() {
-		handleLocationError(true, infoWindow, map.getCenter());
+		//handleLocationError(true, null, map.getCenter());
 	  });
 	} else {
 	  // Browser doesn't support Geolocation
-	  handleLocationError(false, infoWindow, map.getCenter());
+	 // handleLocationError(false, null, map.getCenter());
 	}
 }
 
@@ -415,4 +415,32 @@ function writeDirectionOnMap(src, dst_x, dst_y) {
 			directionsRenderer.setDirections(response);
 		}
 	});
+}
+//Find closest location by duration using the OSRM API (Distance isn't supported by default, but there should be a workaround)
+function findNearestOSRM(){
+	var str='http://router.project-osrm.org/table/v1/driving/';
+	str+=srcx+",";
+	str+=srcy+";";
+	for(var i=0;i<markers.length;i++){
+		str+=markers[i].x+","+srcy;
+		if(i!=markers.length-1){
+			str+=";";
+		}
+	}
+	str+="?sources=0";
+	var distanceMatrix=JSON.parse(httpGet(str));
+	var min=distanceMatrix.durations[0][1];
+	var pos=0;
+	for(var i=2;i<distanceMatrix.durations[0].length;i++){
+		if(distanceMatrix.durations[0][i]<min){
+			min=distanceMatrix.durations[0][i];
+			pos=i-1;
+		}
+	}
+	nearest_marker.x = markers[pos].x;
+	nearest_marker.y = markers[pos].y;
+	src.x=srcx;
+	src.y=srcy;
+	writeDirectionOnMap(src,nearest_marker.x,nearest_marker.y);
+
 }
