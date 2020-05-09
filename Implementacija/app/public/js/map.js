@@ -143,16 +143,6 @@ function initMap() {
 	//Setup search-box and location-finding features
 	findLocation();
 }
-
-
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-	/*infoWindow.setPosition(pos);
-	infoWindow.setContent(browserHasGeolocation ?
-						  'Error: The Geolocation service failed.' :
-						  'Error: Your browser doesn\'t support geolocation.');
-	infoWindow.open(map);*/
-  }
-
 //Find the location that the user searched for
 function findLocation(){
 	
@@ -234,11 +224,10 @@ function accessUserLocation(){
 		srcy=position.coords.longitude;
 		
 	  }, function() {
-		//handleLocationError(true, null, map.getCenter());
+		//Error
 	  });
 	} else {
 	  // Browser doesn't support Geolocation
-	 // handleLocationError(false, null, map.getCenter());
 	}
 }
 
@@ -396,11 +385,10 @@ function put_direction_on_map() {
 		write_direction_on_map(src, nearest_marker.x, nearest_marker.y);
 	}, 600);
 }
-var fin=null;
+var response_simulation=null;
 function writeDirectionOnMap(src, dst_x, dst_y) {
 	var starting_position = new google.maps.LatLng(src.x, src.y);
 	var final_position = new google.maps.LatLng(dst_x, dst_y);
-	fin=final_position;
 	var request = {
 		origin: starting_position,
 		destination: final_position,
@@ -413,34 +401,112 @@ function writeDirectionOnMap(src, dst_x, dst_y) {
 		if (status == 'OK') {
 			console.log(response);
 			directionsRenderer.setDirections(response);
+			response_simulation=response;
 		}
 	});
 }
+function moveStartingMarker(src,dst){
+	var starting_position = new google.maps.LatLng(src.x, src.y);
+	var final_position = new google.maps.LatLng(dst.x, dst.y);
+	
+}
+
 //Find closest location by duration using the OSRM API (Distance isn't supported by default, but there should be a workaround)
 function findNearestOSRM(){
+	//Prepare the string for httpGet request
 	var str='http://router.project-osrm.org/table/v1/driving/';
-	str+=srcx+",";
-	str+=srcy+";";
+	str+=srcy+",";
+	str+=srcx+";";
 	for(var i=0;i<markers.length;i++){
-		str+=markers[i].x+","+srcy;
+		str+=markers[i].y+","+markers[i].x;
 		if(i!=markers.length-1){
 			str+=";";
 		}
 	}
 	str+="?sources=0";
-	var distanceMatrix=JSON.parse(httpGet(str));
-	var min=distanceMatrix.durations[0][1];
+
+	//Find the minimum duration
+	var durationMatrix=JSON.parse(httpGet(str));
+	var min=durationMatrix.durations[0][1];
 	var pos=0;
-	for(var i=2;i<distanceMatrix.durations[0].length;i++){
-		if(distanceMatrix.durations[0][i]<min){
-			min=distanceMatrix.durations[0][i];
+	for(var i=2;i<durationMatrix.durations[0].length;i++){
+		if(durationMatrix.durations[0][i]<min){
+			min=durationMatrix.durations[0][i];
 			pos=i-1;
 		}
 	}
+
 	nearest_marker.x = markers[pos].x;
 	nearest_marker.y = markers[pos].y;
 	src.x=srcx;
 	src.y=srcy;
+
 	writeDirectionOnMap(src,nearest_marker.x,nearest_marker.y);
 
+	//Simulate travel
+	setTimeout(function() {
+		simulateTravel(srcx,srcy,nearest_marker.x,nearest_marker.y);
+	}, 500);
+}
+function sleep (time) {
+	return new Promise((resolve) => setTimeout(resolve, time));
+  }
+  
+function simulateTravel(srcx,srcy,dstx,dsty){
+
+	//Decode route polyline using polyline.js
+	var polylineArray=polyline.decode(response_simulation.routes[0].overview_polyline);
+	//Recursively simulate movement
+	moveAlongPolyline(0,polylineArray.length,polylineArray);
+	
+}
+
+var numDeltas = 200;
+var delay = 10; //milliseconds
+//Represents the total time it takes to go from one polyline coordinate to another (in milliseconds)
+var pointDelay=numDeltas*delay;
+
+//Recursively iterate over the polyline (recursion is used to add up delay)
+function moveAlongPolyline(i,n,coordinates){
+	if(i>=n)return;
+	sleep(pointDelay).then(() => {
+		transition(coordinates[i][0],coordinates[i][1]);
+	
+		src.x=coordinates[i][0];
+		src.y=coordinates[i][1];
+
+		//Writing route direction (currently not used)
+		//Disclaimer: writeDirectionOnMap can use up a lot of google credits !
+		//writeDirectionOnMap(src,nearest_marker.x,nearest_marker.y);
+
+		moveAlongPolyline(i+1,n,coordinates);
+	});
+}
+
+//Smoothly move marker
+var i = 0;
+var deltaLat;
+var deltaLng;
+var position=[];
+function transition(result0,result1){
+	position[0]=src.x;
+	position[1]=src.y;
+	i = 0;
+	deltaLat=(result0 - position[0])/numDeltas;
+	deltaLng=(result1 - position[1])/numDeltas;
+	moveMarker();
+}
+
+function moveMarker(){
+	sleep(delay).then(() => {
+		position[0] += deltaLat;
+		position[1] += deltaLng;
+		var latlng = new google.maps.LatLng(position[0], position[1]);
+
+		marker_now.setPosition(latlng);
+		if(i!=numDeltas){
+			i++;
+			moveMarker();
+		}
+	});
 }
