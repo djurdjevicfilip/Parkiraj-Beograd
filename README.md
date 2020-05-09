@@ -1,5 +1,3 @@
-![image](https://github.com/djurdjevicfilip/Parkiraj-Beograd/blob/master/Implementacija/app/Parkiraj_Beograd.png?raw=true)
-
 # Parkiraj! Beograd 
 
 Velika frustracija za vozače (posebno u velikim gradovima) je **parkiranje**.
