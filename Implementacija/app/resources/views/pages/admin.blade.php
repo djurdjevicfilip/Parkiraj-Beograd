@@ -39,6 +39,7 @@
                     <li><a href="#users">Nalozi</a></li>
                     <li><a href="#locations">Lokacije</a></li>
                     <li><a href="#login">Promeni šifru</a></li>
+                    <li><a href="#add-location">Dodaj mesto</a></li>
                 </ul>
             </nav>
             <!-- .nav-menu -->
@@ -88,7 +89,41 @@
         </div>
     </section>
     <!-- End Of Password Change Section -->
+    <!-- ======= Add Location Section ======= -->
+    <section id="add-location">
+        <div class="container register">
+            <div class="row">
+                <div class="col-md-12 add-locations">
 
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h3 class="register-heading">Dodaj mesto</h3>
+                                <form action="locations"method="post" class="locations-form">
+                                    {{ csrf_field() }}
+                                    <div class="field">
+                                        <label class="label">Name</label>
+                                        <div class="control">
+                                            <input name="x"class="form-control"type="text"placeholder="X Koordinata*">
+                                        </div>
+                                        
+                                        <div class="control">
+                                            <input name="y"class="form-control"type="text"placeholder="Y Koordinata*">
+                                        </div>
+                                    </div>
+                                    <div class="fieldis-grouped">
+                                        <div class="control">
+                                            <button 
+                                            class="btnLogin">Dodaj</button></div></form>
+                            </div>
+
+                        </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End Of Add Location Section -->
     <!-- ======= User Table Section ======= -->
     <section id="users">
         <div class="container">

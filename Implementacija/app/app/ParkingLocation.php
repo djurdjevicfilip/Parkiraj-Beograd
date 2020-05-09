@@ -17,4 +17,8 @@ class ParkingLocation extends Model
     public function sensor(){
         return $this->belongsTo('App\Sensor','idPar','idPar');
     }
+    public function store($idLoc){
+        $this->idLoc=$idLoc;
+        $this->save();
+    }
 }

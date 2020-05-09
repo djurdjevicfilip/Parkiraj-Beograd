@@ -14,4 +14,10 @@ class Location extends Model
     public function parkinglocation(){
         return $this->belongsTo('App\ParkingLocation','idLoc','idLoc');
     }
+
+    public function store($x,$y){
+        $this->x=$x;
+        $this->y=$y;
+        $this->save();
+    }
 }

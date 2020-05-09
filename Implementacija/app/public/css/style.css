@@ -23,7 +23,18 @@ body::before {
   
 }
 #user-body{
-  overflow:hidden;
+}
+.add-locations{
+  
+  background: #f8f9fa;
+  height:500px;
+
+}
+.locations-form{
+  position: absolute;
+  top:150px;
+  left:30%;
+  width:40%;
 }
 .help-block{
   color:#000240;

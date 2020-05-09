@@ -322,7 +322,6 @@ var destinations = [];
 var min = 99999999;
 var minus = 0;
 function findNearest() {
-	console.log(httpGet('http://router.project-osrm.org/nearest/v1/driving/13.388860,52.517037?number=3&bearings=0,20'));
 	setTimeout(function() {
 		var service = new google.maps.DistanceMatrixService();
 		var origin1 = new google.maps.LatLng(srcx, srcy);
@@ -399,18 +398,11 @@ function writeDirectionOnMap(src, dst_x, dst_y) {
 	};
 	directionsService.route(request, function(response, status) {
 		if (status == 'OK') {
-			console.log(response);
 			directionsRenderer.setDirections(response);
 			response_simulation=response;
 		}
 	});
 }
-function moveStartingMarker(src,dst){
-	var starting_position = new google.maps.LatLng(src.x, src.y);
-	var final_position = new google.maps.LatLng(dst.x, dst.y);
-	
-}
-
 //Find closest location by duration using the OSRM API (Distance isn't supported by default, but there should be a workaround)
 function findNearestOSRM(){
 	//Prepare the string for httpGet request

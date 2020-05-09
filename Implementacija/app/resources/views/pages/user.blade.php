@@ -27,8 +27,7 @@
     <script type="text/javascript">
         var data = {!! $data !!};
     </script>
-   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>        
-
+    <script src="/js/polyline.js"></script>
     <script src="/js/map.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBOr3eB1bffutoazOYCopJncLycz2DHik&callback=initMap&libraries=places"
     async defer></script>
@@ -165,7 +164,7 @@
         <div class="section-title lft">
             <h2>Mapa</h2>
         </div>
-        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+        <input id="pac-input" class="controls" type="text" placeholder="Pretraga mesta">
         <div id="map" style="left:70px;height:660px;width:90%"></div>  
         <div class="container-fullwidth" id="search">
             <div class="row map">

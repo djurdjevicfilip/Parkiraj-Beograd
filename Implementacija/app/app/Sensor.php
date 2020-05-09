@@ -14,5 +14,9 @@ class Sensor extends Model
     public function parkinglocation(){
         return $this->hasOne('App\ParkingLocation','idPar','idPar');
     }
-    
+    public function store($idPar){
+        $this->idPar=$idPar;
+        $this->free="1";
+        $this->save();
+    }
 }

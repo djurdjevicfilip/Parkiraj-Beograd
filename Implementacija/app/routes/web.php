@@ -36,6 +36,9 @@ Route::group(['middleware' => ['auth', 'mod']], function() {
     Route::get('/mod', 'HomeController@mod')->name('mod');
 });
 
+//Locations post
+Route::post('/locations','LocationsController@store');
+
 /** Redirect back if the page doesn't exist
  * Otherwise it throws an error
 */
