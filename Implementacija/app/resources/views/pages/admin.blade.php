@@ -109,6 +109,24 @@
                                         <div class="control">
                                             <input name="y"class="form-control"type="text"placeholder="Y Koordinata*">
                                         </div>
+
+                                        <div class="control">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="parkingType" id="sensor" value="sensor" checked>
+                                            <label class="form-check-label" for="sensor" style="color:#000240">
+                                              Senzor
+                                            </label>
+                                          </div>
+                                          <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="parkingType" id="garage" value="garage">
+                                            <label class="form-check-label" for="garage" style="color:#000240">
+                                              Garaza
+                                            </label>
+                                          </div>
+                                        </div>
+                                        <div class="control">
+                                            <input id="capacity" name="capacity"class="form-control cap"type="text"placeholder="Kapacitet*">
+                                        </div>
                                     </div>
                                     <div class="fieldis-grouped">
                                         <div class="control">
@@ -287,7 +305,7 @@
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
     <!-- Template Main JS File -->
-    <script src="/js/main.js"></script>
+    <script src="/js/admin.js"></script>
     <script>
         $(document).ready(function() {
             $('#dataTable').dataTable();

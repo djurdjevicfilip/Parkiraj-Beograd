@@ -139,6 +139,7 @@
       });
     });
 
+    
   });
 
   // Initiate venobox (lightbox feature used in portofilo)
@@ -146,7 +147,6 @@
     $('.venobox').venobox(); 
     
   });
-
 })(jQuery);
 function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
@@ -159,5 +159,6 @@ $(window).on("load", function(){
           $('#login-button').click();
           $('#profile-tab').click();
     }
-  
+
+   
   });

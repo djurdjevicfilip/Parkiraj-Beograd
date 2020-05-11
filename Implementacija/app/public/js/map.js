@@ -12,12 +12,22 @@ for(var i=0;i<data.length;i++){
 	locations[i]=[];
 	locations[i].x=data[i].location.x;
 	locations[i].y=data[i].location.y;
-	locations[i].free=data[i].sensor.Free;
+	if(data[i].sensor!=null){
+		locations[i].free=data[i].sensor.Free;
+		locations[i].type="sensor";
+	}
+	else{
+		locations[i].free=data[i].garage.Free;
+		locations[i].type="garage";
+	}
 }
 
 var free_markers = [];
 var old_markers = [];
+var garage_markers=[];
+var sensor_markers=[];
 function showOnlyFree() {
+	showAll();
 	free_markers = [];
 	for (var i = 0; i < markers.length; i++) {
 		if (markers[i].free == 1) {
@@ -29,7 +39,32 @@ function showOnlyFree() {
 	old_markers = markers;
 	markers = free_markers;
 }
-
+function showOnlyGarages(){
+	showAll();
+	garage_markers = [];
+	for (var i = 0; i < markers.length; i++) {
+		if (markers[i].type == "garage") {
+			garage_markers.push(markers[i]);
+		} else {
+			markers[i].setMap(null);
+		}
+	}
+	old_markers = markers;
+	markers = garage_markers;
+}
+function showOnlySensors(){
+	showAll();
+	sensor_markers = [];
+	for (var i = 0; i < markers.length; i++) {
+		if (markers[i].type == "sensor") {
+			sensor_markers.push(markers[i]);
+		} else {
+			markers[i].setMap(null);
+		}
+	}
+	old_markers = markers;
+	markers = sensor_markers;
+}
 function showAll() {
 	markers = old_markers;
 	for (var i = 0; i < markers.length; i++) {
@@ -72,9 +107,15 @@ function CenterControl(controlDiv, map, text) {
 function addCustomControls(){
 
 	var centerControlDiv = document.createElement('div');
-	var centerControl = new CenterControl(centerControlDiv, map, 'Free');
+	var centerControl = new CenterControl(centerControlDiv, map, 'Garages');
 	centerControlDiv.index = 1;
-	centerControlDiv.onclick=showOnlyFree;
+	centerControlDiv.onclick=showOnlyGarages;
+	map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
+
+	var centerControlDiv = document.createElement('div');
+	var centerControl = new CenterControl(centerControlDiv, map, 'Sensors');
+	centerControlDiv.index = 1;
+	centerControlDiv.onclick=showOnlySensors;
 	map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
 
 	centerControlDiv = document.createElement('div');
@@ -142,6 +183,9 @@ function initMap() {
 
 	//Setup search-box and location-finding features
 	findLocation();
+
+	
+	old_markers=markers;
 }
 //Find the location that the user searched for
 function findLocation(){
@@ -242,23 +286,50 @@ function placeMarkers(){
 		url: 'https://cdn4.iconfinder.com/data/icons/car-service-1/512/park-512.png',
 		scaledSize: new google.maps.Size(35, 35) // size
 	};
+	var garage_icon={
+		url: 'img/garage-marker.png',
+		scaledSize: new google.maps.Size(35, 35) // size
+	}
 	setTimeout(function() {
 		//console.log(locations);
+		
+		var contentString = '<div id="content">'+
+		'<h1 id="firstHeading" class="firstHeading" style="color:black; font-size:18px">Garaza'+'<div id="bodyContent">Slobodna mesta: <b>'+locations[i].free+'</b></div>'+'</h1>'+'</div>';
+		var infowindow = new google.maps.InfoWindow({
+			content:contentString
+		}
+		  );
 		for (i = 0; i < locations.length; i++) {
-			console.log(locations[i]);
+			var icon=green_icon;
+			if(locations[i].type=="garage"){
+				icon=garage_icon;
+			}else if(locations[i].free=="0"){
+				icon=red_icon;
+			}
+				console.log(locations[i]);
 			var marker_x = parseFloat(locations[i].x);
 			var marker_y = parseFloat(locations[i].y);
 			var free_space = parseFloat(locations[i].free);
 			marker = new google.maps.Marker({
 				position: new google.maps.LatLng(marker_x, marker_y),
 				map: map,
-				icon: free_space == '1' ? green_icon : red_icon,
+				icon: icon,
 				html: document.getElementById('map'),
 				x: marker_x,
 				y: marker_y,
-				free: free_space
+				free: free_space,
+				type:locations[i].type
 			});
 			markers.push(marker);
+			if(marker.type=="garage"){
+				marker.addListener('mouseover', function() {
+					infowindow.open(map, this);
+				});
+				
+				marker.addListener('mouseout', function() {
+					infowindow.close();
+				});
+			}
 		}
 	}, 100);
 }

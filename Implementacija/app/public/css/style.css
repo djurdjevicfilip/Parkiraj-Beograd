@@ -22,6 +22,9 @@ body::before {
   height: 100vh;
   
 }
+#capacity{
+  display: none;
+}
 #user-body{
 }
 .add-locations{
@@ -967,7 +970,7 @@ section .container {
 }
 .btnLogin{
   float: right;
-  margin-top: 27%;
+  margin-top: 2%;
   border: none;
   border-radius: 1.5rem;
   padding: 2%;
