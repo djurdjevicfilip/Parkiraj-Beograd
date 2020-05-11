@@ -1,4 +1,3 @@
-
 # Parkiraj! Beograd 
 
 Velika frustracija za vozače (posebno u velikim gradovima) je **parkiranje**.
