@@ -71,8 +71,6 @@ Lista mogućih proširenja.
  - Filip Đurđević
  - Danilo Dabović
  - Milan Ciganović
-## Misija
-## Vizija
 ## Platforme korišćene za saradnju
  - GitHub
  - Microsoft Teams
