@@ -14,6 +14,8 @@ for(var i=0;i<data.length;i++){
 	locations[i].y=data[i].location.y;
 	if(data[i].sensor!=null){
 		locations[i].free=data[i].sensor.Free;
+		locations[i].zone=data[i].sensor.Zone;
+		locations[i].disabled=data[i].sensor.Disabled;
 		locations[i].type="sensor";
 	}
 	else{
@@ -21,11 +23,11 @@ for(var i=0;i<data.length;i++){
 		locations[i].type="garage";
 	}
 }
-
 var free_markers = [];
 var old_markers = [];
 var garage_markers=[];
 var sensor_markers=[];
+var zone_markers=[];
 function showOnlyFree() {
 	showAll();
 	free_markers = [];
@@ -64,6 +66,19 @@ function showOnlySensors(){
 	}
 	old_markers = markers;
 	markers = sensor_markers;
+}
+function showRedZone(){
+	showAll();
+	zone_markers = [];
+	for (var i = 0; i < markers.length; i++) {
+		if (markers[i].zone == "Crvena") {
+			zone_markers.push(markers[i]);
+		} else {
+			markers[i].setMap(null);
+		}
+	}
+	old_markers = markers;
+	markers = zone_markers;
 }
 function showAll() {
 	markers = old_markers;
@@ -116,6 +131,12 @@ function addCustomControls(){
 	var centerControl = new CenterControl(centerControlDiv, map, 'Sensors');
 	centerControlDiv.index = 1;
 	centerControlDiv.onclick=showOnlySensors;
+	map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
+
+	var centerControlDiv = document.createElement('div');
+	var centerControl = new CenterControl(centerControlDiv, map, 'Red zone');
+	centerControlDiv.index = 1;
+	centerControlDiv.onclick=showRedZone;
 	map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
 
 	centerControlDiv = document.createElement('div');
@@ -290,27 +311,22 @@ function placeMarkers(){
 		url: 'img/garage-marker.png',
 		scaledSize: new google.maps.Size(35, 35) // size
 	}
+	
+	var infowindow = new google.maps.InfoWindow();
 	setTimeout(function() {
-		//console.log(locations);
-		
-		var contentString = '<div id="content">'+
-		'<h1 id="firstHeading" class="firstHeading" style="color:black; font-size:18px">Garaza'+'<div id="bodyContent">Slobodna mesta: <b>'+locations[i].free+'</b></div>'+'</h1>'+'</div>';
-		var infowindow = new google.maps.InfoWindow({
-			content:contentString
-		}
-		  );
 		for (i = 0; i < locations.length; i++) {
 			var icon=green_icon;
+				
 			if(locations[i].type=="garage"){
 				icon=garage_icon;
 			}else if(locations[i].free=="0"){
-				icon=red_icon;
+				icon=red_icon;	
 			}
-				console.log(locations[i]);
+			
 			var marker_x = parseFloat(locations[i].x);
 			var marker_y = parseFloat(locations[i].y);
 			var free_space = parseFloat(locations[i].free);
-			marker = new google.maps.Marker({
+			var marker = new google.maps.Marker({
 				position: new google.maps.LatLng(marker_x, marker_y),
 				map: map,
 				icon: icon,
@@ -318,18 +334,18 @@ function placeMarkers(){
 				x: marker_x,
 				y: marker_y,
 				free: free_space,
-				type:locations[i].type
-			});
+				type:locations[i].type,
+				zone:locations[i].zone,
+				disabled:locations[i].disabled
+			});	
+
 			markers.push(marker);
-			if(marker.type=="garage"){
-				marker.addListener('mouseover', function() {
-					infowindow.open(map, this);
-				});
-				
-				marker.addListener('mouseout', function() {
-					infowindow.close();
-				});
-			}
+			//Info windows
+			google.maps.event.addListener(marker, 'click', function () {
+				infowindow.setContent('<h5 style="color:black">' + this.type + '</h5><hr/><h6 style="color:blue; text-align:center"><div style="color:black">Slobodno:</div>'+this.free+'<div style="color:black">Zona:</div>'+this.zone+'<br/><div style="color:black">Invalidsko:</div>'+this.disabled+'</h6>');
+				infowindow.open(map, this);
+			});
+			
 		}
 	}, 100);
 }

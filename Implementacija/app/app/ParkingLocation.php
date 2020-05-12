@@ -11,6 +11,7 @@ class ParkingLocation extends Model
 
     protected $table='parkinglocation';
 
+    public $primaryKey='idPar';
     public function location(){
         return $this->hasOne('App\Location','idLoc','idLoc');
     }

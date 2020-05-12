@@ -11,6 +11,7 @@ class Location extends Model
 
     protected $table='location';
 
+    public $primaryKey='idLoc';
     public function parkinglocation(){
         return $this->belongsTo('App\ParkingLocation','idLoc','idLoc');
     }

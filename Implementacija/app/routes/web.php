@@ -34,8 +34,14 @@ Route::group(['middleware' => ['auth', 'admin']], function() {
 });
 Route::group(['middleware' => ['auth', 'mod']], function() {
     Route::get('/mod', 'HomeController@mod')->name('mod');
-});
+});/*
+Route::get('test', function(){
+    // this returns the contents of the rendered template to the client as a string
+    return View::make("mytemplate")
+        ->with("value", "something")
+        ->render();
 
+});*/
 //Locations post
 Route::post('/locations','LocationsController@store');
 

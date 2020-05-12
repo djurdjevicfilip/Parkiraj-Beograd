@@ -22,7 +22,8 @@
 
     <!-- Template Main CSS File -->
     <link href="/css/style.css" rel="stylesheet">
-
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+     
     <!-- Pass locations data to javascript -->
     <script type="text/javascript">
         var data = {!! $data !!};
@@ -39,7 +40,7 @@
     <header id="header" class="header-tops">
         <div class="container">
 
-            <h1><a href="index.html">Parkiraj! Beograd</a></h1>
+            <h1><a href="index.html" id="main-title">Parkiraj! Beograd</a></h1>
             <h2><span>Prva</span> veb aplikacija za parkiranje <span> uz pomoć senzora </span> u Srbiji </h2>
 
             <nav class="nav-menu d-none d-lg-block">

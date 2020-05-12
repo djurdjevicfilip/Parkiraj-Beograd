@@ -22,15 +22,22 @@ class LocationsController extends Controller
         $location=new Location;
         $location->store($x,$y);
         $parkinglocation=new ParkingLocation;
-        $parkinglocation->store($location->id);
+        $parkinglocation->store($location->idLoc);
         if($type=="sensor"){
+            $disabled=request('disabled');
+            if($disabled=="on"){
+                $disabled=1;
+            }else{
+                $disabled=0;
+            }
+            $zone=request('zone');
             $sensor=new Sensor;
-            $sensor->store($parkinglocation->id);
+            $sensor->store($parkinglocation->idPar,$disabled,$zone);
         }
         else{
             $capacity=request('capacity');
             $garage=new Garage;
-            $garage->store($parkinglocation->id,$capacity);
+            $garage->store($parkinglocation->idPar,$capacity);
         }
         return redirect('/');
     }

@@ -101,7 +101,8 @@
                                 <form action="locations"method="post" class="locations-form">
                                     {{ csrf_field() }}
                                     <div class="field">
-                                        <label class="label">Name</label>
+                                       
+                                       
                                         <div class="control">
                                             <input name="x"class="form-control"type="text"placeholder="X Koordinata*">
                                         </div>
@@ -124,8 +125,21 @@
                                             </label>
                                           </div>
                                         </div>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" name="disabled"class="custom-control-input"style=" background-color:#000240" id="customCheck1">
+                                            <label class="custom-control-label" style="color:#000240;"for="customCheck1">Invalidsko mesto</label>
+                                          </div>
                                         <div class="control">
                                             <input id="capacity" name="capacity"class="form-control cap"type="text"placeholder="Kapacitet*">
+                                        </div>
+                                        
+                                        <div class="control">
+                                        <select name="zone"class="custom-select">
+                                            <option name="zone"selected>Odaberi zonu*</option>
+                                            <option name="zone"value="Plava">Plava</option>
+                                            <option name="zone"value="Zelena">Zelena</option>
+                                            <option name="zone"value="Crvena">Crvena</option>
+                                        </select>
                                         </div>
                                     </div>
                                     <div class="fieldis-grouped">

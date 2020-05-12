@@ -10,6 +10,10 @@ class Client extends Model
     
     protected $table='client';
     public $primaryKey='idUser';
-
+    
+    public function store($idUser){
+        $this->idUser=$idUser;
+        $this->save();
+    }
     
 }

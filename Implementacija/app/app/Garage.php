@@ -10,6 +10,7 @@ class Garage extends Model
     public $timestamps = false;
 
     protected $table='garage';
+    public $primaryKey='idPar';
 
     public function parkinglocation(){
         return $this->hasOne('App\ParkingLocation','idPar','idPar');

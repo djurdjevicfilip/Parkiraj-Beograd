@@ -11,12 +11,24 @@ class Sensor extends Model
 
     protected $table='sensor';
 
+    public $primaryKey='idPar';
+    
     public function parkinglocation(){
         return $this->hasOne('App\ParkingLocation','idPar','idPar');
     }
-    public function store($idPar){
+    public function store($idPar,$disabled,$zone){
         $this->idPar=$idPar;
-        $this->free="1";
+        $this->Free="1";
+        $this->disabled=$disabled;
+        $this->zone=$zone;
+        $this->save();
+    }
+    public function occupy(){
+        $this->Free="0";
+        $this->save();
+    }
+    public function free(){
+        $this->Free="1";
         $this->save();
     }
 }

@@ -41,8 +41,7 @@ class User extends Authenticatable
     //Store client in Client table
     public function storeClient(){
         $client = new Client;
-        $client->idUser=$this->idUser;
-        $client->save();
+        $client->store($this->idUser);
     }
 
     //* User modification methods
@@ -54,15 +53,12 @@ class User extends Authenticatable
 
         //Create Administration table
         $administration=new Administration;
-        $administration->idUser=$this->idUser;
-        $administration->isAdmin=0;
-        $administration->save();
+        $administration->store($this->idUser);
 
         $this->type=1;
         $this->save();
     }
     public function promoteToAdministrator(){
-        //Find and delete client
         $administration=Administration::find($this->idUser);
         $administration->isAdmin=1;
         $administration->save();
@@ -71,23 +67,22 @@ class User extends Authenticatable
         $this->save();
     }
     public function demoteToUser(){
-        //Find and delete client
+        //Find and delete administration
         $administration=Administration::find($this->idUser);
         $administration->delete();
 
-        //Create Administration table
+        //Create Client table
         $client=new Client;
-        $client->idUser=$this->idUser;
-        $client->save();
+        $client->store($this->idUser);
+
         $this->type=0;
         $this->save();
     }
     public function demoteToModerator(){
-        //Find and delete client
+
         $administration=Administration::find($this->idUser);
         $administration->isAdmin=0;
         $administration->save();
-
         
         $this->type=1;
         $this->save();

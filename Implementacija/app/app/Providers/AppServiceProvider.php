@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use App\Sensor;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -14,6 +15,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+        Sensor::observe(\App\Observers\SensorObserver::class);
+    
     }
 
     /**

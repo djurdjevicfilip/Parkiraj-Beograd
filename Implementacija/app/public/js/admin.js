@@ -89,15 +89,23 @@
     } else if ($(".mobile-nav, .mobile-nav-toggle").length) {
       $(".mobile-nav, .mobile-nav-toggle").hide();
     }
-  
+    
+   
    
   })(jQuery);
   
 $(window).on("load", function(){
+ 
     $(document).on('click', '#garage', function(e) {
         $('.cap').show();
+        $('.custom-select').hide();
+        $('.custom-control').hide();
     });
     $(document).on('click', '#sensor', function(e) {
         $('.cap').hide();
+        $('.custom-select').show();
+        $('.custom-control').show();
     });
+
+    
 });
