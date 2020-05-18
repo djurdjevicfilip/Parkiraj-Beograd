@@ -10,7 +10,6 @@ class SensorObserver
     //On location update/create
     public function saving(Sensor $location)
     {
-        \Log::debug($location);
         
         $data=LocationsController::newLocationData($location);
 

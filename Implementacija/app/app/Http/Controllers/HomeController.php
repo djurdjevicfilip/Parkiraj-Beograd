@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\User;
+use App\ParkingLocation;
+use App\Location;
+use App\Sensor;
+use App\Garage;
 /**
  *  FOR AUTHENTICATED USERS
  */
@@ -19,11 +23,11 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-
     /* User page */
     public function user()
     {
-        return view('pages.user');
+        $joined_locations=ParkingLocation::with(['location','sensor','garage'])->get();
+        return view('pages.user')->with('data',$joined_locations);
     }
     /* Admin page */ 
     public function admin()

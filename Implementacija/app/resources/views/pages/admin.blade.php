@@ -98,11 +98,10 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <h3 class="register-heading">Dodaj mesto</h3>
+
                                 <form action="locations"method="post" class="locations-form">
                                     {{ csrf_field() }}
                                     <div class="field">
-                                       
-                                       
                                         <div class="control">
                                             <input name="x"class="form-control"type="text"placeholder="X Koordinata*">
                                         </div>

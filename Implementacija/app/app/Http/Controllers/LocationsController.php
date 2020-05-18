@@ -9,11 +9,10 @@ use App\Sensor;
 use App\Garage;
 class LocationsController extends Controller
 {
-    public function convert(){
-        $joined_locations=ParkingLocation::with(['location','sensor','garage'])->get();
-        return view('pages.user')->with('data',$joined_locations);
-    }
-    //Storing sensors (currently working for testing purposes)
+   
+    /** Storing parking locations
+     *  & delegating to GarageController and SensorController
+     */
     public function store(){
         $x=request('x');
         $y=request('y');
@@ -21,28 +20,22 @@ class LocationsController extends Controller
 
         $location=new Location;
         $location->store($x,$y);
+
         $parkinglocation=new ParkingLocation;
-        $parkinglocation->store($location->idLoc);
+        $parkinglocation->store($location->idLoc, $type);
+
         if($type=="sensor"){
-            $disabled=request('disabled');
-            if($disabled=="on"){
-                $disabled=1;
-            }else{
-                $disabled=0;
-            }
-            $zone=request('zone');
-            $sensor=new Sensor;
-            \Log::debug($parkinglocation->idPar);
-            $sensor->store($parkinglocation->idPar,$disabled,$zone);
+            SensorController::store($parkinglocation);
         }
         else{
-            $capacity=request('capacity');
-            $garage=new Garage;
-            $garage->store($parkinglocation->idPar,$capacity);
+            GarageController::store($parkinglocation);
         }
         return redirect('/');
     }
 
+    /** Get sensor data 
+     * (for now)
+     */
     public static function newLocationData($subclass){
         $parkinglocation=ParkingLocation::where('idPar',$subclass->idPar)->first();
         $location=Location::where('idLoc',$parkinglocation->idLoc)->first();

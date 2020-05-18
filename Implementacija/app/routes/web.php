@@ -30,7 +30,7 @@ Route::delete('users/{id}/delete','UsersController@delete');
  * Made UserMiddleware and AdminMiddleware, and added it to Kernel.php 
 */
 Route::group(['middleware' => ['auth', 'user']], function() {
-    Route::get('/home', 'LocationsController@convert')->name('home');
+    Route::get('/home', 'HomeController@user')->name('home');
 });
 Route::group(['middleware' => ['auth', 'admin']], function() {
     Route::get('/admin', 'HomeController@admin')->name('admin');
