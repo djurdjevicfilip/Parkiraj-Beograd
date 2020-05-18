@@ -32,6 +32,7 @@ class LocationsController extends Controller
             }
             $zone=request('zone');
             $sensor=new Sensor;
+            \Log::debug($parkinglocation->idPar);
             $sensor->store($parkinglocation->idPar,$disabled,$zone);
         }
         else{
@@ -40,5 +41,14 @@ class LocationsController extends Controller
             $garage->store($parkinglocation->idPar,$capacity);
         }
         return redirect('/');
+    }
+
+    public static function newLocationData($subclass){
+        $parkinglocation=ParkingLocation::where('idPar',$subclass->idPar)->first();
+        $location=Location::where('idLoc',$parkinglocation->idLoc)->first();
+        $dataA = $subclass->toArray();
+        $dataB = $location->toArray();
+        $dataMerge = array_merge($dataA, $dataB);
+        return $dataMerge;
     }
 }

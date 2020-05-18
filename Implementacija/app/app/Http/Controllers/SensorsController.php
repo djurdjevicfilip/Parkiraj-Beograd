@@ -17,11 +17,12 @@ class SensorsController extends Controller
         $sensor->occupy();
         \Log::debug($sensor);
 
-        \Log::debug("FREE");
+       \Log::debug("FREE");
         //Take random sensor
         $sensor=Sensor::all()->random(1)->first();
         //Free it
         $sensor->free();
         \Log::debug($sensor);
     }
+
 }
