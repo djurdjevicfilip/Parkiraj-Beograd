@@ -21,8 +21,9 @@ class ParkingLocation extends Model
     public function garage(){
         return $this->belongsTo('App\Garage','idPar','idPar');
     }
-    public function store($idLoc){
+    public function store($idLoc,$type){
         $this->idLoc=$idLoc;
+        $this->type=$type;
         $this->save();
     }
 }

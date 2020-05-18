@@ -2,6 +2,8 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+html{
+}
 body {
   
   font-family: "Poppins", sans-serif;
@@ -41,15 +43,25 @@ body::before {
 }
 .help-block{
   color:#000240;
+ 
+}
+.btnUp{
 
+  background: url('https://img.icons8.com/color/48/000000/up.png') no-repeat;
+  background-size: 25px;
+}
+.btnDown{
+  background:url('https://img.icons8.com/color/48/000000/down.png') no-repeat;
+  background-size: 25px;
+}
+.btnDel{
+  background: url("/img/trash.jpg") no-repeat;
+  background-size: 25px;
 }
 .map{
-  height:600px;
+  height:550px;
   margin-left: 21px;
   margin-bottom: 0;
-}
-#map {
-  height: 80%;
 }
 .lft{
   margin-left: 80px;
@@ -66,7 +78,7 @@ body::before {
   .map {
     margin: 1px 0px;
     margin-bottom: 10%;
-    height:500px;
+    height:480px;
   }
   .map-right{
     margin: 0;
@@ -77,6 +89,7 @@ body::before {
 @media (min-width: 1024px) {
   body::before {
     background-attachment: fixed;
+    
   }
 }
 
@@ -389,9 +402,8 @@ h1, h2, h3, h4, h5, h6 {
 #header.header-top {
   height: 80px;
   position: fixed;
-  left: 40px;
   top: 0;
-  right: 0;
+  right: 100px;
   background: #000240;
 }
 
@@ -400,8 +412,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header.header-top h1 {
-  margin-right: auto;
+  margin-right: 20px;
   font-size: 36px;
+  right:0;
 }
 
 #header.header-top .container {

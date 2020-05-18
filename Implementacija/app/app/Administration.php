@@ -12,8 +12,8 @@ class Administration extends Model
     public $primaryKey='idUser';
 
     public function store($idUser){
-        $administration->idUser=$this->idUser;
-        $administration->isAdmin=0;
-        $administration->save();
+        $this->idUser=$idUser;
+        $this->isAdmin=0;
+        $this->save();
     }
 }
