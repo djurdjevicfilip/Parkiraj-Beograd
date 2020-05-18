@@ -75,7 +75,8 @@ function newSensorMarker(location){
 		if(this.type=="garage"){
 			additionalContent="";
 		}
-		infowindow.setContent('<h5 style="color:black">' + this.type + '</h5><hr/><h6 style="color:blue; text-align:center"><div style="color:black">Slobodno:</div>'+this.free+additionalContent+'</h6>');
+		nearest_marker=this;
+		infowindow.setContent('<h5 style="color:black">' + this.type + '</h5><hr/><h6 style="color:blue; text-align:center"><div style="color:black">Slobodno:</div>'+this.free+additionalContent+'</h6><button onclick="sim()"class="btn btnPrimary"style="width:100%;background-color:#000240;color:white">Ruta</button>');
 		infowindow.open(map, this);
 	});		
 }
@@ -115,8 +116,9 @@ function updateMarker(from,to){
 		if(this.type=="garage"){
 			additionalContent="";
 		}
-		infowindow.setContent('<h5 style="color:black">' + this.type + '</h5><hr/><h6 style="color:blue; text-align:center"><div style="color:black">Slobodno:</div>'+this.free+additionalContent+'</h6>');
+		
+		nearest_marker=this;
+		infowindow.setContent('<h5 style="color:black">' + this.type + '</h5><hr/><h6 style="color:blue; text-align:center"><div style="color:black">Slobodno:</div>'+this.free+additionalContent+'</h6>;<button onclick="sim()" class="btn btnPrimary"style="width:100%;background-color:#000240;color:white">Ruta</button>');
 		infowindow.open(map, this);
 	});	
-	//Change infowindow!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 }

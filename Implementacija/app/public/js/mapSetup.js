@@ -319,7 +319,8 @@ function newMarker(location,infowindow){
 				if(this.type=="garage"){
 					additionalContent="";
 				}
-				infowindow.setContent('<h5 style="color:black">' + this.type + '</h5><hr/><h6 style="color:blue; text-align:center"><div style="color:black">Slobodno:</div>'+this.free+additionalContent+'</h6><button class="btn btnPrimary"style="width:100%;background-color:#000240;color:white">Ruta</button>');
+				nearest_marker=this;
+				infowindow.setContent('<h5 style="color:black">' + this.type + '</h5><hr/><h6 style="color:blue; text-align:center"><div style="color:black">Slobodno:</div>'+this.free+additionalContent+'</h6><button onclick="sim()"class="btn btnPrimary"style="width:100%;background-color:#000240;color:white">Ruta</button>');
 				infowindow.open(map, this);
 			});
 			

@@ -28,6 +28,7 @@ function findNearestOSRM(){
 	src.x=srcx;
 	src.y=srcy;
 
+
 	writeDirectionOnMap(src,nearest_marker.x,nearest_marker.y);
 
 	going_to=nearest_marker;
@@ -37,4 +38,19 @@ function findNearestOSRM(){
 		//
 	}, 500);
 }
+}
+
+
+function sim(){
+	src.x=srcx;
+	src.y=srcy;
+	console.log(src);
+	writeDirectionOnMap(src,nearest_marker.x,nearest_marker.y);
+
+	going_to=nearest_marker;
+	//Simulate travel
+	setTimeout(function() {
+		simulateTravel(src.x,src.y,nearest_marker.x,nearest_marker.y);
+		//
+	}, 500);
 }
