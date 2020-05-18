@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Client;
+use App\Administration;
 class UsersController extends Controller
 {
     //Update Users, Clients, and Administration tables
@@ -25,6 +27,21 @@ class UsersController extends Controller
         }
         $user->save();
         
-        return redirect('/admin');
+        return redirect()->to(route('admin').'#users');
+    }
+
+    public function delete(Request $request,$idUser){
+        
+        $user = User::find($idUser);
+        if($user->type=="0"){
+            $client=Client::find($idUser);
+            $client->delete();
+        }else{
+            $administration=Administration::find($idUser);
+            $administration->delete();
+        }
+        $user->delete();
+
+        return redirect()->to(route('admin').'#users');
     }
 }
