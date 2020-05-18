@@ -13,6 +13,7 @@ class Sensor extends Model
 
     public $primaryKey='idPar';
     
+
     public function parkinglocation(){
         return $this->hasOne('App\ParkingLocation','idPar','idPar');
     }

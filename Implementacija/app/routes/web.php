@@ -22,6 +22,9 @@ Auth::routes();
 /* Passing parameters to UsersController update function */
 Route::put('users/{id}/{act?}', 'UsersController@update');
 
+Route::delete('users/{id}/delete','UsersController@delete');
+
+
 /** Restricting access based on user type 
  * 
  * Made UserMiddleware and AdminMiddleware, and added it to Kernel.php 
@@ -34,14 +37,9 @@ Route::group(['middleware' => ['auth', 'admin']], function() {
 });
 Route::group(['middleware' => ['auth', 'mod']], function() {
     Route::get('/mod', 'HomeController@mod')->name('mod');
-});/*
-Route::get('test', function(){
-    // this returns the contents of the rendered template to the client as a string
-    return View::make("mytemplate")
-        ->with("value", "something")
-        ->render();
-
-});*/
+});
+//Post message
+Route::post('/getmsg','AjaxController@index');
 //Locations post
 Route::post('/locations','LocationsController@store');
 

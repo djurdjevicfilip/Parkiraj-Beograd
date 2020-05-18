@@ -1,9 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\User;
-use App\Location;
-use App\ParkingLocation;
+
 use Illuminate\Http\Request;
 /**
  * FOR NON-AUTHENTICATED USERS (GUESTS)
@@ -21,4 +19,5 @@ class PagesController extends Controller
     public function register(){
         return view('auth.register');
     }
+    
 }
