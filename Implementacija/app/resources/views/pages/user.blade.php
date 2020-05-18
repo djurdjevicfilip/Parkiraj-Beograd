@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>Korisnik</title>
     <meta content="" name="descriptison">
     <meta content="" name="keywords">
@@ -22,25 +22,19 @@
 
     <!-- Template Main CSS File -->
     <link href="/css/style.css" rel="stylesheet">
-    <link href="/css/alertify.css" rel="stylesheet">
-    
+    <link href="/css/button.css" rel="stylesheet">
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
+     
     <!-- Pass locations data to javascript -->
     <script type="text/javascript">
         var data = {!! $data !!};
     </script>
     <script src="/js/polyline.js"></script>
+    <script src="/js/map.js"></script>
+    <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBOr3eB1bffutoazOYCopJncLycz2DHik&callback=initMap&libraries=places"
-        async defer></script>
-    <script src="https://js.pusher.com/6.0/pusher.min.js"></script>
-    
-    <script src="/js/alertify.js"></script>
-    <script src="/js/filtering.js"></script>
-    <script src="/js/travel.js"></script>
-    <script src="/js/nearestLocation.js"></script>
-    <script src="/js/mapSetup.js"></script>
-    <script src="/js/update.js"></script>
+    async defer></script>
+
 </head>
 
 <body id="user-body">
@@ -71,8 +65,10 @@
         </div>
     </header>
     <!-- End Header -->
+
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
+
         <!-- ======= About Me ======= -->
         <div class="about-me container">
 
@@ -168,10 +164,45 @@
 
     <!-- ======= Map Section ======= -->
     <section id="mapSection" class="col-12 services">
-        
+        <div class="section-title lft">
+            <h2>Mapa</h2>
+        </div>
         <input id="pac-input" class="controls" type="text" placeholder="Pretraga mesta">
-        <div id="map" style="left:70px;height:660px;width:90%"></div>  
-        
+        <div id="map" style="left:70px;height:660px;width:90%">
+             
+        </div> 
+        <div id="floating-panel-names">
+            <a id="button-names">Garaze</a>     
+            <a id="button-names">Invalidska mesta</a>   
+            <a id="button-names">samo slobodna</a>
+            <a id="button-names">zone</a>       
+        </div>
+        <div id="floating-panel">
+            <input type="checkbox" id="garage" name="m" onclick="garageCheck()">
+            <input type="checkbox" id="inv" name="m" onclick="invCheck()">
+            <input type="checkbox" id="free" name="m" onclick="freeCheck()">
+            <input type="checkbox" id="zone" name="m" onclick="zoneCheck()">
+            <ul>
+  
+                <li>
+                    <input id="r1" type="radio" name="radio" value="1">
+                    <label for="r1">Radio</label>
+                </li>
+                <li>
+                    <input id="r2" type="radio" name="radio" value="2" checked>
+                    <label for="r2">Radio</label>
+                </li>
+            
+            </ul>
+            
+        </div> 
+        <div class="container-fullwidth" id="search">
+            <div class="row map">
+                <div class="col-12 map">
+                </div>
+               
+            </div>
+        </div>
     </section>
     <!-- End Map Section -->
 
