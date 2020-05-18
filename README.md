@@ -35,12 +35,11 @@ Sekcija o implementaciji aplikacije.
 ## Tehnologije
 Za izradu prototipa koristili smo **HTML**, **CSS** i **Bootstrap**. Takođe je urađena trivijalna komunikacija sa **Google Maps API**.
 
-Implementacioni deo je još uvek delimično neodređen. Koristićemo **MySql** za bazu podataka, **PHP** i **Ajax** za backend, kao i prethodno pomenute tehnologije za izradu frontend dela stranice. 
+### Implementacija
+Implementacioni deo je još uvek delimično neodređen. Koristićemo **MySql** za bazu podataka, **PHP** za backend, kao i prethodno pomenute tehnologije za izradu frontend dela stranice. 
 
-Tehnologije koje će verovatno biti korišćene pri implementaciji:
+Koristili smo **Laravel** Framework, kao i neke dodatne funkcionalnosti istog. Neke od tih dodatnih funkcionalosti su **Event Handling**, **Broadcasting** i **Observing**. Za potrebe Broadcasting-a korišćen je **Pusher API**.
 
- - **Laravel** - PHP Framework
- - Front-end dodaci
 
 Bitno je da se poštuju određene paradigme. Takođe, veoma je bitno da kod bude što bolji, lepši, i da bude čitljiv, radi olakšanja razvoja aplikacije. Stoga se svim članovima tima preporučuje korišćenje **Visual Studio Code** editor-a. Preporučuje se i korišćenje sledećih dodataka:
 
