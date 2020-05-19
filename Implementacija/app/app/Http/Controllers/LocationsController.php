@@ -33,15 +33,5 @@ class LocationsController extends Controller
         return redirect('/');
     }
 
-    /** Get sensor data 
-     * (for now)
-     */
-    public static function newLocationData($subclass){
-        $parkinglocation=ParkingLocation::where('idPar',$subclass->idPar)->first();
-        $location=Location::where('idLoc',$parkinglocation->idLoc)->first();
-        $dataA = $subclass->toArray();
-        $dataB = $location->toArray();
-        $dataMerge = array_merge($dataA, $dataB);
-        return $dataMerge;
-    }
+  
 }
