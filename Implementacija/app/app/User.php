@@ -36,14 +36,22 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Client');
     }*/
-
+    public function administration()
+    {
+        return $this->hasOne('App\Administration','idUser','idUser');
+    }
     
     //Store client in Client table
     public function storeClient(){
         $client = new Client;
         $client->store($this->idUser);
     }
-
+    //Store client in Client table
+    public function storeAdministration(){
+    
+        $administration = new Administration;
+        $administration->store($this->idUser);
+    }
     //* User modification methods
 
     public function promoteToModerator(){
