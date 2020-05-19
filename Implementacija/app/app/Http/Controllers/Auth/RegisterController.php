@@ -77,7 +77,6 @@ class RegisterController extends Controller
         //Redirect if validation fails
         if ($validator->fails()) {
             $messages = $validator->messages();
-            Log::debug($messages);
             return redirect()->to(route('index').'#register')->withErrors($messages,'register');
         }
         $validator->validate();
@@ -89,7 +88,10 @@ class RegisterController extends Controller
         $this->guard()->login($user);
     
         // Success redirection - which will be attribute `$redirectTo`
-        return redirect()->to(route('home'));
+        if($request['type']==1)
+            return redirect()->to(route('mod'));
+        else
+            return redirect()->to(route('home'));
     }
     /**
      * Create a new user instance after a valid registration.
@@ -103,10 +105,12 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'type' => 0,
+            'type' => $data['type'],
         ]);
-        
-        $user->storeClient();
+        if($data['type']==0)
+         $user->storeClient();
+        else
+         $user->storeAdministration();
         return $user;
     }
 }
