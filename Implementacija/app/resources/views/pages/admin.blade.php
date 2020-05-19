@@ -37,6 +37,7 @@
                 <ul>
                     <li class="active"><a href="#header">Parkiraj! Beograd</a></li>
                     <li><a href="#users">Nalozi</a></li>
+                    <li><a href="#moderators">Moderatori</a></li>
                     <li><a href="#locations">Lokacije</a></li>
                     <li><a href="#login">Promeni šifru</a></li>
                     <li><a href="#add-location">Dodaj mesto</a></li>
@@ -98,11 +99,10 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <h3 class="register-heading">Dodaj mesto</h3>
+
                                 <form action="locations"method="post" class="locations-form">
                                     {{ csrf_field() }}
                                     <div class="field">
-                                       
-                                       
                                         <div class="control">
                                             <input name="x"class="form-control"type="text"placeholder="X Koordinata*">
                                         </div>
@@ -178,6 +178,7 @@
                             </thead>
                             <tbody>
                                 @foreach($users as $user)
+                                @if($user->type=='0'||$user->administration->active=='1')
                                 <tr>
                                     <td> {{$user->idUser}} </td>
                                     <td> {{$user->name}} </td>
@@ -202,6 +203,7 @@
                                         @endif
                                     </td>
                                 </tr>
+                                @endif
                                 @endforeach
 
                             </tbody>
@@ -212,7 +214,51 @@
         </div>
     </section>
     <!-- End Of User Table Section -->
-    
+     <!-- ======= Accept Moderators Section ======= -->
+     <section id="moderators">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nalozi</h2>
+                <p>Moderatori</p>
+            </div>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Redni broj</th>
+                                    <th scope="col">Ime korisnika</th>
+                                    <th scope="col">E-mail adresa korisnika</th>
+                                    <th scope="col">Uloga korisnika</th>
+                                    <th scope="col">Promeni</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($users as $user)
+                                @if($user->type=='1'&&$user->administration->active=='0')
+                                <tr>
+                                    <td> {{$user->idUser}} </td>
+                                    <td> {{$user->name}} </td>
+                                    <td> {{$user->email}} </td>
+                                    <td> {{$user->type}} </td>
+                                    <td style="width:120px">
+                                            {!! Form::open(['action' => ['AdministrationController@activate', 'idUser'=>$user->idUser], 'method' => 'PUT']) !!}
+                                            {{Form::submit('Aktiviraj',['class'=>'btn btnPrimary'])}}
+                                            {!! Form::close() !!} 
+                                    </td>
+                                </tr>
+                                @endif
+                                @endforeach
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Of Accept Moderators Section -->
     <!-- ======= Locations Table Section ======= -->
     <section id="locations">
         <div class="container">

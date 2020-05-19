@@ -24,13 +24,16 @@ Route::put('users/{id}/{act?}', 'UsersController@update');
 
 Route::delete('users/{id}/delete','UsersController@delete');
 
+/* Activate moderator */
+Route::put('mod/{id}', 'AdministrationController@activate');
+
 
 /** Restricting access based on user type 
  * 
  * Made UserMiddleware and AdminMiddleware, and added it to Kernel.php 
 */
 Route::group(['middleware' => ['auth', 'user']], function() {
-    Route::get('/home', 'LocationsController@convert')->name('home');
+    Route::get('/home', 'HomeController@user')->name('home');
 });
 Route::group(['middleware' => ['auth', 'admin']], function() {
     Route::get('/admin', 'HomeController@admin')->name('admin');
@@ -38,8 +41,6 @@ Route::group(['middleware' => ['auth', 'admin']], function() {
 Route::group(['middleware' => ['auth', 'mod']], function() {
     Route::get('/mod', 'HomeController@mod')->name('mod');
 });
-//Post message
-Route::post('/getmsg','AjaxController@index');
 //Locations post
 Route::post('/locations','LocationsController@store');
 
