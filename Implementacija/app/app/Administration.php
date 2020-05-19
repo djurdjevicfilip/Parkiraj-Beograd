@@ -16,4 +16,9 @@ class Administration extends Model
         $this->isAdmin=0;
         $this->save();
     }
+
+    public function activate(){
+        $this->active=1;
+        $this->save();
+    }
 }

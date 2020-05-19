@@ -24,6 +24,9 @@ Route::put('users/{id}/{act?}', 'UsersController@update');
 
 Route::delete('users/{id}/delete','UsersController@delete');
 
+/* Activate moderator */
+Route::put('mod/{id}', 'AdministrationController@activate');
+
 
 /** Restricting access based on user type 
  * 
@@ -38,8 +41,6 @@ Route::group(['middleware' => ['auth', 'admin']], function() {
 Route::group(['middleware' => ['auth', 'mod']], function() {
     Route::get('/mod', 'HomeController@mod')->name('mod');
 });
-//Post message
-Route::post('/getmsg','AjaxController@index');
 //Locations post
 Route::post('/locations','LocationsController@store');
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\User;
+use App\Administration;
 use App\ParkingLocation;
 use App\Location;
 use App\Sensor;
@@ -32,7 +33,7 @@ class HomeController extends Controller
     /* Admin page */ 
     public function admin()
     {
-        $users=User::all();
+        $users=User::with('administration')->get();
 
         //Passing all users as a parameter for the table
         return view('pages.admin')->with('users',$users);
