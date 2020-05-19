@@ -90,11 +90,13 @@
 
     <!-- End Of Locations Table Section -->
     <section id="locations">
+       
         <div class="container">
             <div class="section-title">
                 <h2>Lokacije</h2>
                 <p>Tabela sa svim lokacijama</p>
             </div>
+            @if(Auth::user()->administration->active=='1')
             <div class="card mb-4">
                 <div class="card-body">
                     <div class="table-responsive">
@@ -115,6 +117,9 @@
                     </div>
                 </div>
             </div>
+            @else
+                Vaš nalog nije aktiviran! Nemate mogućnost pregleda i izmene lokacija.
+            @endif
         </div>
     </section>
     <!-- ======= Locations Table Section ======= -->
