@@ -182,18 +182,17 @@
             <input type="checkbox" id="inv" name="m" onclick="invCheck()">
             <input type="checkbox" id="free" name="m" onclick="freeCheck()">
             <input type="checkbox" id="zone" name="m" onclick="zoneCheck()">
-            <ul>
-  
-                <li>
-                    <input id="r1" type="radio" name="radio" value="1">
-                    <label for="r1">Radio</label>
-                </li>
-                <li>
-                    <input id="r2" type="radio" name="radio" value="2" checked>
-                    <label for="r2">Radio</label>
-                </li>
+            <input type="checkbox" id="_checkbox">
+            <label for="_checkbox" id="lab">
+                <div id="tick_mark"></div>
+            </label>
+            <input type="checkbox" id="_checkbox">
+            <label for="_checkbox" id="lab2">
+            </label>
+            <input type="checkbox" id="_checkbox">
+            <label for="_checkbox" id="lab3">
+            </label>
             
-            </ul>
             
         </div> 
         <div class="container-fullwidth" id="search">
