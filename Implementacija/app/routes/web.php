@@ -24,6 +24,14 @@ Route::put('users/{id}/{act?}', 'UsersController@update');
 
 Route::delete('users/{id}/delete','UsersController@delete');
 
+<<<<<<< Updated upstream
+=======
+Route::delete('locations/{id}/delete','LocationsController@delete');
+
+/* Activate moderator */
+Route::put('mod/{id}', 'AdministrationController@activate');
+
+>>>>>>> Stashed changes
 
 /** Restricting access based on user type 
  * 
