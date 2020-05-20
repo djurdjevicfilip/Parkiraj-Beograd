@@ -29,9 +29,14 @@ class HomeController extends Controller
     public function admin()
     {
         $users=User::all();
+<<<<<<< Updated upstream
 
+=======
+        
+        $locations=ParkingLocation::with(['location','sensor','garage'])->get();
+>>>>>>> Stashed changes
         //Passing all users as a parameter for the table
-        return view('pages.admin')->with('users',$users);
+        return view('pages.admin')->with('users',$users)->with('locations',$locations);;  
     }
     /* Moderator page */
     public function mod(){
