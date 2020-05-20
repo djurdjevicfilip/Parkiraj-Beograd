@@ -402,8 +402,9 @@ h1, h2, h3, h4, h5, h6 {
 #header.header-top {
   height: 80px;
   position: fixed;
+  left:180px;
   top: 0;
-  right: 100px;
+  right:0;
   background: #000240;
 }
 
@@ -412,9 +413,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header.header-top h1 {
-  margin-right: 20px;
+  margin-right: auto;
   font-size: 36px;
-  right:0;
 }
 
 #header.header-top .container {
@@ -963,7 +963,7 @@ section .container {
 }
 .register .register-form{
   padding: 5%;
-  margin-top: 18%;
+  margin-top: 14%;
 }
 .login{
   padding-bottom:10%;
@@ -974,7 +974,7 @@ section .container {
 }
 .btnRegister{
   float: right;
-  margin-top: 30%;
+  margin-top: 35%;
   border: none;
   border-radius: 1.5rem;
   padding: 2%;
