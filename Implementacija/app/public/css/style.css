@@ -972,6 +972,13 @@ section .container {
   padding: 10%;
   margin-top: 16%;
 }
+.nav-users{
+  color:white;
+}
+.nav-users:hover{
+  font-weight: 600;
+  color:white;
+}
 .btnRegister{
   float: right;
   margin-top: 35%;
