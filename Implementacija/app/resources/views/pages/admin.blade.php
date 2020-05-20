@@ -63,7 +63,7 @@
                 <div class="col-md-12 register-right">
 
                     <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="home-tab">
                             <h3 class="register-heading">Promeni šifru</h3>
                             <div class="row register-form">
                                 <div class="col-md-6">
@@ -97,7 +97,7 @@
                 <div class="col-md-12 add-locations">
 
                     <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="home-tab">
                             <h3 class="register-heading">Dodaj mesto</h3>
 
                                 <form action="locations"method="post" class="locations-form">
@@ -319,8 +319,11 @@
     <div class="user">
         <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                document.getElementById('logout-form').submit();">
-
+            @if(strlen(Auth::user()->name)<10)
             <i class="icofont-user"></i> {{ Auth::user()->name }} | Izloguj se
+            @else
+            <i class="icofont-user"></i> {{ substr(Auth::user()->name,0,10) }}... | Izloguj se
+            @endif
         </a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             {{ csrf_field() }}

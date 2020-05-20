@@ -163,8 +163,11 @@
     <div class="user">
         <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                document.getElementById('logout-form').submit();">
-
+            @if(strlen(Auth::user()->name)<10)
             <i class="icofont-user"></i> {{ Auth::user()->name }} | Izloguj se
+            @else
+            <i class="icofont-user"></i> {{ substr(Auth::user()->name,0,10) }}... | Izloguj se
+            @endif
         </a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             {{ csrf_field() }}
