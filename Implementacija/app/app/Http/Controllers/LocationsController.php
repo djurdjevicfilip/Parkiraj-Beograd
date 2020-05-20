@@ -43,6 +43,7 @@ class LocationsController extends Controller
         return redirect('/');
     }
 
+<<<<<<< Updated upstream
     public static function newLocationData($subclass){
         $parkinglocation=ParkingLocation::where('idPar',$subclass->idPar)->first();
         $location=Location::where('idLoc',$parkinglocation->idLoc)->first();
@@ -51,4 +52,22 @@ class LocationsController extends Controller
         $dataMerge = array_merge($dataA, $dataB);
         return $dataMerge;
     }
+=======
+    public function delete(Request $request,$idPar){
+        \Log::debug($request);
+        $location = ParkingLocation::find($idPar);
+        if($location->sensor!=null){
+            $sensor=Sensor::find($idPar);
+            $sensor->delete();
+        }else{
+            $garage=Garage::find($idPar);
+            $garage->delete();
+        }
+        $location->delete();
+
+        return redirect()->to(route('admin').'#locations');
+    }
+
+  
+>>>>>>> Stashed changes
 }
