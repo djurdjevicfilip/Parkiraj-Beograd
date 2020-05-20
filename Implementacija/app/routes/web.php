@@ -27,6 +27,7 @@ Route::delete('users/{id}/delete','UsersController@delete');
 /* Activate moderator */
 Route::put('mod/{id}', 'AdministrationController@activate');
 
+Route::put('passchange','UsersController@passchange');
 
 /** Restricting access based on user type 
  * 
