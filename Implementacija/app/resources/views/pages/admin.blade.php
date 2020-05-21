@@ -65,7 +65,7 @@
                         <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="home-tab">
                             <h3 class="register-heading">Promeni šifru</h3>
                             <div class="row register-form">
-                                <form class="form-horizontal" method="PUT" action="passchange">
+                                <form style="width:100%; margin-left:30%"class="form-horizontal" method="PUT" action="passchange">
                                     {{ csrf_field() }}
                                
                                 <div class="col-md-6">
@@ -197,13 +197,13 @@
                                     <td> {{$user->name}} </td>
                                     <td> {{$user->email}} </td>
                                     <td> {{$user->type}} </td>
-                                    <td style="width:120px">
+                                    <td style="width:20px">
                                         @if($user->type!='2')
                                             {!! Form::open(['action' => ['UsersController@update', 'idUser'=>$user->idUser,'act'=>'up'], 'method' => 'PUT']) !!}
                                             {{Form::submit('',['class'=>'btn btnPrimary btnUp'])}}
                                             {!! Form::close() !!} 
                                         @endif
-                                        @if($user->type!='0')
+                                        @if($user->type!='0'&&$user->type!='2')
                                             {!! Form::open(['action' => ['UsersController@update', 'idUser'=>$user->idUser,'act'=>'down'], 'method' => 'PUT']) !!}
                                             {{Form::submit('',['class'=>'btn btnPrimary btnDown'])}}
                                             {!! Form::close() !!} 
