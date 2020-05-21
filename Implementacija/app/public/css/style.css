@@ -47,16 +47,19 @@ body::before {
 }
 .btnUp{
 
-  background: url('https://img.icons8.com/color/48/000000/up.png') no-repeat;
+  background: url('/img/up-arrow.png') no-repeat;
   background-size: 25px;
 }
 .btnDown{
-  background:url('https://img.icons8.com/color/48/000000/down.png') no-repeat;
+  background:url('/img/down-arrow.png') no-repeat;
   background-size: 25px;
 }
 .btnDel{
   background: url("/img/trash.jpg") no-repeat;
   background-size: 25px;
+}
+.btnUp:hover{
+  
 }
 .map{
   height:550px;
@@ -402,7 +405,7 @@ h1, h2, h3, h4, h5, h6 {
 #header.header-top {
   height: 80px;
   position: fixed;
-  left:180px;
+  left:150px;
   top: 0;
   right:0;
   background: #000240;
