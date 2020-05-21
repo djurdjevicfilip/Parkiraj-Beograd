@@ -55,8 +55,28 @@ body::before {
   background-size: 25px;
 }
 .btnDel{
-  background: url("/img/trash.jpg") no-repeat;
+  background: url("/img/delete.png") no-repeat;
   background-size: 25px;
+  float: right;
+  vertical-align: middle;
+}
+.btnEdit{
+  background: url("/img/edit.png") no-repeat;
+  background-size: 25px;
+  height: 25px;
+  float: left;
+}
+.btnSave{
+  background: url("/img/save.png") no-repeat;
+  background-size: 25px;
+  float: left;
+  height: 25px;
+}
+.btnCancel{
+  background: url("/img/cancel.png") no-repeat;
+  background-size: 25px;
+  float: right;
+  height: 25px;
 }
 .map{
   height:550px;
@@ -434,7 +454,10 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 26px;
   }
 }
-
+.custom-select{
+  background-color: #000240;
+  color:white;
+}
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
