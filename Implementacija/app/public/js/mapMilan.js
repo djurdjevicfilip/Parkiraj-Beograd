@@ -235,24 +235,20 @@ function freeCheck() {
 
 function zoneCheck() {
 	var garageCheckBox = document.getElementById('zone');
-	if (garageCheckBox) {
-		document.getElementById('green').style.visibility = 'visible';
-		document.getElementById('green').style.backgroundColor = 'green';
-		//document.getElementById('green').style.top = '170px';
-		//document.getElementById('green').style.right = '10px';
+	if (garageCheckBox.checked) {
+		document.getElementById('lab1').style.visibility = 'visible';
 
-		document.getElementById('red').style.visibility = 'visible';
-		document.getElementById('red').style.backgroundColor = 'red';
+		document.getElementById('lab2').style.top = '140px';
+		document.getElementById('lab2').style.backgroundColor = '#f81e01';
+		document.getElementById('lab2').style.visibility = 'visible';
 
-		document.getElementById('blue').style.visibility = 'visible';
-		document.getElementById('blue').style.backgroundColor = 'blue';
+		document.getElementById('lab3').style.top = '210px';
+		document.getElementById('lab3').style.backgroundColor = '#2314f7';
+		document.getElementById('lab3').style.visibility = 'visible';
 	} else {
-		document.getElementById('green').style.visibility = 'hidden';
-
-		document.getElementById('green').style.backgroundColor = 'transparent';
-		document.getElementById('red').style.visibility = 'hidden';
-
-		document.getElementById('blue').style.visibility = 'hidden';
+		document.getElementById('lab').style.visibility = 'hidden';
+		document.getElementById('lab2').style.visibility = 'hidden';
+		document.getElementById('lab3').style.visibility = 'hidden';
 	}
 }
 
