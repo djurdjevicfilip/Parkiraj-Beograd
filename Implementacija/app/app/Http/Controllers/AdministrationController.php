@@ -12,6 +12,6 @@ class AdministrationController extends Controller
         $user->activate();
 
         
-        return redirect()->to(route('admin').'#moderators');
+        return redirect()->to(route('admin').'#users');
     }
 }

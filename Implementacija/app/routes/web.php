@@ -27,6 +27,7 @@ Route::delete('users/{id}/delete','UsersController@delete');
 /* Activate moderator */
 Route::put('mod/{id}', 'AdministrationController@activate');
 
+Route::put('passchange','UsersController@passchange');
 
 /** Restricting access based on user type 
  * 
@@ -43,6 +44,9 @@ Route::group(['middleware' => ['auth', 'mod']], function() {
 });
 //Locations post
 Route::post('/locations','LocationsController@store');
+
+//Redirect back when login is requested
+Route::get('/login',function() { return redirect()->back();})->name('login');
 
 /** Redirect back if the page doesn't exist
  * Otherwise it throws an error

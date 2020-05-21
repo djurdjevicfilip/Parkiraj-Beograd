@@ -59,6 +59,7 @@ class RegisterController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => [
                 'required',
+                'confirmed',
                 'string',
                 'min:10',             // must be at least 10 characters in length
                 'regex:/[a-z]/',      // must contain at least one lowercase letter

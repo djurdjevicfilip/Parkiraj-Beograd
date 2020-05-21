@@ -153,12 +153,10 @@ function sleep (time) {
 }
 
 $(window).on("load", function(){
-
   //Manually redirect user to the register tab if the link contains the 'register' keyword
     if (window.location.href.indexOf("#register") != -1){
           $('#login-button').click();
           $('#profile-tab').click();
     }
 
-   
   });

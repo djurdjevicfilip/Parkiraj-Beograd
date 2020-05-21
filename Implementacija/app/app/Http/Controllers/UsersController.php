@@ -8,7 +8,9 @@ use App\Client;
 use App\Administration;
 class UsersController extends Controller
 {
-    //Update Users, Clients, and Administration tables
+    /**
+    * Update Users, Clients, and Administration tables
+    */
     public function update(Request $request, $idUser,$act=null)
     {
         //Update User
@@ -29,7 +31,9 @@ class UsersController extends Controller
         
         return redirect()->to(route('admin').'#users');
     }
-
+    /**
+     * Delete user
+     */
     public function delete(Request $request,$idUser){
         
         $user = User::find($idUser);
@@ -43,5 +47,9 @@ class UsersController extends Controller
         $user->delete();
 
         return redirect()->to(route('admin').'#users');
+    }
+
+    public function passchange(Request $request){
+        
     }
 }
