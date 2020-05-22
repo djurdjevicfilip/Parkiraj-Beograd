@@ -27,8 +27,6 @@ Route::delete('users/{id}/delete','UsersController@delete');
 /* Activate moderator */
 Route::put('mod/{id}', 'AdministrationController@activate');
 
-Route::put('passchange','UsersController@passchange');
-
 /** Restricting access based on user type 
  * 
  * Made UserMiddleware and AdminMiddleware, and added it to Kernel.php 
@@ -44,6 +42,8 @@ Route::group(['middleware' => ['auth', 'mod']], function() {
 });
 //Locations post
 Route::post('/locations','LocationsController@store');
+
+Route::post('/passchange','UsersController@passchange');
 
 //Redirect back when login is requested
 Route::get('/login',function() { return redirect()->back();})->name('login');
