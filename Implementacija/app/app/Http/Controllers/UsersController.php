@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Client;
 use App\Administration;
+use Auth;
+use Hash;
+use Redirect;
+use URL;
 class UsersController extends Controller
 {
     /**
@@ -48,8 +52,27 @@ class UsersController extends Controller
 
         return redirect()->to(route('admin').'#users');
     }
-
+    /**
+     * Change user password
+     */
     public function passchange(Request $request){
-        
+    $user = Auth::user();
+
+    $curPassword = $request->oldPassword;
+    $newPassword = $request->newPassword;
+
+    if (Hash::check($curPassword, $user->password)) {
+        $user_id = $user->idUser;
+        $obj_user = User::where('idUser',$user_id)->first();
+        $obj_user->password = Hash::make($newPassword);
+        $obj_user->save();
+        return Redirect::to(URL::current() . "#passchange");
+    }
+    else
+    {
+        \Log::debug('sdasdasd');
+        return Redirect::to(URL::current() . "#passchange");
+    }
     }
 }
+    
