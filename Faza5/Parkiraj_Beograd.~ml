@@ -11420,7 +11420,7 @@
 <XPD:ATTR name="Left" type="integer">435</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">797</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">44</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedViews[28]" type="UMLSeqStimulusView" guid="Z4RMYYBkika6zX+DkXjaCwAA">
@@ -11434,7 +11434,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="YKQsXftyDEOQpprtijAaxgAA">
 <XPD:ATTR name="Alpha" type="real">1.49402481787807</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">26.0768096208106</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">21 : map</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">21 : mapa</XPD:ATTR>
 <XPD:REF name="Model">NyB2eAtlfEmzNxKh/sYQxwAA</XPD:REF>
 <XPD:REF name="HostEdge">Z4RMYYBkika6zX+DkXjaCwAA</XPD:REF>
 </XPD:OBJ>
@@ -11471,7 +11471,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="/g+Jbz8+mki+YPwvLdblIgAA">
 <XPD:ATTR name="Alpha" type="real">2.11121664406263</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">5.8309518948453</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">22 : map</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">22 : mapa</XPD:ATTR>
 <XPD:REF name="Model">/iAkv5jgPkCGJDAzf7N+/AAA</XPD:REF>
 <XPD:REF name="HostEdge">NYuiWGpIH0mwUIWgPdXx7gAA</XPD:REF>
 </XPD:OBJ>
@@ -11778,7 +11778,7 @@
 <XPD:REF name="Views[3]">Q1nJNeCve0i4eAvCPDgaewAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingStimuli[20]" type="UMLStimulus" guid="NyB2eAtlfEmzNxKh/sYQxwAA">
-<XPD:ATTR name="Name" type="string">map</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">mapa</XPD:ATTR>
 <XPD:REF name="Sender">PXK/dVLLbEKOMNYzc6neNwAA</XPD:REF>
 <XPD:REF name="Receiver">M65AkMouEkaSLCZ73fClwAAA</XPD:REF>
 <XPD:OBJ name="Action" type="UMLReturnAction" guid="PAq7C+8LVUCFg6ejn1piEwAA">
@@ -11792,7 +11792,7 @@
 <XPD:REF name="Views[3]">VLWhkNi+1kOij7q8URUqFAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingStimuli[21]" type="UMLStimulus" guid="/iAkv5jgPkCGJDAzf7N+/AAA">
-<XPD:ATTR name="Name" type="string">map</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">mapa</XPD:ATTR>
 <XPD:REF name="Sender">M65AkMouEkaSLCZ73fClwAAA</XPD:REF>
 <XPD:REF name="Receiver">UW/SbYb/s0Gk3JF2eGlhHwAA</XPD:REF>
 <XPD:OBJ name="Action" type="UMLReturnAction" guid="LrBejkeQcUmBXRow0t813gAA">
