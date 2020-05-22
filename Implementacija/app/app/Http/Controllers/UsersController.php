@@ -10,6 +10,7 @@ use Auth;
 use Hash;
 use Redirect;
 use URL;
+use Validator;
 class UsersController extends Controller
 {
     /**
@@ -56,23 +57,44 @@ class UsersController extends Controller
      * Change user password
      */
     public function passchange(Request $request){
-    $user = Auth::user();
 
-    $curPassword = $request->oldPassword;
-    $newPassword = $request->newPassword;
+        //Validate input
+        $validator = Validator::make($request->all(), [
+            'oldPassword' => 'required',
+            'newPassword' => [
+            'required', 
+            'string',
+            'min:10',             // must be at least 10 characters in length
+            'regex:/[a-z]/',      // must contain at least one lowercase letter
+            'regex:/[A-Z]/',      // must contain at least one uppercase letter
+            'regex:/[0-9]/',      // must contain at least one digit
+            'regex:/[@$!%*#?&]/', // must contain a special character]
+            ]]);
 
-    if (Hash::check($curPassword, $user->password)) {
-        $user_id = $user->idUser;
-        $obj_user = User::where('idUser',$user_id)->first();
-        $obj_user->password = Hash::make($newPassword);
-        $obj_user->save();
-        return Redirect::to(URL::current() . "#passchange");
-    }
-    else
-    {
-        \Log::debug('sdasdasd');
-        return Redirect::to(URL::current() . "#passchange");
-    }
+        if ($validator->fails()) {
+            return Redirect::to(URL::current() . "#passchange");
+        }
+        $user = Auth::user();
+
+        //Get input passwords
+        $curPassword = $request->oldPassword;
+        $newPassword = $request->newPassword;
+
+        //Check if curPassword is correct
+        if (Hash::check($curPassword, $user->password)) {
+            //Change pass
+            $user_id = $user->idUser;
+            $obj_user = User::where('idUser',$user_id)->first();
+            $obj_user->password = Hash::make($newPassword);
+            $obj_user->save();
+            //Redirect
+            return Redirect::to(URL::current() . "#passchange");
+        }
+        else
+        {
+            //No password
+            return Redirect::to(URL::current() . "#passchange");
+        }
     }
 }
     
