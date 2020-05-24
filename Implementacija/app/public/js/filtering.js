@@ -83,3 +83,54 @@ function showAll() {
 	btn=null;
 	setMarkerCluster();
 }
+function showRemaining(){
+	if(zone==true){
+
+	}
+}
+function garageCheck() {
+	var garageCheckBox = document.getElementById('garage');
+	if (garageCheckBox.checked) {
+		showOnlyGarages();
+	} else {
+		showAll();
+	}
+}
+function invCheck() {
+	var garageCheckBox = document.getElementById('inv');
+	//treba da se ubaci pretraga za invalidska mesta
+}
+
+function freeCheck() {
+	var garageCheckBox = document.getElementById('free');
+	if (garageCheckBox.checked) {
+		showOnlyFree();
+	} else {
+		showAll();
+	}
+}
+var zone=false;
+function zoneCheck() {
+	var garageCheckBox = document.getElementById('zone');
+	var label1=document.getElementById('lab1');
+	var label2=document.getElementById('lab2');
+	var label3=document.getElementById('lab3');
+	if (garageCheckBox.checked) {
+		label1.style.visibility = 'visible';
+
+		label2.style.top = '140px';
+
+		label2.style.backgroundColor = '#f81e01';
+		label2.style.visibility = 'visible';
+
+		label3.style.top = '210px';
+		label3.style.backgroundColor = '#2314f7';
+		label3.style.visibility = 'visible';
+		zone=true;
+	} else {
+		label1.style.visibility = 'hidden';
+		label2.style.visibility = 'hidden';
+		label3.style.visibility = 'hidden';
+		zone=false;
+	}
+}
