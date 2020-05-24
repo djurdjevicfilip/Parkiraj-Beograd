@@ -246,6 +246,7 @@ function zoneCheck() {
 		document.getElementById('lab3').style.backgroundColor = '#2314f7';
 		document.getElementById('lab3').style.visibility = 'visible';
 	} else {
+		//when is not acitve
 		document.getElementById('lab').style.visibility = 'hidden';
 		document.getElementById('lab2').style.visibility = 'hidden';
 		document.getElementById('lab3').style.visibility = 'hidden';
