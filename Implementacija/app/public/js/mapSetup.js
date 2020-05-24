@@ -131,7 +131,7 @@ function CenterControl(controlDiv, map, text) {
 
 }
 function addCustomControls(){
-	var centerControlDiv = document.createElement('div');
+/*	var centerControlDiv = document.createElement('div');
 	var centerControl = new CenterControl(centerControlDiv, map, 'Free');
 	centerControlDiv.index = 1;
 	centerControlDiv.onclick=showOnlyFree;
@@ -164,7 +164,7 @@ function addCustomControls(){
 	centerControlDiv.index = 1;
 	centerControlDiv.onclick=showAll;
 	map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
-
+*/
 	centerControlDiv = document.createElement('div');
 	centerControl = new CenterControl(centerControlDiv, map, 'Route');
 	centerControlDiv.index = 1;
