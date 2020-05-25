@@ -23,6 +23,7 @@
     <!-- Template Main CSS File -->
     <link href="/css/style.css" rel="stylesheet">
     <link href="/css/alertify.css" rel="stylesheet">
+    <link href="/css/button.css" rel="stylesheet">
     
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
@@ -171,7 +172,28 @@
         
         <input id="pac-input" class="controls" type="text" placeholder="Pretraga mesta">
         <div id="map" style="left:70px;height:660px;width:90%"></div>  
-        
+      
+        <div id="floating-panel">
+            <input type="checkbox" id="garage" name="m" onclick="garageCheck()">
+            <input type="checkbox" id="inv" name="m" onclick="invCheck()">
+            <input type="checkbox" id="free" name="m" onclick="freeCheck()">
+            <input type="checkbox" id="zone" name="m" onclick="zoneCheck()">
+            
+            <input type="checkbox" class="_checkbox" id="cb1">
+            <label for="cb1" id="lab1">
+                <div class="tick_mark" id="c1" ></div>
+            </label>
+            <input type="checkbox" class="_checkbox" id="cb2">
+            <label for="cb2" id="lab2">   
+                <div class="tick_mark" id="c2"></div>
+            </label>
+            <input type="checkbox" class="_checkbox" id="cb3">
+            <label for="cb3" id="lab3">
+                <div class="tick_mark" id="c3"></div>
+            </label>
+            
+            
+        </div>
     </section>
     <!-- End Map Section -->
 
