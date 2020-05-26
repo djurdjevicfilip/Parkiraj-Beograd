@@ -158,4 +158,8 @@ $(window).on("load", function(){
           $('#login-button').click();
           $('#profile-tab').click();
     }
+   
+  }); $('#mapSec').click(function(){
+    document.getElementById('map-container').style.display='block';
+    console.log("A");
   });

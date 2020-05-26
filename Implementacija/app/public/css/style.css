@@ -27,7 +27,17 @@ body::before {
 #capacity{
   display: none;
 }
+#map-container{
+  left:0px;
+  margin-left: 0px;
+  margin-top: 0px;
+  top:-10px;
+  width:110vw;
+  z-index:2;
+  margin-bottom: 0;
+}
 #user-body{
+  overflow:hidden;
 }
 .add-locations{
   
@@ -60,6 +70,11 @@ body::before {
 }
 .btnUp:hover{
   
+}
+#map{
+  height:660px;
+  width:95%;
+  left:70px;
 }
 .map{
   height:550px;
@@ -139,6 +154,7 @@ h1, h2, h3, h4, h5, h6 {
 #pac-container {
   padding-bottom: 12px;
   margin-right: 12px;
+  z-index:5;
 }
 
 .pac-controls {
@@ -161,6 +177,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 11px 0 13px;
   text-overflow: ellipsis;
   width: 400px;
+  z-index: 5;
 }
 
 #pac-input:focus {
