@@ -158,5 +158,4 @@ $(window).on("load", function(){
           $('#login-button').click();
           $('#profile-tab').click();
     }
-
   });
