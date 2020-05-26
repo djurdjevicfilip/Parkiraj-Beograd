@@ -37,9 +37,15 @@ Sekcija o implementaciji aplikacije.
 Za izradu prototipa koristili smo **HTML**, **CSS** i **Bootstrap**. Takođe je urađena trivijalna komunikacija sa **Google Maps API**.
 
 ### Implementacija
-Implementacioni deo je još uvek delimično neodređen. Koristićemo **MySql** za bazu podataka, **PHP** za backend, kao i prethodno pomenute tehnologije za izradu frontend dela stranice. 
+Korišćen je **MySql** za bazu podataka, **PHP** za backend, kao i prethodno pomenute tehnologije za izradu frontend dela stranice. 
 
 Koristili smo **Laravel** Framework, kao i neke dodatne funkcionalnosti istog. Neke od tih dodatnih funkcionalosti su **Event Handling**, **Broadcasting** i **Observing**. Za potrebe Broadcasting-a korišćen je **Pusher API**.
+
+Tehnologije korišćene za mapu:  
+- Google Maps Javascript API
+- Google Directions API
+- Google Places API
+- OSRM API
 
 
 Bitno je da se poštuju određene paradigme. Takođe, veoma je bitno da kod bude što bolji, lepši, i da bude čitljiv, radi olakšanja razvoja aplikacije. Stoga se svim članovima tima preporučuje korišćenje **Visual Studio Code** editor-a. Preporučuje se i korišćenje sledećih dodataka:
