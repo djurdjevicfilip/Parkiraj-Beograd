@@ -35,7 +35,7 @@ Route::group(['middleware' => ['auth', 'user']], function() {
     Route::get('/home', 'HomeController@user')->name('home');
 });
 Route::group(['middleware' => ['auth', 'admin']], function() {
-    Route::get('/admin', 'HomeController@admin')->name('admin');
+    Route::get('/admin{message?}', 'HomeController@admin')->name('admin');
 });
 Route::group(['middleware' => ['auth', 'mod']], function() {
     Route::get('/mod', 'HomeController@mod')->name('mod');
