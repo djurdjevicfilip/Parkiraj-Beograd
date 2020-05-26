@@ -57,7 +57,6 @@ class UsersController extends Controller
      * Change user password
      */
     public function passchange(Request $request){
-
         //Validate input
         $validator = Validator::make($request->all(), [
             'oldPassword' => 'required',
@@ -72,7 +71,7 @@ class UsersController extends Controller
             ]]);
 
         if ($validator->fails()) {
-            return Redirect::to(URL::current() . "#passchange");
+            return Redirect::to(route('admin',['message'=>'2']) . "#passchange");
         }
         $user = Auth::user();
 
@@ -81,19 +80,22 @@ class UsersController extends Controller
         $newPassword = $request->newPassword;
 
         //Check if curPassword is correct
-        if (Hash::check($curPassword, $user->password)) {
+
+        //If they are the same
+        
+        if (Hash::check($curPassword, $user->password)&&$curPassword!=$newPassword) {
             //Change pass
             $user_id = $user->idUser;
             $obj_user = User::where('idUser',$user_id)->first();
             $obj_user->password = Hash::make($newPassword);
             $obj_user->save();
             //Redirect
-            return Redirect::to(URL::current() . "#passchange");
+            return Redirect::to(route('admin',['message'=>'1']) . "#passchange");
         }
         else
         {
             //No password
-            return Redirect::to(URL::current() . "#passchange");
+            return Redirect::to(route('admin',['message'=>'2']) . "#passchange");
         }
     }
 }

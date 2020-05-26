@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Korisnik</title>
     <meta content="" name="descriptison">
-    <meta content="" name="keywords">
+    <meta content="" name="keywords"> 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -56,7 +56,7 @@
                 <ul>
                     <li class="active"><a href="#header">Parkiraj! Beograd</a></li>
                     <li><a href="#about">Moj Nalog</a></li>
-                    <li><a href="#mapSection">Mapa</a></li>
+                    <li><a id="mapSec" href="#mapSection">Mapa</a></li>
                     <li><a href="#login">Promeni šifru</a></li>
                 </ul>
             </nav>
@@ -169,10 +169,11 @@
 
     <!-- ======= Map Section ======= -->
     <section id="mapSection" class="col-12 services">
-        
-        <input id="pac-input" class="controls" type="text" placeholder="Pretraga mesta">
-        <div id="map" style="left:70px;height:660px;width:90%"></div>  
-      
+        <div class="container-fluid" id="map-container" style="display:none">
+        <div class="row">
+        <div id="map" class="col-12"style="left:-20px;top:0px;height:81vh;width:105vw;"></div> 
+        <input id="pac-input" class="controls" type="text" placeholder="Pretraga mesta"> 
+        </div>
         <div id="floating-panel">
             <input type="checkbox" id="garage" name="m" onclick="garageCheck()">
             <input type="checkbox" id="inv" name="m" onclick="invCheck()">
@@ -192,8 +193,8 @@
                 <div class="tick_mark" id="c3"></div>
             </label>
             
-            
         </div>
+    </div>
     </section>
     <!-- End Map Section -->
 

@@ -58,7 +58,7 @@ input:checked[type="checkbox"] {
 #floating-panel {
 	position: absolute;
 	top: 10px;
-	right: 100px;
+	right: 0px;
 	z-index: 5;
 	background-color: transparent;
 	padding: 5px;
@@ -66,11 +66,12 @@ input:checked[type="checkbox"] {
 	font-family: 'Roboto', 'sans-serif';
 	line-height: 30px;
 	padding-left: 10px;
+	margin-right: 0;
 }
 #floating-panel-names {
 	position: absolute;
 	top: 40px;
-	right: 100px;
+	right: 0px;
 	z-index: 5;
 	background-color: transparent;
 	padding: 5px;
