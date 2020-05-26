@@ -66,7 +66,7 @@ Jedno ograničenje aplikacije javlja se kroz API za mape. Ograničenje je u tome
  - **OSRM Api** je korišćen za pronalazak mesta do kog se najbrže dolazi  
  
 
-***Zašto OSRM?***
+***Zašto OSRM?***  
 Google nam uz svoju uslugu **Distance Matrix** omogućava pronalazak najbližeg mesta, ali je broj mesta ograničen, a broj poziva API-a drastično raste sa porastom broja mesta. Na primer, ukoliko bismo imali **200** parking mesta, pronalazak najbližeg mesta bi trajao više od 2 minuta, a broj poziva bi mogao da bude među desetinama hiljada. To je, dakle, samo za jedan korisnički zahtev! 
 OSRM nam sve ovo rešava jer je besplatan i bez ograničenja. Jedina 'mana' je što OSRM trenutno ne podržava **Distance Matrix**, već samo **Duration Matrix**
 
