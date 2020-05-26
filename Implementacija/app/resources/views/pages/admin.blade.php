@@ -65,11 +65,13 @@
                         <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="home-tab">
                             <h3 class="register-heading">Promeni šifru</h3>
                             <div class="row register-form">
-                                <form style="width:100%; margin-left:30%"class="form-horizontal" method="post" action="passchange">
+                                <form style="width:100%; margin-left:33%"class="form-horizontal" method="post" action="passchange">
                                     {{ csrf_field() }}
-                                @isset($message)
-                                <h1 style="color:black">message</h1>
-                               @endisset
+                                @if($message=='1')
+                                    <h4 style="color:#000240">Uspešno ste promenili šifru! ...</h4>
+                                @elseif($message=='2')
+                                    <h4 style="color:red">Niste uspešno promenili šifru!</h4>
+                               @endif
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="password" name="oldPassword"class="form-control" placeholder="Stara Šifra *" value="" />

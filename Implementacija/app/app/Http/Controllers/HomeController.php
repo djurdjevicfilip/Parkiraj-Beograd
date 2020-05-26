@@ -9,6 +9,7 @@ use App\Administration;
 use App\ParkingLocation;
 use App\Location;
 use App\Sensor;
+use Session;
 use App\Garage;
 /**
  *  FOR AUTHENTICATED USERS
@@ -31,11 +32,12 @@ class HomeController extends Controller
         return view('pages.user')->with('data',$joined_locations);
     }
     /* Admin page */ 
-    public function admin()
+    public function admin($message=0)
     {
         $users=User::with('administration')->get();
         //Passing all users as a parameter for the table
-        return view('pages.admin')->with('users',$users);
+        \Log::debug($message);
+        return view('pages.admin')->with('users',$users)->with('message',$message);
     }
     /* Moderator page */
     public function mod(){
