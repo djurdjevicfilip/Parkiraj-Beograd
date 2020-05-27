@@ -861,7 +861,8 @@ section .container {
 .credits {
   position: fixed;
   right: 15px;
-  bottom: 15px;
+  margin-right: 0;
+  bottom: 5px;
   font-size: 16px;
   color: #fff;
   z-index: 10000;
@@ -902,8 +903,8 @@ section .container {
 
 .user {
   position: fixed;
-  left: 15px;
-  top: 20px;
+  left: 5px;
+  top: 10px;
   font-size: 16px;
   color: #fff;
   z-index: 10000;
