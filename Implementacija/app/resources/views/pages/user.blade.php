@@ -56,7 +56,7 @@
                 <ul>
                     <li class="active"><a href="#header">Parkiraj! Beograd</a></li>
                     <li><a href="#about">Moj Nalog</a></li>
-                    <li><a id="mapSec" href="#mapSection">Mapa</a></li>
+                    <li><a id="mapSec" onclick="document.getElementById('map-container').style.display='block'"href="#mapSection">Mapa</a></li>
                     <li><a href="#login">Promeni šifru</a></li>
                 </ul>
             </nav>
