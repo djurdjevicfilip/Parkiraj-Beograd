@@ -7,6 +7,7 @@ use App\ParkingLocation;
 use App\Location;
 use App\Sensor;
 use App\Garage;
+
 class SensorController extends Controller
 {
     
@@ -42,7 +43,15 @@ class SensorController extends Controller
         $sensor->free();
         \Log::debug($sensor);
     }
-  /** Get sensor data 
+    //Update sensor when a car arrives
+    public function occupyOnArrival(){
+        $idPar=request('idPar');
+        $sensor=Sensor::where('idPar',$idPar)->first();
+
+        $sensor->occupy();
+
+    }
+    /** Get sensor data 
      * (for now)
      */
     public static function sensorUpdateData($subclass){
