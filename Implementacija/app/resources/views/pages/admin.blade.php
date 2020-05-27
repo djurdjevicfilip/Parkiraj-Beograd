@@ -152,7 +152,8 @@
                                     <div class="fieldis-grouped">
                                         <div class="control">
                                             <button 
-                                            class="btnLogin">Dodaj</button></div></form>
+                                            class="btnLogin">Dodaj</button></div>
+                                </form>
                             </div>
 
                         </div>

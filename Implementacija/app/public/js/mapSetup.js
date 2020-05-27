@@ -91,12 +91,7 @@ function initMap() {
 
 	old_markers=markers;
 	}
-	else{
-		
-		//markers=[];
-		
-		//placeMarkers();
-	}
+	
 	
 }
 
@@ -307,6 +302,7 @@ function placeMarkerOnClick(){
 			srcx = e.latLng.lat();
 		}
 	});
+	
 }
 var srcx;
 var srcy;
