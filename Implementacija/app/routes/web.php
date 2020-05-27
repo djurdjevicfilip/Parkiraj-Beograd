@@ -40,9 +40,11 @@ Route::group(['middleware' => ['auth', 'admin']], function() {
 Route::group(['middleware' => ['auth', 'mod']], function() {
     Route::get('/mod', 'HomeController@mod')->name('mod');
 });
+
+Route::post('/getmsg','SensorController@occupyOnArrival');
 //Locations post
 Route::post('/locations','LocationsController@store');
-
+//Change password
 Route::post('/passchange','UsersController@passchange');
 
 //Redirect back when login is requested
