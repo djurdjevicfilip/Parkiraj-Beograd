@@ -71,7 +71,12 @@ class UsersController extends Controller
             ]]);
 
         if ($validator->fails()) {
-            return Redirect::to(route('admin',['message'=>'2']) . "#passchange");
+            if(Auth::user()->type=='2')
+                 return Redirect::to(route('admin',['message'=>'2']) . "#passchange");
+            else if(Auth::user()->type=='1')
+                return Redirect::to(route('mod',['message'=>'2']) . "#passchange");
+            else
+                return Redirect::to(route('home',['message'=>'2']) . "#passchange");
         }
         $user = Auth::user();
 
@@ -90,12 +95,22 @@ class UsersController extends Controller
             $obj_user->password = Hash::make($newPassword);
             $obj_user->save();
             //Redirect
-            return Redirect::to(route('admin',['message'=>'1']) . "#passchange");
+            if(Auth::user()->type=='2')
+                 return Redirect::to(route('admin',['message'=>'1']) . "#passchange");
+            else if(Auth::user()->type=='1')
+                 return Redirect::to(route('mod',['message'=>'1']) . "#passchange");
+            else
+                return Redirect::to(route('home',['message'=>'1']) . "#passchange");
         }
         else
         {
-            //No password
-            return Redirect::to(route('admin',['message'=>'2']) . "#passchange");
+            //No password 
+            if(Auth::user()->type=='2')
+                 return Redirect::to(route('admin',['message'=>'2']) . "#passchange");
+            else if(Auth::user()->type=='1')
+                 return Redirect::to(route('mod',['message'=>'2']) . "#passchange");
+            else
+                return Redirect::to(route('home',['message'=>'2']) . "#passchange");
         }
     }
 }
