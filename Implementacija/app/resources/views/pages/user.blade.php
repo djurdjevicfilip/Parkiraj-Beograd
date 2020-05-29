@@ -7,7 +7,7 @@
 
     <title>Korisnik</title>
     <meta content="" name="descriptison">
-    <meta content="" name="keywords">
+    <meta content="" name="keywords"> 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -22,7 +22,9 @@
 
     <!-- Template Main CSS File -->
     <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/alertify.css" rel="stylesheet">
     <link href="/css/button.css" rel="stylesheet">
+    
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
      
     <!-- Pass locations data to javascript -->
@@ -49,8 +51,8 @@
                 <ul>
                     <li class="active"><a href="#header">Parkiraj! Beograd</a></li>
                     <li><a href="#about">Moj Nalog</a></li>
-                    <li><a href="#mapSection">Mapa</a></li>
-                    <li><a href="#login">Promeni šifru</a></li>
+                    <li><a id="mapSec" onclick="document.getElementById('map-container').style.display='block'"href="#mapSection">Mapa</a></li>
+                    <li><a href="#passchange">Promeni šifru</a></li>
                 </ul>
             </nav>
             <!-- .nav-menu -->
@@ -126,22 +128,29 @@
     </section>
     <!-- End About Section -->
 
-    <!-- ======= Change Password Section ======= -->
-    <section id="login">
+    <!-- ======= Password Change Section ======= -->
+    <section id="passchange">
         <div class="container register">
             <div class="row">
                 <div class="col-md-12 register-right">
 
                     <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="home-tab">
                             <h3 class="register-heading">Promeni šifru</h3>
                             <div class="row register-form">
+                                <form style="width:100%; margin-left:33%"class="form-horizontal" method="post" action="passchange">
+                                    {{ csrf_field() }}
+                                @if($message=='1')
+                                    <h4 style="color:#000240">Uspešno ste promenili šifru! ...</h4>
+                                @elseif($message=='2')
+                                    <h4 style="color:red">Niste uspešno promenili šifru!</h4>
+                               @endif
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Šifra *" value="" />
+                                        <input type="password" name="oldPassword"class="form-control" placeholder="Stara Šifra *" value="" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Potvrdi šifru *" value="" />
+                                        <input type="password"name="newPassword" class="form-control" placeholder="Nova šifru *" value="" />
                                     </div>
 
                                 </div>
@@ -149,6 +158,7 @@
 
                                     <input type="submit" class="btnLogin" value="Promeni šifru" />
                                 </div>
+                            </form>
                             </div>
 
                         </div>
@@ -159,23 +169,14 @@
 
         </div>
     </section>
-    
-    <!-- End Change Password Section -->
+    <!-- End Of Password Change Section -->
 
     <!-- ======= Map Section ======= -->
     <section id="mapSection" class="col-12 services">
-        <div class="section-title lft">
-            <h2>Mapa</h2>
-        </div>
-        <input id="pac-input" class="controls" type="text" placeholder="Pretraga mesta">
-        <div id="map" style="left:70px;height:660px;width:90%">
-             
-        </div> 
-        <div id="floating-panel-names">
-            <a id="button-names">Garaze</a>     
-            <a id="button-names">Invalidska mesta</a>   
-            <a id="button-names">samo slobodna</a>
-            <a id="button-names">zone</a>       
+        <div class="container-fluid" id="map-container" style="display:none">
+        <div class="row">
+        <div id="map" class="col-12"style="left:-20px;top:0px;height:81vh;width:105vw;"></div> 
+        <input id="pac-input" class="controls" type="text" placeholder="Pretraga mesta"> 
         </div>
         <div id="floating-panel">
             <input type="checkbox" id="garage" name="m" onclick="garageCheck()">
@@ -196,15 +197,9 @@
                 <div class="tick_mark" id="c3"></div>
             </label>
             
-            
-        </div> 
-        <div class="container-fullwidth" id="search">
-            <div class="row map">
-                <div class="col-12 map">
-                </div>
-               
-            </div>
+
         </div>
+    </div>
     </section>
     <!-- End Map Section -->
     <div>></div>
@@ -215,8 +210,11 @@
     <div class="user">
         <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                document.getElementById('logout-form').submit();">
-
+            @if(strlen(Auth::user()->name)<10)
             <i class="icofont-user"></i> {{ Auth::user()->name }} | Izloguj se
+            @else
+            <i class="icofont-user"></i> {{ substr(Auth::user()->name,0,10) }}... | Izloguj se
+            @endif
         </a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             {{ csrf_field() }}

@@ -91,12 +91,7 @@ function initMap() {
 
 	old_markers=markers;
 	}
-	else{
-		
-		//markers=[];
-		
-		//placeMarkers();
-	}
+	
 	
 }
 
@@ -104,7 +99,7 @@ function CenterControl(controlDiv, map, text) {
 
 	// Set CSS for the control border.
 	var controlUI = document.createElement('div');
-	controlUI.style.backgroundColor = 'white';
+	controlUI.style.backgroundColor = '#000240';
 	controlUI.style.border = '2px solid #fff';
 	controlUI.style.borderRadius = '3px';
 	controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
@@ -112,17 +107,19 @@ function CenterControl(controlDiv, map, text) {
 	controlUI.style.marginBottom = '5px';
 	controlUI.style.marginLeft = '5px';
 	controlUI.style.textAlign = 'center';
-	controlUI.title = 'Click to show only free spaces';
+
+	controlUI.title = 'Ruta do najblize lokacije. Ukoliko je trenutno primenjen filter, ruta ce pronaci samo lokacije koje zadovoljavaju kriterijum tog filtera';
 	controlDiv.appendChild(controlUI);
 
 	// Set CSS for the control interior.
 	var controlText = document.createElement('div');
-	controlText.style.color = 'rgb(25,25,25)';
+	controlText.style.color = 'white';
 	controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
 	controlText.style.fontSize = '16px';
 	controlText.style.lineHeight = '38px';
 	controlText.style.paddingLeft = '5px';
 	controlText.style.paddingRight = '5px';
+
 	controlText.innerHTML = text;
 	controlUI.appendChild(controlText);
 
@@ -131,40 +128,6 @@ function CenterControl(controlDiv, map, text) {
 
 }
 function addCustomControls(){
-	var centerControlDiv = document.createElement('div');
-	var centerControl = new CenterControl(centerControlDiv, map, 'Free');
-	centerControlDiv.index = 1;
-	centerControlDiv.onclick=showOnlyFree;
-	centerControlDiv.id="free";
-	map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
-
-	var centerControlDiv = document.createElement('div');
-	var centerControl = new CenterControl(centerControlDiv, map, 'Garages');
-	centerControlDiv.index = 1;
-	centerControlDiv.onclick=showOnlyGarages;
-	centerControlDiv.id="garage";
-	map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
-
-	var centerControlDiv = document.createElement('div');
-	var centerControl = new CenterControl(centerControlDiv, map, 'Sensors');
-	centerControlDiv.index = 1;
-	centerControlDiv.onclick=showOnlySensors;
-	centerControlDiv.id="sensor";
-	map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
-
-	var centerControlDiv = document.createElement('div');
-	var centerControl = new CenterControl(centerControlDiv, map, 'Red zone');
-	centerControlDiv.index = 1;
-	centerControlDiv.onclick=showRedZone;
-	centerControlDiv.id="red";
-	map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
-
-	centerControlDiv = document.createElement('div');
-	centerControl = new CenterControl(centerControlDiv, map, 'All');
-	centerControlDiv.index = 1;
-	centerControlDiv.onclick=showAll;
-	map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
-
 	centerControlDiv = document.createElement('div');
 	centerControl = new CenterControl(centerControlDiv, map, 'Route');
 	centerControlDiv.index = 1;
@@ -339,6 +302,7 @@ function placeMarkerOnClick(){
 			srcx = e.latLng.lat();
 		}
 	});
+	
 }
 var srcx;
 var srcy;
