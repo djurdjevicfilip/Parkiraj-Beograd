@@ -314,19 +314,55 @@
                                         </tr>
                                         @endif
                                         @endforeach
-                                        <form name=”PrimerForme” id="formEdit">
                                         <tr id="edit1">
-                                            <td id="idParEditS"> </td>
-                                            <td> <input type=”text” name=”x” id="xEditS" style="width:80px"> </td>
-                                            <td> <input type=”text” name=”y” id='yEditS'style="width:80px" > </td>
-                                            <td> <input type=”text” name=”cap” id='disEditS' style="width:80px"> </td>
-                                            <td> <input type=”text” name=”cap” id='zoneEditS' style="width:80px"> </td>
-                                            <td>
-                                            <input class="btn btn-default btnSave" type="submit" value=''>
-                                            <input class="btn btn-default btnCancel" type="submit" value=''>
-                                            </td>
+                                            <form action="edit"method="post" >
+                                                {{ csrf_field() }}
+                                                <td>
+                                                    <div class="control">
+                                                        <input name="id"class="form-control disable"type="text" id="idParEditS">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <div class="control">
+                                                        <input name="x"class="form-control"type="text"placeholder="X Koordinata*" id="xEditS">
+                                                    </div>
+                                                </td>
+                                                <td>           
+                                                    <div class="control">
+                                                        <input name="y"class="form-control"type="text"placeholder="Y Koordinata*" id="yEditS">
+                                                    </div>
+                                                </td>
+                                                <td>           
+                                                    <div class="control">
+                                                        <!-- <input name="dis"class="form-control"type="text"placeholder="Kapacitet"> -->
+                                                        <select name="dis"class="custom-select">
+                                                            <option name="dis" id="disEditS"selected>Invalid?</option>
+                                                            <option name="dis"value="1">Da</option>
+                                                            <option name="dis"value="0">Ne</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td>           
+                                                    <div class="control">
+                                                        <!-- <input name="zone"class="form-control"type="text"placeholder="Kapacitet" id = "zoneEditS"> -->
+                                                        <select name="zone"class="custom-select">
+                                                            <option name="zone"selected id="zoneEditS">Zona?</option>
+                                                            <option name="zone"value="Plava">Plava</option>
+                                                            <option name="zone"value="Zelena">Zelena</option>
+                                                            <option name="zone"value="Crvena">Crvena</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td>      
+                                                    <div class="fieldis-grouped">
+                                                        <div class="control">
+                                                            <button class="btnLogin">Izmeni</button>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </form>
                                         </tr>
-                                        </form>
                                     </tbody>
                                 </table>
                             </div>
@@ -363,18 +399,41 @@
                                         </tr>
                                         @endif
                                         @endforeach
-                                        <form name=”PrimerForme” id="formEdit">
+                                        
                                         <tr id="edit2">
-                                            <td id="idParEdit"> </td>
-                                            <td> <input type=”text” name=”x” id="xEdit" style="width:80px"> </td>
-                                            <td> <input type=”text” name=”y” id='yEdit'style="width:80px" > </td>
-                                            <td> <input type=”text” name=”cap” id='capEdit' style="width:80px"> </td>
-                                            <td>
-                                            <input class="btn btn-default btnSave" type="submit" value=''>
-                                            <input class="btn btn-default btnCancel" type="submit" value=''>
-                                            </td>
-                                        </tr>
-                                        </form>
+                                            <form action="edit"method="post" >
+                                            {{ csrf_field() }}
+                                                <td>
+                                                    <div class="control">
+                                                        <!-- <div id="idParEdit" name ="id" class="form-control"></div> -->
+                                                        <input name="id"class="form-control disable"type="text" id="idParEdit">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <div class="control">
+                                                        <input name="x"class="form-control"type="text"placeholder="X Koordinata*" id="xEdit">
+                                                    </div>
+                                                </td>
+                                                <td>           
+                                                    <div class="control">
+                                                        <input name="y"class="form-control"type="text"placeholder="Y Koordinata*" id="yEdit">
+                                                    </div>
+                                                </td>
+                                                <td>           
+                                                    <div class="control">
+                                                        <input name="cap"class="form-control"type="text"placeholder="Kapacitet" id = "capEdit">
+                                                    </div>
+                                                </td>
+                                                <td>      
+                                                    <div class="fieldis-grouped">
+                                                        <div class="control">
+                                                            <button class="btnLogin">Izmeni</button>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </form> 
+                                        </tr>     
                                     </tbody>
                                 </table>
                             </div>
