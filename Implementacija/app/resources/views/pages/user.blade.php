@@ -57,7 +57,7 @@
                     <li class="active"><a href="#header">Parkiraj! Beograd</a></li>
                     <li><a href="#about">Moj Nalog</a></li>
                     <li><a id="mapSec" onclick="document.getElementById('map-container').style.display='block'"href="#mapSection">Mapa</a></li>
-                    <li><a href="#login">Promeni šifru</a></li>
+                    <li><a href="#passchange">Promeni šifru</a></li>
                 </ul>
             </nav>
             <!-- .nav-menu -->
@@ -131,22 +131,29 @@
     </section>
     <!-- End About Section -->
 
-    <!-- ======= Change Password Section ======= -->
-    <section id="login">
+    <!-- ======= Password Change Section ======= -->
+    <section id="passchange">
         <div class="container register">
             <div class="row">
                 <div class="col-md-12 register-right">
 
                     <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="home-tab">
                             <h3 class="register-heading">Promeni šifru</h3>
                             <div class="row register-form">
+                                <form style="width:100%; margin-left:33%"class="form-horizontal" method="post" action="passchange">
+                                    {{ csrf_field() }}
+                                @if($message=='1')
+                                    <h4 style="color:#000240">Uspešno ste promenili šifru! ...</h4>
+                                @elseif($message=='2')
+                                    <h4 style="color:red">Niste uspešno promenili šifru!</h4>
+                               @endif
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Šifra *" value="" />
+                                        <input type="password" name="oldPassword"class="form-control" placeholder="Stara Šifra *" value="" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Potvrdi šifru *" value="" />
+                                        <input type="password"name="newPassword" class="form-control" placeholder="Nova šifru *" value="" />
                                     </div>
 
                                 </div>
@@ -154,6 +161,7 @@
 
                                     <input type="submit" class="btnLogin" value="Promeni šifru" />
                                 </div>
+                            </form>
                             </div>
 
                         </div>
@@ -164,8 +172,7 @@
 
         </div>
     </section>
-    
-    <!-- End Change Password Section -->
+    <!-- End Of Password Change Section -->
 
     <!-- ======= Map Section ======= -->
     <section id="mapSection" class="col-12 services">
