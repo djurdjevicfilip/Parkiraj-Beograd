@@ -159,7 +159,4 @@ $(window).on("load", function(){
           $('#profile-tab').click();
     }
    
-  }); $('#mapSec').click(function(){
-    document.getElementById('map-container').style.display='block';
-    console.log("A");
   });

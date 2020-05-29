@@ -26,23 +26,22 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
     /* User page */
-    public function user()
+    public function user($message=0)
     {
         $joined_locations=ParkingLocation::with(['location','sensor','garage'])->get();
-        return view('pages.user')->with('data',$joined_locations);
+        return view('pages.user')->with('data',$joined_locations)->with('message',$message);
     }
     /* Admin page */ 
     public function admin($message=0)
     {
         $users=User::with('administration')->get();
         //Passing all users as a parameter for the table
-        \Log::debug($message);
         return view('pages.admin')->with('users',$users)->with('message',$message);
     }
     /* Moderator page */
-    public function mod(){
+    public function mod($message=0){
 
         // Should pass locations as parameter
-        return view('pages.moderator');
+        return view('pages.moderator')->with('message',$message);
     }
 }
