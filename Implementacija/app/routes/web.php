@@ -32,15 +32,16 @@ Route::put('mod/{id}', 'AdministrationController@activate');
  * Made UserMiddleware and AdminMiddleware, and added it to Kernel.php 
 */
 Route::group(['middleware' => ['auth', 'user']], function() {
-    Route::get('/home', 'HomeController@user')->name('home');
+    Route::get('/home{message?}', 'HomeController@user')->name('home');
 });
 Route::group(['middleware' => ['auth', 'admin']], function() {
     Route::get('/admin{message?}', 'HomeController@admin')->name('admin');
 });
 Route::group(['middleware' => ['auth', 'mod']], function() {
-    Route::get('/mod', 'HomeController@mod')->name('mod');
+    Route::get('/mod{message?}', 'HomeController@mod')->name('mod');
 });
 
+//Occupy sensor
 Route::post('/getmsg','SensorController@occupyOnArrival');
 //Locations post
 Route::post('/locations','LocationsController@store');
