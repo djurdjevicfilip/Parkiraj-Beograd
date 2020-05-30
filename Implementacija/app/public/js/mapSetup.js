@@ -192,7 +192,12 @@ function findLocation(){
 			title: place.name,
 			position: place.geometry.location
 			}));
-
+			//Place marker
+			placeMarkerAndPanTo(place.geometry.location, map);
+			location_now = 1;
+			srcy = place.geometry.location.lng();
+			srcx = place.geometry.location.lat();
+			
 			if (place.geometry.viewport) {
 			// Only geocodes have viewport.
 			bounds.union(place.geometry.viewport);
