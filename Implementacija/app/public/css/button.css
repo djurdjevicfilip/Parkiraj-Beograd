@@ -12,6 +12,7 @@ input[type="checkbox"]::before{
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 	transition: .4s;
 }
+
 #garage::before{
 	
 	background: url('https://img.icons8.com/ios-filled/50/000240/circled-g.png') ;
@@ -66,7 +67,6 @@ input:checked[type="checkbox"] {
 	font-family: 'Roboto', 'sans-serif';
 	line-height: 30px;
 	padding-left: 10px;
-	margin-right: 0;
 }
 #floating-panel-names {
 	position: absolute;
