@@ -34,6 +34,8 @@ class HomeController extends Controller
     /* Admin page */ 
     public function admin($message=0)
     {
+        
+       
         $users=User::with('administration')->get();
         //Passing all users as a parameter for the table
         return view('pages.admin')->with('users',$users)->with('message',$message);

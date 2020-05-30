@@ -95,7 +95,7 @@
   })(jQuery);
   
 $(window).on("load", function(){
- 
+    
     $(document).on('click', '#garage', function(e) {
         $('.cap').show();
         $('.custom-select').hide();
@@ -106,6 +106,54 @@ $(window).on("load", function(){
         $('.custom-select').show();
         $('.custom-control').show();
     });
+    $('#edit1').hide();
+    $('#edit2').hide();
+    
 
     
+    
 });
+
+var clicked = false;
+
+function edit(id,flag) {
+  if(clicked == false){
+    if(flag=='2'){
+    var idPar = id.parentElement.parentElement.children[0].innerHTML;
+    document.getElementById("idParEdit").value = idPar;
+    var x = id.parentElement.parentElement.children[1].innerHTML;
+    document.getElementById("xEdit").value = x;
+    var y = id.parentElement.parentElement.children[2].innerHTML;
+    document.getElementById("yEdit").value = y;
+    var cap = id.parentElement.parentElement.children[3].innerHTML;
+    document.getElementById("capEdit").value = cap;
+    id.parentElement.parentElement.style.display='none';
+    $('#edit2').show();
+    $('#idParEdit').hide();
+
+    clicked = true;
+    }
+    else{
+      var idPar = id.parentElement.parentElement.children[0].innerHTML;
+      document.getElementById("idParEditS").value = idPar;
+      var x = id.parentElement.parentElement.children[1].innerHTML;
+      document.getElementById("xEditS").value = x;
+      var y = id.parentElement.parentElement.children[2].innerHTML;
+      document.getElementById("yEditS").value = y;
+      var dis = id.parentElement.parentElement.children[3].innerHTML;
+      if(dis == "Da"){
+      document.getElementById("disEditS").value = 1;
+      }else{
+        document.getElementById("disEditS").value = 0;
+      }
+      var zone = id.parentElement.parentElement.children[4].innerHTML;
+      document.getElementById("zoneEditS").value = zone;
+      id.parentElement.parentElement.style.display='none';
+      $('#edit1').show();
+      $('#idParEditS').hide();
+      clicked = true;
+    }
+  }
+  
+}
+

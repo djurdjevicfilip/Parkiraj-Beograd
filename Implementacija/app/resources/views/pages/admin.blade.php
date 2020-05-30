@@ -37,6 +37,7 @@
                 <ul>
                     <li class="active"><a href="#header">Parkiraj! Beograd</a></li>
                     <li><a href="#users">Nalozi</a></li>
+                    <li><a href="#moderators">Moderatori</a></li>
                     <li><a href="#locations">Lokacije</a></li>
                     <li><a href="#passchange">Promeni šifru</a></li>
                     <li><a href="#add-location">Dodaj mesto</a></li>
@@ -62,6 +63,7 @@
                 <div class="col-md-12 register-right">
 
                     <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="hom" role="tabpanel" aria-labelledby="home-tab">
                         <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="home-tab">
                             <h3 class="register-heading">Promeni šifru</h3>
                             <div class="row register-form">
@@ -104,6 +106,7 @@
                 <div class="col-md-12 add-locations">
 
                     <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="hom" role="tabpanel" aria-labelledby="home-tab">
                         <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="home-tab">
                             <h3 class="register-heading">Dodaj mesto</h3>
 
@@ -196,6 +199,7 @@
                             </thead>
                             <tbody>
                                 @foreach($users as $user)
+                                @if($user->type=='0'||($user->administration!=null&&$user->administration->active=='1') )
                                 @if($user->type=='0'||$user->administration->active=='1')
                                 <tr>
                                     <td> {{$user->idUser}} </td>
@@ -277,13 +281,13 @@
     <section id="locations">
         <div class="container">
             <div class="section-title">
-                <h2>Lokacije</h2>
-                <p>Tabela sa svim lokacijama</p>
+                <h2>Nalozi</h2>
+                <p>Moderatori</p>
             </div>
             <div class="card mb-4">
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th scope="col">Redni broj</th>
@@ -295,22 +299,19 @@
                             </thead>
                             <tbody>
                                 @foreach($users as $user)
+                                @if($user->type=='1'&&$user->administration->active=='0')
                                 <tr>
                                     <td> {{$user->idUser}} </td>
                                     <td> {{$user->name}} </td>
                                     <td> {{$user->email}} </td>
                                     <td> {{$user->type}} </td>
                                     <td style="width:120px">
-
-                                        {!! Form::open(['action' => ['UsersController@update', 'idUser'=>$user->idUser,'act'=>'up'], 'method' => 'PUT']) !!}
-                                        <img src="https://img.icons8.com/color/48/000000/up.png" style="height: 25px;">
-                                        <a type="submit" class='btn' href="#users">Unapredi</a> {!! Form::close() !!} {!! Form::open(['action' => ['UsersController@update', 'idUser'=>$user->idUser,'act'=>'down'], 'method' => 'PUT']) !!}
-                                        <img src="https://img.icons8.com/color/48/000000/down.png" style="height: 25px;"> {{Form::submit('Submit',['class'=>'btn btnPrimary'])}} {!! Form::close() !!} {!! Form::open(['action' => ['UsersController@update', 'idUser'=>$user->idUser,'act'=>'up'], 'method' => 'PUT']) !!}
-
-                                        <img src="img/trash.jpg" style="height: 25px;"> {{Form::submit('Submit',['class'=>'btn btnPrimary'])}} {!! Form::close() !!}
-
+                                            {!! Form::open(['action' => ['AdministrationController@activate', 'idUser'=>$user->idUser], 'method' => 'PUT']) !!}
+                                            {{Form::submit('Aktiviraj',['class'=>'btn btnPrimary'])}}
+                                            {!! Form::close() !!} 
                                     </td>
                                 </tr>
+                                @endif
                                 @endforeach
 
                             </tbody>
@@ -320,7 +321,193 @@
             </div>
         </div>
     </section>
-    <!-- End Of Locations Table Section -->
+    <!-- End Of Accept Moderators Section -->
+    <!-- ======= Locations Table Section ======= -->
+    <section id="locations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nalozi</h2>
+                <p>Tabela sa svim nalozima</p>
+            </div>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Senzor</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Garaža</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID Parkinga</th>
+                                            <th scope="col">X</th>
+                                            <th scope="col">Y</th>
+                                            <th scope="col">Invalid</th>
+                                            <th scope="col">Zona</th>
+                                            <th scope="col">Izmena</th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($locations as $location)
+                                        @if($location->sensor != null )
+                                                
+                                        <tr>
+                                            <td> {{$location->idPar}} </td>
+                                            <td> {{$location->location->x}} </td>
+                                            <td> {{$location->location->y}} </td>
+                                            @if($location->sensor->Disabled)
+                                            <td>Da</td>
+                                            @else
+                                            <td>Ne</td>
+                                            @endif
+                                            <td> {{$location->sensor->Zone}} </td>
+                                            <td>
+                                            <button class="btn btn-default btnEdit" onClick="edit(this,1)" ></button>
+                                            {!! Form::open(['action' => ['LocationsController@delete','idPar'=>$location->idPar], 'method' => 'DELETE']) !!}
+                                            {{Form::submit('',['class'=>'btn btnPrimary btnDel'])}}
+                                            {!! Form::close() !!}
+                                            </td>
+                                        </tr>
+                                        @endif
+                                        @endforeach
+                                        <tr id="edit1">
+                                            <form action="edit"method="post" >
+                                                {{ csrf_field() }}
+                                                <td>
+                                                    <div class="control">
+                                                        <input name="id"class="form-control disable"type="text" id="idParEditS">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <div class="control">
+                                                        <input name="x"class="form-control"type="text"placeholder="X Koordinata*" id="xEditS">
+                                                    </div>
+                                                </td>
+                                                <td>           
+                                                    <div class="control">
+                                                        <input name="y"class="form-control"type="text"placeholder="Y Koordinata*" id="yEditS">
+                                                    </div>
+                                                </td>
+                                                <td>           
+                                                    <div class="control">
+                                                        <!-- <input name="dis"class="form-control"type="text"placeholder="Kapacitet"> -->
+                                                        <select name="dis"class="custom-select">
+                                                            <option name="dis" id="disEditS"selected>Invalid?</option>
+                                                            <option name="dis"value="1">Da</option>
+                                                            <option name="dis"value="0">Ne</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td>           
+                                                    <div class="control">
+                                                        <!-- <input name="zone"class="form-control"type="text"placeholder="Kapacitet" id = "zoneEditS"> -->
+                                                        <select name="zone"class="custom-select">
+                                                            <option name="zone"selected id="zoneEditS">Zona?</option>
+                                                            <option name="zone"value="Plava">Plava</option>
+                                                            <option name="zone"value="Zelena">Zelena</option>
+                                                            <option name="zone"value="Crvena">Crvena</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td>      
+                                                    <div class="fieldis-grouped">
+                                                        <div class="control">
+                                                            <button class="btnLogin">Izmeni</button>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </form>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable3" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID Parkinga</th>
+                                            <th scope="col">X</th>
+                                            <th scope="col">Y</th>
+                                            <th scope="col">Kapacitet</th>
+                                            <th scope="col">Izmena</th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($locations as $location)
+                                        @if($location->garage != null )
+                                                
+                                        <tr>
+                                            <td> {{$location->idPar}} </td>
+                                            <td> {{$location->location->x}} </td>
+                                            <td> {{$location->location->y}} </td>
+                                            <td> {{$location->garage->Free}} </td>
+                                            <td>
+                                            <button class="btn btn-default btnEdit" onClick="edit(this,2)" ></button>
+                                                {!! Form::open(['action' => ['LocationsController@delete','idPar'=>$location->idPar], 'method' => 'DELETE']) !!}
+                                                {{Form::submit('',['class'=>'btn btnPrimary btnDel'])}}
+                                                {!! Form::close() !!}
+                                            </td>
+                                            
+                                        </tr>
+                                        @endif
+                                        @endforeach
+                                        
+                                        <tr id="edit2">
+                                            <form action="edit"method="post" >
+                                            {{ csrf_field() }}
+                                                <td>
+                                                    <div class="control">
+                                                        <!-- <div id="idParEdit" name ="id" class="form-control"></div> -->
+                                                        <input name="id"class="form-control disable"type="text" id="idParEdit">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <div class="control">
+                                                        <input name="x"class="form-control"type="text"placeholder="X Koordinata*" id="xEdit">
+                                                    </div>
+                                                </td>
+                                                <td>           
+                                                    <div class="control">
+                                                        <input name="y"class="form-control"type="text"placeholder="Y Koordinata*" id="yEdit">
+                                                    </div>
+                                                </td>
+                                                <td>           
+                                                    <div class="control">
+                                                        <input name="cap"class="form-control"type="text"placeholder="Kapacitet" id = "capEdit">
+                                                    </div>
+                                                </td>
+                                                <td>      
+                                                    <div class="fieldis-grouped">
+                                                        <div class="control">
+                                                            <button class="btnLogin">Izmeni</button>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </form> 
+                                        </tr>     
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <!-- End Of Location Table Section -->
     
     <!-- ======= Services Section ======= -->
     
@@ -367,6 +554,10 @@
         $(document).ready(function() {
             $('#dataTable2').dataTable();
         });
+        $(document).ready(function() {
+            $('#dataTable3').dataTable();
+        });
+        
     </script>
 </body>
 
