@@ -71,12 +71,20 @@ function newSensorMarker(location){
 	markers.push(marker);
 	var infowindow = new google.maps.InfoWindow();
 	google.maps.event.addListener(marker, 'click', function () {
-		var additionalContent='<div style="color:black">Zona:</div>'+this.zone+'<br/><div style="color:black">Invalidsko:</div>'+this.disabled;
+		var disabled="Da";
+		var free="Da";
+		var type="Senzor";
+		if(this.disabled==false)
+			disabled="Ne";
+		var additionalContent='<div style="color:black">Zona:</div>'+this.zone+'<br/><div style="color:black">Invalidsko:</div>'+disabled;
 		if(this.type=="garage"){
 			additionalContent="";
+			type="Garaža";
 		}
+		if(this.free==false)
+			free="Ne";
 		nearest_marker=this;
-		infowindow.setContent('<h5 style="color:black">' + this.type + '</h5><hr/><h6 style="color:blue; text-align:center"><div style="color:black">Slobodno:</div>'+this.free+additionalContent+'</h6><button onclick="sim()"class="btn btnPrimary"style="width:100%;background-color:#000240;color:white">Ruta</button>');
+		infowindow.setContent('<h5 style="color:black">' + type + '</h5><hr/><h6 style="color:blue; text-align:center"><div style="color:black">Slobodno:</div>'+free+additionalContent+'</h6><button onclick="sim()"class="btn btnPrimary"style="width:100%;background-color:#000240;color:white">Ruta</button>');
 		infowindow.open(map, this);
 	});		
 }
@@ -112,13 +120,20 @@ function updateMarker(from,to){
 	google.maps.event.clearInstanceListeners(from);
 	var infowindow = new google.maps.InfoWindow();
 	google.maps.event.addListener(from, 'click', function () {
-		var additionalContent='<div style="color:black">Zona:</div>'+this.zone+'<br/><div style="color:black">Invalidsko:</div>'+this.disabled;
+		var disabled="Da";
+		var free="Da";
+		var type="Senzor";
+		if(this.disabled==false)
+			disabled="Ne";
+		var additionalContent='<div style="color:black">Zona:</div>'+this.zone+'<br/><div style="color:black">Invalidsko:</div>'+disabled;
 		if(this.type=="garage"){
 			additionalContent="";
+			type="Garaža";
 		}
-		
+		if(this.free==false)
+			free="Ne";
 		nearest_marker=this;
-		infowindow.setContent('<h5 style="color:black">' + this.type + '</h5><hr/><h6 style="color:blue; text-align:center"><div style="color:black">Slobodno:</div>'+this.free+additionalContent+'</h6>;<button onclick="sim()" class="btn btnPrimary"style="width:100%;background-color:#000240;color:white">Ruta</button>');
+		infowindow.setContent('<h5 style="color:black">' + type + '</h5><hr/><h6 style="color:blue; text-align:center"><div style="color:black">Slobodno:</div>'+free+additionalContent+'</h6><button onclick="sim()"class="btn btnPrimary"style="width:100%;background-color:#000240;color:white">Ruta</button>');
 		infowindow.open(map, this);
 	});	
 }
