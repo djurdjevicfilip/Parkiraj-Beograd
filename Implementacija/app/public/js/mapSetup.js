@@ -291,12 +291,14 @@ function newMarker(location,infowindow){
 				if(this.disabled==false)
 					disabled="Ne";
 				var additionalContent='<div style="color:black">Zona:</div>'+this.zone+'<br/><div style="color:black">Invalidsko:</div>'+disabled;
+				
+				if(this.free==false)
+					free="Ne";
 				if(this.type=="garage"){
 					additionalContent="";
 					type="Garaža";
+					free=this.free;
 				}
-				if(this.free==false)
-					free="Ne";
 				nearest_marker=this;
 				infowindow.setContent('<h5 style="color:black">' + type + '</h5><hr/><h6 style="color:blue; text-align:center"><div style="color:black">Slobodno:</div>'+free+additionalContent+'</h6><button onclick="sim()"class="btn btnPrimary"style="width:100%;background-color:#000240;color:white">Ruta</button>');
 				infowindow.open(map, this);
