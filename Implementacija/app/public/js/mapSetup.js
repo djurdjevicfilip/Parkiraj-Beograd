@@ -133,6 +133,13 @@ function addCustomControls(){
 	centerControlDiv.index = 1;
 	centerControlDiv.onclick=findNearestOSRM;
 	map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
+
+	
+	centerControlDiv = document.createElement('div');
+	centerControl = new CenterControl(centerControlDiv, map, 'Stop Simulation');
+	centerControlDiv.index = 1;
+	centerControlDiv.onclick=stopSimulation;
+	map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
 }
 //Find the location that the user searched for
 function findLocation(){

@@ -43,7 +43,7 @@ function sleep (time) {
   }
   
 function simulateTravel(srcx,srcy,dstx,dsty){
-	
+	if(cancel)return;
 	//Decode route polyline using polyline.js
 	var polylineArray=polyline.decode(response_simulation.routes[0].overview_polyline);
 	
@@ -64,9 +64,13 @@ function simulateTravel(srcx,srcy,dstx,dsty){
 	});
 
 }
+
 //Recursively iterate over the polyline (recursion is used to add up delay)
 function moveAlongPolyline(i,n,coordinates){
 	if(i>=n)return;
+	if(cancel){
+		return;
+	}
 	sleep(pointDelay).then(() => {
 		transition(coordinates[i][0],coordinates[i][1]);
 	
@@ -86,6 +90,7 @@ function moveAlongPolyline(i,n,coordinates){
 //Smoothly move marker
 
 function transition(result0,result1){
+	if(cancel)return;
 	position[0]=src.x;
 	position[1]=src.y;
 	i = 0;
@@ -95,6 +100,7 @@ function transition(result0,result1){
 }
 
 function moveMarker(){
+	if(cancel)return;
 	sleep(delay).then(() => {
 		position[0] += deltaLat;
 		position[1] += deltaLng;
