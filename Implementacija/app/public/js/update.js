@@ -83,7 +83,7 @@ function newSensorMarker(location){
 function updateMarker(from,to){
 
 	//Alert the user if his location status has changed
-	if(from.free=="1"&&to.Free=="0"&&nearest_marker==from){
+	if(from.free=="1"&&to.Free=="0"&&nearest_marker==from&&going_to!=null){
 		alertify.error('Neko je zauzeo parking mesto');
 	}
 	from.free=to.Free;

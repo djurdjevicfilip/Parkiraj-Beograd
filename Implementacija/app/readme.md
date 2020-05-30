@@ -1,14 +1,4 @@
-<<<<<<< Updated upstream
-# Implementacija aplikacije
-## Simuliranje senzora
-### Windows
-Na Windows platformi, za simuliranje senzora potrebno je pokrenuti **Task Scheduler**.
-### Linux 
-CRON
-=======
 
-# Implementacija aplikacije
-## Simuliranje senzora
 #### Windows - *Task Scheduler*.
 #### Linux  - *CRON*
 ### Uputstvo za simuliranje senzora na Windows platformi
@@ -22,4 +12,3 @@ CRON
 		7. U polje Add arguments upisati putanju do aplikacij i komandu artisan schedule:run
 		Primer: C:\wamp64\www\app\artisan schedule:run
 		8. Sačuvati Task. Ovim ste omogućili periodično simuliranje senzora.
->>>>>>> Stashed changes

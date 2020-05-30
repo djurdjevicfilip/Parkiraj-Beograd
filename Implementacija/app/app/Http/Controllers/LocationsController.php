@@ -58,8 +58,6 @@ class LocationsController extends Controller
         }
 
 
-
-        //adding location
         $x=request('x');
         $y=request('y');
         
@@ -119,5 +117,5 @@ class LocationsController extends Controller
         return redirect()->to(route('admin').'#locations');
     }
 
-  
+
 }

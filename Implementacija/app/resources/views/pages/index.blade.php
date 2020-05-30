@@ -347,6 +347,12 @@
                                                         <input id="password-confirm" type="password" class="form-control"placeholder="Ponovi šifru *" name="password_confirmation" required>
                                                     </div>
                                                 </div>
+                                                <div class="control">
+                                                    <select name="type"class="custom-select">
+                                                        <option name="type"value="0"selected>Korisnik</option>
+                                                        <option name="type"value="1">Moderator</option>
+                                                    </select>
+                                                    </div>
                                             </div>
                                             <div class="col-md-5">
                                                 <div class="form-group">

@@ -3,19 +3,17 @@
 namespace App\Observers;
 
 use App\Sensor;
-use App\Events\LocationUpdated;
-use App\Http\Controllers\LocationsController;
+use App\Events\SensorUpdated;
+use App\Http\Controllers\SensorController;
 class SensorObserver
 {
     //On location update/create
-    public function saving(Sensor $location)
+    public function saving(Sensor $sensor)
     {
-        \Log::debug($location);
         
-        $data=LocationsController::newLocationData($location);
+        $data=SensorController::sensorUpdateData($sensor);
 
-        event(new LocationUpdated($data));
-        \Log::debug('CREATED');
+        event(new SensorUpdated($data));
     }
 
 }

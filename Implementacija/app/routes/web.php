@@ -36,17 +36,27 @@ Route::put('mod/{id}', 'AdministrationController@activate');
 */
 Route::group(['middleware' => ['auth', 'user']], function() {
     Route::get('/home', 'HomeController@user')->name('home');
+
 });
 Route::group(['middleware' => ['auth', 'admin']], function() {
-    Route::get('/admin', 'HomeController@admin')->name('admin');
+    Route::get('/admin{message?}', 'HomeController@admin')->name('admin');
 });
 Route::group(['middleware' => ['auth', 'mod']], function() {
-    Route::get('/mod', 'HomeController@mod')->name('mod');
+    Route::get('/mod{message?}', 'HomeController@mod')->name('mod');
 });
-//Locations post
-Route::post('/locations','LocationsController@store');
 //Locations edit
 Route::post('/edit','LocationsController@edit');
+=======
+
+//Occupy sensor
+Route::post('/getmsg','SensorController@occupyOnArrival');
+//Locations post
+Route::post('/locations','LocationsController@store');
+//Change password
+Route::post('/passchange','UsersController@passchange');
+
+//Redirect back when login is requested
+Route::get('/login',function() { return redirect()->back();})->name('login');
 
 /** Redirect back if the page doesn't exist
  * Otherwise it throws an error
