@@ -27,7 +27,17 @@ body::before {
 #capacity{
   display: none;
 }
+#map-container{
+  left:0px;
+  margin-left: 0px;
+  margin-top: 0px;
+  top:-10px;
+  width:110vw;
+  z-index:2;
+  margin-bottom: 0;
+}
 #user-body{
+  overflow:hidden;
 }
 .add-locations{
   
@@ -47,16 +57,24 @@ body::before {
 }
 .btnUp{
 
-  background: url('https://img.icons8.com/color/48/000000/up.png') no-repeat;
+  background: url('/img/up-arrow.png') no-repeat;
   background-size: 25px;
 }
 .btnDown{
-  background:url('https://img.icons8.com/color/48/000000/down.png') no-repeat;
+  background:url('/img/down-arrow.png') no-repeat;
   background-size: 25px;
 }
 .btnDel{
   background: url("/img/trash.jpg") no-repeat;
   background-size: 25px;
+}
+.btnUp:hover{
+  
+}
+#map{
+  height:660px;
+  width:95%;
+  left:70px;
 }
 .map{
   height:550px;
@@ -136,6 +154,7 @@ h1, h2, h3, h4, h5, h6 {
 #pac-container {
   padding-bottom: 12px;
   margin-right: 12px;
+  z-index:5;
 }
 
 .pac-controls {
@@ -158,6 +177,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 11px 0 13px;
   text-overflow: ellipsis;
   width: 400px;
+  z-index: 5;
 }
 
 #pac-input:focus {
@@ -402,8 +422,9 @@ h1, h2, h3, h4, h5, h6 {
 #header.header-top {
   height: 80px;
   position: fixed;
+  left:150px;
   top: 0;
-  right: 100px;
+  right:0;
   background: #000240;
 }
 
@@ -412,9 +433,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header.header-top h1 {
-  margin-right: 20px;
+  margin-right: auto;
   font-size: 36px;
-  right:0;
 }
 
 #header.header-top .container {
@@ -434,7 +454,10 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 26px;
   }
 }
-
+.custom-select{
+  background-color: #000240;
+  color:white;
+}
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -838,7 +861,8 @@ section .container {
 .credits {
   position: fixed;
   right: 15px;
-  bottom: 15px;
+  margin-right: 0;
+  bottom: 5px;
   font-size: 16px;
   color: #fff;
   z-index: 10000;
@@ -879,8 +903,8 @@ section .container {
 
 .user {
   position: fixed;
-  left: 15px;
-  top: 20px;
+  left: 5px;
+  top: 10px;
   font-size: 16px;
   color: #fff;
   z-index: 10000;
@@ -960,7 +984,7 @@ section .container {
 }
 .register .register-form{
   padding: 5%;
-  margin-top: 18%;
+  margin-top: 14%;
 }
 .login{
   padding-bottom:10%;
@@ -969,9 +993,16 @@ section .container {
   padding: 10%;
   margin-top: 16%;
 }
+.nav-users{
+  color:white;
+}
+.nav-users:hover{
+  font-weight: 600;
+  color:white;
+}
 .btnRegister{
   float: right;
-  margin-top: 30%;
+  margin-top: 35%;
   border: none;
   border-radius: 1.5rem;
   padding: 2%;

@@ -51,7 +51,18 @@ function simulateTravel(srcx,srcy,dstx,dsty){
 	moveAlongPolyline(0,polylineArray.length,polylineArray);
 	sleep(pointDelay*polylineArray.length).then(()=> {
 		going_to=null;
+		var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+		$.ajax({
+			type:'post',
+			url:'/getmsg',
+			
+			data: {_token: CSRF_TOKEN, idPar:nearest_marker.id},
+							dataType: 'JSON',
+			success: function( msg ) {
+			}
+		});
 	});
+
 }
 //Recursively iterate over the polyline (recursion is used to add up delay)
 function moveAlongPolyline(i,n,coordinates){

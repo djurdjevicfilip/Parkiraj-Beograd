@@ -1,3 +1,4 @@
+
 # Parkiraj! Beograd 
 
 Velika frustracija za vozače (posebno u velikim gradovima) je **parkiranje**.
@@ -36,9 +37,15 @@ Sekcija o implementaciji aplikacije.
 Za izradu prototipa koristili smo **HTML**, **CSS** i **Bootstrap**. Takođe je urađena trivijalna komunikacija sa **Google Maps API**.
 
 ### Implementacija
-Implementacioni deo je još uvek delimično neodređen. Koristićemo **MySql** za bazu podataka, **PHP** za backend, kao i prethodno pomenute tehnologije za izradu frontend dela stranice. 
+Korišćen je **MySql** za bazu podataka, **PHP** za backend, kao i prethodno pomenute tehnologije za izradu frontend dela stranice. 
 
 Koristili smo **Laravel** Framework, kao i neke dodatne funkcionalnosti istog. Neke od tih dodatnih funkcionalosti su **Event Handling**, **Broadcasting** i **Observing**. Za potrebe Broadcasting-a korišćen je **Pusher API**.
+
+Tehnologije korišćene za mapu:  
+- Google Maps Javascript API
+- Google Directions API
+- Google Places API
+- OSRM API
 
 
 Bitno je da se poštuju određene paradigme. Takođe, veoma je bitno da kod bude što bolji, lepši, i da bude čitljiv, radi olakšanja razvoja aplikacije. Stoga se svim članovima tima preporučuje korišćenje **Visual Studio Code** editor-a. Preporučuje se i korišćenje sledećih dodataka:
@@ -52,13 +59,24 @@ Bitno je da se poštuju određene paradigme. Takođe, veoma je bitno da kod bude
 ## Baza podataka
 Kako je implementirana baza podataka...
 ## Performanse
-Načini za poboljšanje performansi aplikacije.
+Korisnička stranica sadrži mapu koju je često potrebno osvežavati i menjati. Trudili smo se da poboljšamo performanse stranice i da je što manje preopteretimo. Iz tog razloga je umesto Ajax-a korišćene su Laravel-ove dodatne mogućnosti. **Observing** nam služi za praćenje promena u bazi, a **Broadcasting** i **Pusher API** nam služe za slanje poruka korisničkim stranicama. Ovim dobijamo bolje performanse korisničke stranice, jer se stranica ne osvežava na fiksan vremenski period. Takođe, ovo nam omogućava i trenutno vidljive promene, dok bi kod većeg fiksnog intervala bilo kašnjenja.
 ## Sigurnost
 Kako obezbeđujemo sigurnost naših korisnika, njihovih naloga...
 ## Testiranje
 Testiranje je obavezno.
 ## Ograničenja
 Jedno ograničenje aplikacije javlja se kroz API za mape. Ograničenje je u tome što je broj zahteva ograničen na mesečnoj ili dnevnoj bazi. Ovo ograničenje nama trenutno ne predstavlja problem, ali može uticati na novčane resurse pri velikom porastu korisnika aplikacije. Takođe, nemamo pristup senzorima, tako da će oni biti simulirani.
+## OSRM API vs. Google Maps API
+
+ - **Google Maps Api** korišćen je za prikazivanje mape, rutiranje, clustering...  
+ - **OSRM Api** je korišćen za pronalazak mesta do kog se najbrže dolazi  
+ 
+
+***Zašto OSRM?***  
+Google nam uz svoju uslugu **Distance Matrix** omogućava pronalazak najbližeg mesta, ali je broj mesta ograničen, a broj poziva API-a drastično raste sa porastom broja mesta. Na primer, ukoliko bismo imali **200** parking mesta, pronalazak najbližeg mesta bi trajao više od 2 minuta, a broj poziva bi mogao da bude među desetinama hiljada. To je, dakle, samo za jedan korisnički zahtev! 
+OSRM nam sve ovo rešava jer je besplatan i bez ograničenja. Jedina 'mana' je što OSRM trenutno ne podržava **Distance Matrix**, već samo **Duration Matrix**
+
+
 # Plan i prioriteti
 Osnovni plan je da aplikacija zadovoljava zahteve predmeta, da bude funkcionalna, brza i laka za korišćenje. Želimo da što više različitih tipova korisnika bude u mogućnosti da koristi našu aplikaciju. Iz tog razloga, u sklopu sekcije proširenja ćemo uključiti i opcije koje proširuju već postojeće funkcionalnosti, sa ciljem inkluzije većeg broja ljudi (na primer invalida).
 ## Osnovna verzija

@@ -37,7 +37,7 @@
                 <ul>
                     <li class="active"><a href="#header">Parkiraj! Beograd</a></li>
                     <li><a href="#locations">Moje Lokacije</a></li>
-                    <li><a href="#login">Promeni šifru</a></li>
+                    <li><a href="#passchange">Promeni šifru</a></li>
                 </ul>
             </nav>
             <!-- .nav-menu -->
@@ -54,21 +54,28 @@
     <!-- End Header -->
 
     <!-- ======= Password Change Section ======= -->
-    <section id="login">
+    <section id="passchange">
         <div class="container register">
             <div class="row">
                 <div class="col-md-12 register-right">
 
                     <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="home-tab">
                             <h3 class="register-heading">Promeni šifru</h3>
                             <div class="row register-form">
+                                <form style="width:100%; margin-left:33%"class="form-horizontal" method="post" action="passchange">
+                                    {{ csrf_field() }}
+                                @if($message=='1')
+                                    <h4 style="color:#000240">Uspešno ste promenili šifru! ...</h4>
+                                @elseif($message=='2')
+                                    <h4 style="color:red">Niste uspešno promenili šifru!</h4>
+                               @endif
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Šifra *" value="" />
+                                        <input type="password" name="oldPassword"class="form-control" placeholder="Stara Šifra *" value="" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Potvrdi šifru *" value="" />
+                                        <input type="password"name="newPassword" class="form-control" placeholder="Nova šifru *" value="" />
                                     </div>
 
                                 </div>
@@ -76,6 +83,7 @@
 
                                     <input type="submit" class="btnLogin" value="Promeni šifru" />
                                 </div>
+                            </form>
                             </div>
 
                         </div>
@@ -90,11 +98,13 @@
 
     <!-- End Of Locations Table Section -->
     <section id="locations">
+       
         <div class="container">
             <div class="section-title">
                 <h2>Lokacije</h2>
                 <p>Tabela sa svim lokacijama</p>
             </div>
+            @if(Auth::user()->administration->active=='1')
             <div class="card mb-4">
                 <div class="card-body">
                     <div class="table-responsive">
@@ -115,6 +125,9 @@
                     </div>
                 </div>
             </div>
+            @else
+                Vaš nalog nije aktiviran! Nemate mogućnost pregleda i izmene lokacija.
+            @endif
         </div>
     </section>
     <!-- ======= Locations Table Section ======= -->
@@ -158,8 +171,11 @@
     <div class="user">
         <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                document.getElementById('logout-form').submit();">
-
+            @if(strlen(Auth::user()->name)<10)
             <i class="icofont-user"></i> {{ Auth::user()->name }} | Izloguj se
+            @else
+            <i class="icofont-user"></i> {{ substr(Auth::user()->name,0,10) }}... | Izloguj se
+            @endif
         </a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             {{ csrf_field() }}
