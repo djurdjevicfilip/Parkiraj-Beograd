@@ -405,7 +405,7 @@ function placeMarkers() {
 		});
 	}, 100);
 }
-
+var location_now2 = 0;
 function placeMarkerOnClick() {
 	map.addListener('click', function(e) {
 		if (location_now == 0) {
@@ -420,6 +420,34 @@ function placeMarkerOnClick() {
 			srcx = e.latLng.lat();
 		}
 	});
+
+	map.addListener('dblclick', function(e) {
+		if (location_now2 == 0) {
+			placeMarkerAndPanToDbl(e.latLng, map);
+			location_now2 = 1;
+			srcForNowY = e.latLng.lng();
+			srcForNowX = e.latLng.lat();
+		} else {
+			marker_now2.setMap(null);
+			placeMarkerAndPanToDbl(e.latLng, map);
+			srcForNowY = e.latLng.lng();
+			srcForNowX = e.latLng.lat();
+		}
+		console.log(srcForNowX);
+		console.log(srcForNowY);
+	});
+}
+function placeMarkerOnDblClick() {}
+
+function placeMarkerAndPanToDbl(latLng, map) {
+	var marker = new google.maps.Marker({
+		position: latLng,
+		map: map,
+		animation: google.maps.Animation.DROP,
+		icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+	});
+	marker_now2 = marker;
+	marker_now.setMap(null);
 }
 var srcx;
 var srcy;
