@@ -25,7 +25,7 @@ Standardni jezici koji su korišćeni :
 
 ### Ostalo
  | Stavka  |      Opis      |  
-|:----------:|-------------|------:|
+|:----------:|-------------|  
 | [GitHub](https://www.github.com) | Platforma za kolaboraciju | 
 | [GitHub Pages](https://www.github.com) | Besplatno host-ovanje stranica, korišćeno za prototip | 
 | [MS Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software) | Platforma korišćena za komunikaciju između članova tima| 
