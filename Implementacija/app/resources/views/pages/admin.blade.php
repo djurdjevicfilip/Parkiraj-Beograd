@@ -63,8 +63,8 @@
                 <div class="col-md-12 register-right">
 
                     <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="hom" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="tab-pane fade show active" id="hom" role="tabpanel" aria-labelledby="home-t">
+                        <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="home-t">
                             <h3 class="register-heading">Promeni šifru</h3>
                             <div class="row register-form">
                                 <form style="width:100%; margin-left:33%"class="form-horizontal" method="post" action="passchange">
@@ -106,9 +106,12 @@
                 <div class="col-md-12 add-locations">
 
                     <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="hom" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="tab-pane fade show active" id="hom" role="tabpanel" aria-labelledby="home-">
+                        <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="home-">
                             <h3 class="register-heading">Dodaj mesto</h3>
+                            @if($message=='3')
+                                <h4 style="color:#000240" class="register-heading">Nekorektan unos!</h4>
+                            @endif
 
                                 <form action="locations"method="post" class="locations-form">
                                     {{ csrf_field() }}
@@ -174,16 +177,16 @@
                 <h2>Nalozi</h2>
                 <p>Tabela sa svim nalozima</p>
             </div>
-            <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+            <ul class="nav nav-tabs nav-justified" id="myTabUser" role="tablist">
                 <li class="nav-item nav-users">
-                    <a class="nav-link nav-users active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Aktivirani</a>
+                    <a class="nav-link nav-users active" id="home-tabUser" data-toggle="tab" href="#homeUser" role="tab" aria-controls="homeUser" aria-selected="true">Aktivirani</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-users" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Neaktivirani</a>
+                    <a class="nav-link nav-users" id="profile-tabUser" data-toggle="tab" href="#profileUser" role="tab" aria-controls="profileUser" aria-selected="false">Neaktivirani</a>
                 </li>
             </ul>
-            <div class="tab-content tab-users" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="tab-content tab-users" id="myTabContentUser">
+                <div class="tab-pane fade show active" id="homeUser" role="tabpanel" aria-labelledby="home-tabUser">
             <div class="card mb-4">
                 <div class="card-body">
                     <div class="table-responsive">
@@ -200,7 +203,7 @@
                             <tbody>
                                 @foreach($users as $user)
                                 @if($user->type=='0'||($user->administration!=null&&$user->administration->active=='1') )
-                                @if($user->type=='0'||$user->administration->active=='1')
+                                
                                 <tr>
                                     <td> {{$user->idUser}} </td>
                                     <td> {{$user->name}} </td>
@@ -234,7 +237,7 @@
                 </div>
             </div>
                 </div>
-                <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="tab-pane fade show" id="profileUser" role="tabpanel" aria-labelledby="profile-tabUser">
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="table-responsive">
@@ -277,8 +280,8 @@
     </section>
     <!-- End Of User Table Section -->
      
-    <!-- ======= Locations Table Section ======= -->
-    <section id="locations">
+    <!-- ======= Moderators Section ======= -->
+    <section id="moderators">
         <div class="container">
             <div class="section-title">
                 <h2>Nalozi</h2>
@@ -328,6 +331,11 @@
             <div class="section-title">
                 <h2>Nalozi</h2>
                 <p>Tabela sa svim nalozima</p>
+                @if($message=='5')
+                                <p>Nekorektna izmena</p>
+                @elseif($message=='4')
+                    <p>Uspešno dodata lokacija!</p>
+                @endif
             </div>
             <div class="card mb-4">
                 <div class="card-body">
@@ -380,7 +388,8 @@
                                         <tr id="edit1">
                                             <form action="edit"method="post" >
                                                 {{ csrf_field() }}
-                                                <td>
+                                                <td >
+                                                    <div id='idParEditSTd'></div>
                                                     <div class="control">
                                                         <input name="id"class="form-control disable"type="text" id="idParEditS">
                                                     </div>
@@ -420,9 +429,10 @@
                                                 <td>      
                                                     <div class="fieldis-grouped">
                                                         <div class="control">
-                                                            <button class="btnLogin">Izmeni</button>
+                                                        <button class="btn btn-default btnSave"  ></button>
                                                         </div>
                                                     </div>
+                                                    <button class="btn btn-default btnCancel" onClick="window.location.reload();" ></button>
                                                 </td>
                                             </form>
                                         </tr>
@@ -467,6 +477,7 @@
                                             <form action="edit"method="post" >
                                             {{ csrf_field() }}
                                                 <td>
+                                                    <div id='idParEditTd'></div>
                                                     <div class="control">
                                                         <!-- <div id="idParEdit" name ="id" class="form-control"></div> -->
                                                         <input name="id"class="form-control disable"type="text" id="idParEdit">
@@ -491,9 +502,10 @@
                                                 <td>      
                                                     <div class="fieldis-grouped">
                                                         <div class="control">
-                                                            <button class="btnLogin">Izmeni</button>
+                                                            <button class="btn btn-default btnSave"  ></button>
                                                         </div>
                                                     </div>
+                                                    <button class="btn btn-default btnCancel" onClick="window.location.reload();" ></button>
                                                 </td>
                                             </form> 
                                         </tr>     

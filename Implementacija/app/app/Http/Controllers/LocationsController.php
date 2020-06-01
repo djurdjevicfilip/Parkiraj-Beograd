@@ -54,7 +54,7 @@ class LocationsController extends Controller
         }
         if ($validator->fails()) {
             \Log::debug("pao");
-            return Redirect::to(route('admin',['message'=>'2']) . "#add-location");
+            return Redirect::to(route('admin',['message'=>'3']) . "#add-location");
         }
 
 
@@ -74,7 +74,7 @@ class LocationsController extends Controller
         else{
             GarageController::store($parkinglocation);
         }
-        return Redirect::to(route('admin',['message'=>'2']) . "#locations");
+        return Redirect::to(route('admin',['message'=>'4']) . "#locations");
     }
 
     public function delete(Request $request,$idPar){
@@ -93,6 +93,49 @@ class LocationsController extends Controller
     }
 
     public function edit(Request $request){
+         //Validation of inputs.
+         $type=request('parkingType');
+         if($type=="sensor"){
+             $validator = Validator::make($request->all(), [
+                 'x' => [
+                     'required', 
+                     'string',
+                     'regex:/^(-?\d+(\.\d+)?)/',      
+                     ],
+                 'y' => [
+                     'required', 
+                     'string',
+                     'regex:/^(-?\d+(\.\d+)?)/',      
+                 ],
+                 'zone' => [
+                     'regex:/Zelena|Plava|Crvena/',
+                 ],
+                 
+                 ]);
+         }else{
+             $validator = Validator::make($request->all(), [
+                 'x' => [
+                     'required', 
+                     'string',
+                     'regex:/^(-?\d+(\.\d+)?)/',      
+                     ],
+                 'y' => [
+                     'required', 
+                     'string',
+                     'regex:/^(-?\d+(\.\d+)?)/',      
+                 ],
+                 'cap' => [
+                     'regex:/^[0-9]*$/',
+                 ]
+                 ]);
+         }
+         if ($validator->fails()) {
+             \Log::debug("pao");
+             return Redirect::to(route('admin',['message'=>'5']) . "#locations");
+         }
+
+         //Editing in base.
+
         $idPar=request('id');
         $x=request('x');
         $y=request('y');

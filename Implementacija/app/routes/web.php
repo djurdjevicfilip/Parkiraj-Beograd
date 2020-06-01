@@ -46,7 +46,7 @@ Route::group(['middleware' => ['auth', 'mod']], function() {
 });
 //Locations edit
 Route::post('/edit','LocationsController@edit');
-=======
+
 
 //Occupy sensor
 Route::post('/getmsg','SensorController@occupyOnArrival');

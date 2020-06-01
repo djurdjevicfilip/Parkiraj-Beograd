@@ -113,7 +113,7 @@ $(window).on("load", function(){
     
     
 });
-
+//JS for editing
 var clicked = false;
 
 function edit(id,flag) {
@@ -121,6 +121,7 @@ function edit(id,flag) {
     if(flag=='2'){
     var idPar = id.parentElement.parentElement.children[0].innerHTML;
     document.getElementById("idParEdit").value = idPar;
+    document.getElementById("idParEditTd").innerHTML = idPar;
     var x = id.parentElement.parentElement.children[1].innerHTML;
     document.getElementById("xEdit").value = x;
     var y = id.parentElement.parentElement.children[2].innerHTML;
@@ -136,6 +137,7 @@ function edit(id,flag) {
     else{
       var idPar = id.parentElement.parentElement.children[0].innerHTML;
       document.getElementById("idParEditS").value = idPar;
+      document.getElementById("idParEditSTd").innerHTML = idPar;
       var x = id.parentElement.parentElement.children[1].innerHTML;
       document.getElementById("xEditS").value = x;
       var y = id.parentElement.parentElement.children[2].innerHTML;

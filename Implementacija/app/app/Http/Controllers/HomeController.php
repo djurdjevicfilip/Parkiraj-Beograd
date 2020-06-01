@@ -35,10 +35,10 @@ class HomeController extends Controller
     public function admin($message=0)
     {
         
-       
+        $locations=ParkingLocation::with(['location','sensor','garage'])->get();
         $users=User::with('administration')->get();
         //Passing all users as a parameter for the table
-        return view('pages.admin')->with('users',$users)->with('message',$message);
+        return view('pages.admin')->with('users',$users)->with('message',$message)->with('locations',$locations);
     }
     /* Moderator page */
     public function mod($message=0){
