@@ -115,7 +115,7 @@ $(window).on("load", function(){
     
     
 });
-
+//JS for editing
 var clicked = false;
 /**
  * Edit Location - Place edit form
