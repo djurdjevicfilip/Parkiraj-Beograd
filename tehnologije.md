@@ -13,24 +13,26 @@ Standardni jezici koji su korišćeni :
   | Tehnologija/Bibl.  |      Opis      |  Verzija |
 |:----------:|-------------|------:|
 | [Laravel](https://www.laravel.com) | PHP Framework za veb aplikacije, sa ekspresivnom i elegantnom sintaksom  | 7.x |
-| [polyline.js](https://github.com/mapbox/polyline) | Biblioteka koja se koristi za dekodiranje polyline objekta dobijenog od Google Maps Directions API. Uz pomoc ove biblioteke mozemo da dobijemo niz pozicija koje predstavljaju rutu, a samim tim i da simuliramo  | |
+| [polyline.js](https://github.com/mapbox/polyline) | Biblioteka koja se koristi za dekodiranje polyline objekta dobijenog od Google Maps Directions API. Uz pomoć ove biblioteke možemo da dobijemo niz pozicija koje predstavljaju rutu, a samim tim i da simuliramo kretanje korisnika  | |
 |  [alertify.js](https://alertifyjs.com/) | Biblioteka koja se koristi za prikazivanje obaveštenja korisniku ||
-| [Pusher API](https://pusher.com/) | API koji se koristi za slanje obaveštavanje korisnika. Korisnik se pretplacuje na kanal, i bilo koja promena senzora na serveru se manifestuje kod klijenata| |
+| [Pusher API](https://pusher.com/) | API koji se koristi za slanje obaveštavanje korisnika. Korisnik se pretplaćuje na kanal, i bilo koja promena senzora (dodavanje, brisanje, senzor postaje zauzet...) na serveru se manifestuje kod klijenata| |
 |[Google Maps JavaScript API](https://cloud.google.com/maps-platform/) | Google-ov API za dinamičko prikazivanje mape. On nam služi za postavljanje markera na mapu, kao i za većinu onoga što se vidi na mapi. |3.0|
-|[Google Maps Directions API](https://cloud.google.com/maps-platform/) | Google-ov API za prikazivanje rute do mesta. Ovaj API takodje koristimo za uzimanje polyline objekta koji se dalje salje u polyline.js|3.0|
-|[Google Maps Places API](https://cloud.google.com/maps-platform/) | Google-ov API za pretragu i prikazivanje relevantnih mesta. Ovaj API nam omogucava i *location biasing*|3.0|
-|[Google Maps Distance Matrix API](https://cloud.google.com/maps-platform/) | Google-ov API za pronalazenje najblize lokacije. (prethodno koriscen, vise detalja prikazano je u nastavku ovog dokumenta, kao i u readme.md fajlu na nasem [Git Repozitorijumu](https://github.com/djurdjevicfilip/Parkiraj-Beograd) ) |3.0|
+|[Google Maps Directions API](https://cloud.google.com/maps-platform/) | Google-ov API za prikazivanje rute do mesta. Ovaj API takodje koristimo za uzimanje polyline objekta koji se dalje šalje u polyline.js|3.0|
+|[Google Maps Places API](https://cloud.google.com/maps-platform/) | Google-ov API za pretragu i prikazivanje relevantnih mesta. Ovaj API nam omogućava i *location biasing*|3.0|
+|[Google Maps Distance Matrix API](https://cloud.google.com/maps-platform/) | Google-ov API za pronalazenje najbliže lokacije. (prethodno korišćen, više detalja prikazano je u nastavku ovog dokumenta, kao i u readme.md fajlu na našem [Git Repozitorijumu](https://github.com/djurdjevicfilip/Parkiraj-Beograd) ) |3.0|
 |[Apache](http://apache.com/) | Besplatan open-source HTTP server |2.4.41|
-|[Ajax](http://project-osrm.org/) | Ajax koristimo za slanje poruka serveru od strane klijenta, o dolasku na odredjenu lokaciju||
+|[Ajax](http://project-osrm.org/) | Ajax koristimo za slanje poruka serveru od strane klijenta, o dolasku na određenu lokaciju||
+
 ### Ostalo
  | Stavka  |      Opis      |  
 |:----------:|-------------|------:|
 | [GitHub](https://www.github.com) | Platforma za kolaboraciju | 
-| [GitHub Pages](https://www.github.com) | Besplatno host-ovanje stranica, korisceno za prototip | 
-| [MS Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software) | Platforma koriscena za komunikaciju izmedju clanova tima| 
-| [VS Code](https://code.visualstudio.com/) | Vrlo mocan Code Editor, sa odlicnim izborom ekstenzija| 
+| [GitHub Pages](https://www.github.com) | Besplatno host-ovanje stranica, korišćeno za prototip | 
+| [MS Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software) | Platforma korišćena za komunikaciju između članova tima| 
+| [VS Code](https://code.visualstudio.com/) | Vrlo mocan Code Editor, sa odličnim izborom ekstenzija| 
   | [VS Code Extensions](https://code.visualstudio.com/) | Prettier, Bracket Pair Colorizer,   Better Comments | 
-
+   | [Toad Data Modeler](https://www.quest.com/products/toad-data-modeler/) | Alat za modelovanje baze podataka | 
+ | [StarUML](http://staruml.io/) | Alat za UML modelovanje |
 
 ## OSRM API vs. Google Maps API
 
