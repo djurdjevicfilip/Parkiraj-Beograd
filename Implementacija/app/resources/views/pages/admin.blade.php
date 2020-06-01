@@ -107,9 +107,6 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="hom" role="tabpanel" aria-labelledby="home-tab">
                             <h3 class="register-heading">Dodaj mesto</h3>
-                            @if($message=='3')
-                                <h4 style="color:#000240" class="register-heading">Nekorektan unos!</h4>
-                            @endif
 
                                 <form action="locations"method="post" class="locations-form">
                                     {{ csrf_field() }}
@@ -174,16 +171,16 @@
                 <h2>Nalozi</h2>
                 <p>Tabela sa svim nalozima</p>
             </div>
-            <ul class="nav nav-tabs nav-justified" id="myTabUser" role="tablist">
+            <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                 <li class="nav-item nav-users">
-                    <a class="nav-link nav-users active" id="home-tabUser" data-toggle="tab" href="#homeUser" role="tab" aria-controls="homeUser" aria-selected="true">Aktivirani</a>
+                    <a class="nav-link nav-users active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Aktivirani</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-users" id="profile-tabUser" data-toggle="tab" href="#profileUser" role="tab" aria-controls="profileUser" aria-selected="false">Neaktivirani</a>
+                    <a class="nav-link nav-users" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Neaktivirani</a>
                 </li>
             </ul>
-            <div class="tab-content tab-users" id="myTabContentUser">
-                <div class="tab-pane fade show active" id="homeUser" role="tabpanel" aria-labelledby="home-tabUser">
+            <div class="tab-content tab-users" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <div class="card mb-4">
                 <div class="card-body">
                     <div class="table-responsive">
@@ -239,7 +236,7 @@
                 </div>
             </div>
                 </div>
-                <div class="tab-pane fade show" id="profileUser" role="tabpanel" aria-labelledby="profile-tabUser">
+                <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="table-responsive">
@@ -282,8 +279,8 @@
     </section>
     <!-- End Of User Table Section -->
      
-    <!-- ======= Moderators Section ======= -->
-    <section id="moderators">
+    <!-- ======= Locations Table Section ======= -->
+    <section id="locations">
         <div class="container">
             <div class="section-title">
                 <h2>Nalozi</h2>
@@ -387,7 +384,6 @@
                                                             <button class="btnLogin">Potvrdi</button>
                                                         </div>
                                                     </div>
-                                                    <button class="btn btn-default btnCancel" onClick="window.location.reload();" ></button>
                                                 </td>
                                             </form>
                                         </tr>
@@ -460,7 +456,6 @@
                                                             <button class="btnLogin">Potvrdi</button>
                                                         </div>
                                                     </div>
-                                                    <button class="btn btn-default btnCancel" onClick="window.location.reload();" ></button>
                                                 </td>
                                             </form> 
                                         </tr>     
