@@ -249,7 +249,6 @@
                                             <th scope="col">Redni broj</th>
                                             <th scope="col">Ime korisnika</th>
                                             <th scope="col">E-mail adresa korisnika</th>
-                                            <th scope="col">Uloga korisnika</th>
                                             <th scope="col">Promeni</th>
                                         </tr>
                                     </thead>
