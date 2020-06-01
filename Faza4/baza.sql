@@ -1,54 +1,55 @@
-﻿/*
+/*
 Created: 4/14/2020
-Modified: 4/14/2020
+Modified: 6/1/2020
 Model: Logical model
 Database: MySQL 8.0
 */
 
 -- Create tables section -------------------------------------------------
 
--- Table Account
+-- Table Users
 
-CREATE TABLE `Account`
+CREATE TABLE `Users`
 (
-  `idAcc` Int NOT NULL AUTO_INCREMENT,
-  `Email` Varchar(255) NOT NULL,
+  `idUser` Int NOT NULL AUTO_INCREMENT,
+  `Email` Varchar(200) NOT NULL,
   `Password` Varchar(30) NOT NULL,
   `Name` Varchar(20) NOT NULL,
   `Type` Tinyint NOT NULL,
-  PRIMARY KEY (`idAcc`),
-  UNIQUE `Attribute1` (`idAcc`)
+  PRIMARY KEY (`idUser`),
+  UNIQUE `Attribute1` (`idUser`)
 )
 ;
 
-ALTER TABLE `Account` ADD UNIQUE `Email` (`Email`)
+ALTER TABLE `Users` ADD UNIQUE `Email` (`Email`)
 ;
 
--- Table User
+-- Table Client
 
-CREATE TABLE `User`
+CREATE TABLE `Client`
 (
-  `Attribute1` Int NOT NULL,
+  `idAcc` Int NOT NULL,
   `idLoc` Int
 )
 ;
 
-CREATE INDEX `IX_Relationship21` ON `User` (`idLoc`)
+CREATE INDEX `IX_Relationship21` ON `Client` (`idLoc`)
 ;
 
-ALTER TABLE `User` ADD PRIMARY KEY (`Attribute1`)
+ALTER TABLE `Client` ADD PRIMARY KEY (`idAcc`)
 ;
 
 -- Table Administrative
 
 CREATE TABLE `Administrative`
 (
-  `Attribute1` Int NOT NULL,
-  `isAdmin` Bool NOT NULL
+  `idAcc` Int NOT NULL,
+  `isAdmin` Tinyint(1) NOT NULL,
+  `active` Char(20)
 )
 ;
 
-ALTER TABLE `Administrative` ADD PRIMARY KEY (`Attribute1`)
+ALTER TABLE `Administrative` ADD PRIMARY KEY (`idAcc`)
 ;
 
 -- Table ParkingLocation
@@ -57,14 +58,10 @@ CREATE TABLE `ParkingLocation`
 (
   `idPar` Int NOT NULL AUTO_INCREMENT,
   `Type` Tinyint NOT NULL,
-  `Attribute1` Int NOT NULL,
   `idLoc` Int NOT NULL,
   PRIMARY KEY (`idPar`),
   UNIQUE `idLoc` (`idPar`)
 )
-;
-
-CREATE INDEX `IX_Relationship17` ON `ParkingLocation` (`Attribute1`)
 ;
 
 CREATE INDEX `IX_Relationship20` ON `ParkingLocation` (`idLoc`)
@@ -75,9 +72,9 @@ CREATE INDEX `IX_Relationship20` ON `ParkingLocation` (`idLoc`)
 CREATE TABLE `Sensor`
 (
   `idLoc` Int NOT NULL,
-  `Free` Bool NOT NULL,
+  `Free` Tinyint(1) NOT NULL,
   `Zone` Varchar(20) NOT NULL,
-  `Disabled` Bool NOT NULL
+  `Disabled` Tinyint(1) NOT NULL
 )
 ;
 
@@ -94,21 +91,6 @@ CREATE TABLE `Garage`
 ;
 
 ALTER TABLE `Garage` ADD PRIMARY KEY (`idLoc`)
-;
-
--- Table going_to
-
-CREATE TABLE `going_to`
-(
-  `Attribute1` Int NOT NULL,
-  `idLoc` Int NOT NULL
-)
-;
-
-CREATE INDEX `IX_Relationship24` ON `going_to` (`idLoc`)
-;
-
-ALTER TABLE `going_to` ADD PRIMARY KEY (`Attribute1`)
 ;
 
 -- Table Location
@@ -131,19 +113,10 @@ ALTER TABLE `Sensor` ADD CONSTRAINT `R1` FOREIGN KEY (`idLoc`) REFERENCES `Parki
 ALTER TABLE `Garage` ADD CONSTRAINT `R2` FOREIGN KEY (`idLoc`) REFERENCES `ParkingLocation` (`idPar`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
 
-ALTER TABLE `ParkingLocation` ADD CONSTRAINT `R3` FOREIGN KEY (`Attribute1`) REFERENCES `Administrative` (`Attribute1`) ON DELETE RESTRICT ON UPDATE RESTRICT
-;
-
 ALTER TABLE `ParkingLocation` ADD CONSTRAINT `R4` FOREIGN KEY (`idLoc`) REFERENCES `Location` (`idLoc`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
 
-ALTER TABLE `User` ADD CONSTRAINT `R6` FOREIGN KEY (`idLoc`) REFERENCES `Location` (`idLoc`) ON DELETE SET NULL ON UPDATE CASCADE
-;
-
-ALTER TABLE `going_to` ADD CONSTRAINT `R5` FOREIGN KEY (`Attribute1`) REFERENCES `User` (`Attribute1`) ON DELETE CASCADE ON UPDATE CASCADE
-;
-
-ALTER TABLE `going_to` ADD CONSTRAINT `R7` FOREIGN KEY (`idLoc`) REFERENCES `Sensor` (`idLoc`) ON DELETE CASCADE ON UPDATE CASCADE
+ALTER TABLE `Client` ADD CONSTRAINT `R6` FOREIGN KEY (`idLoc`) REFERENCES `Location` (`idLoc`) ON DELETE SET NULL ON UPDATE CASCADE
 ;
 
 
