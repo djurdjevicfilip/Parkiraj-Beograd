@@ -37,7 +37,6 @@
                 <ul>
                     <li class="active"><a href="#header">Parkiraj! Beograd</a></li>
                     <li><a href="#users">Nalozi</a></li>
-                    <li><a href="#moderators">Moderatori</a></li>
                     <li><a href="#locations">Lokacije</a></li>
                     <li><a href="#passchange">Promeni šifru</a></li>
                     <li><a href="#add-location">Dodaj mesto</a></li>
@@ -55,59 +54,58 @@
         </div>
     </header>
     <!-- End Header -->
+ <!-- ======= Password Change Section ======= -->
+ <section id="passchange">
+    <div class="container register">
+        <div class="row">
+            <div class="col-md-12 register-right">
 
-    <!-- ======= Password Change Section ======= -->
-    <section id="passchange">
-        <div class="container register">
-            <div class="row">
-                <div class="col-md-12 register-right">
-
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="hom" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="home-tab">
-                            <h3 class="register-heading">Promeni šifru</h3>
-                            <div class="row register-form">
-                                <form style="width:100%; margin-left:33%"class="form-horizontal" method="post" action="passchange">
-                                    {{ csrf_field() }}
-                                @if($message=='1')
-                                    <h4 style="color:#000240">Uspešno ste promenili šifru! ...</h4>
-                                @elseif($message=='2')
-                                    <h4 style="color:red">Niste uspešno promenili šifru!</h4>
-                               @endif
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="password" name="oldPassword"class="form-control" placeholder="Stara Šifra *" value="" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password"name="newPassword" class="form-control" placeholder="Nova šifru *" value="" />
-                                    </div>
-
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="home-tab">
+                        <h3 class="register-heading">Promeni šifru</h3>
+                        <div class="row register-form">
+                            <form style="width:100%; margin-left:33%"class="form-horizontal" method="post" action="passchange">
+                                {{ csrf_field() }}
+                            @if($message=='1')
+                                <h4 style="color:#000240">Uspešno ste promenili šifru! ...</h4>
+                            @elseif($message=='2')
+                                <h4 style="color:red">Niste uspešno promenili šifru!</h4>
+                           @endif
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="password" name="oldPassword"class="form-control" placeholder="Stara Šifra *" value="" />
                                 </div>
-                                <div class="col-md-6">
-
-                                    <input type="submit" class="btnLogin" value="Promeni šifru" />
+                                <div class="form-group">
+                                    <input type="password"name="newPassword" class="form-control" placeholder="Nova šifru *" value="" />
                                 </div>
-                            </form>
+
                             </div>
+                            <div class="col-md-6">
 
+                                <input type="submit" class="btnLogin" value="Promeni šifru" />
+                            </div>
+                        </form>
                         </div>
 
                     </div>
+
                 </div>
             </div>
-
         </div>
-    </section>
-    <!-- End Of Password Change Section -->
+
+    </div>
+</section>
+<!-- End Of Password Change Section -->
     <!-- ======= Add Location Section ======= -->
     <section id="add-location">
         <div class="container register">
             <div class="row">
                 <div class="col-md-12 add-locations">
-
+                    @if($message=='3')
+                                <h4 style="color:#000240" class="register-heading">Nekorektan unos!</h4>
+                            @endif
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="hom" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="home-tab">
                             <h3 class="register-heading">Dodaj mesto</h3>
 
                                 <form action="locations"method="post" class="locations-form">
@@ -155,8 +153,7 @@
                                     <div class="fieldis-grouped">
                                         <div class="control">
                                             <button 
-                                            class="btnLogin">Dodaj</button></div>
-                                </form>
+                                            class="btnLogin">Dodaj</button></div></form>
                             </div>
 
                         </div>
@@ -199,13 +196,18 @@
                             </thead>
                             <tbody>
                                 @foreach($users as $user)
-                                @if($user->type=='0'||($user->administration!=null&&$user->administration->active=='1') )
                                 @if($user->type=='0'||$user->administration->active=='1')
                                 <tr>
                                     <td> {{$user->idUser}} </td>
                                     <td> {{$user->name}} </td>
                                     <td> {{$user->email}} </td>
-                                    <td> {{$user->type}} </td>
+                                    @if($user->type==0)
+                                    <td> Korisnik </td>
+                                    @elseif($user->type==1)
+                                        <td> Moderator </td>
+                                    @else
+                                        <td> Administrator </td>
+                                    @endif
                                     <td style="width:20px">
                                         @if($user->type!='2')
                                             {!! Form::open(['action' => ['UsersController@update', 'idUser'=>$user->idUser,'act'=>'up'], 'method' => 'PUT']) !!}
@@ -238,7 +240,7 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <table class="table table-bordered" id="dataTable4" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
                                             <th scope="col">Redni broj</th>
@@ -255,7 +257,8 @@
                                             <td> {{$user->idUser}} </td>
                                             <td> {{$user->name}} </td>
                                             <td> {{$user->email}} </td>
-                                            <td> {{$user->type}} </td>
+                                          
+                                            
                                             <td style="width:120px">
                                                     {!! Form::open(['action' => ['AdministrationController@activate', 'idUser'=>$user->idUser], 'method' => 'PUT']) !!}
                                                     {{Form::submit('Aktiviraj',['class'=>'btn btnPrimary'])}}
@@ -282,65 +285,25 @@
         <div class="container">
             <div class="section-title">
                 <h2>Nalozi</h2>
-                <p>Moderatori</p>
-            </div>
-            <div class="card mb-4">
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Redni broj</th>
-                                    <th scope="col">Ime korisnika</th>
-                                    <th scope="col">E-mail adresa korisnika</th>
-                                    <th scope="col">Uloga korisnika</th>
-                                    <th scope="col">Promeni</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($users as $user)
-                                @if($user->type=='1'&&$user->administration->active=='0')
-                                <tr>
-                                    <td> {{$user->idUser}} </td>
-                                    <td> {{$user->name}} </td>
-                                    <td> {{$user->email}} </td>
-                                    <td> {{$user->type}} </td>
-                                    <td style="width:120px">
-                                            {!! Form::open(['action' => ['AdministrationController@activate', 'idUser'=>$user->idUser], 'method' => 'PUT']) !!}
-                                            {{Form::submit('Aktiviraj',['class'=>'btn btnPrimary'])}}
-                                            {!! Form::close() !!} 
-                                    </td>
-                                </tr>
-                                @endif
-                                @endforeach
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Of Accept Moderators Section -->
-    <!-- ======= Locations Table Section ======= -->
-    <section id="locations">
-        <div class="container">
-            <div class="section-title">
-                <h2>Nalozi</h2>
                 <p>Tabela sa svim nalozima</p>
+                @if($message=='5')
+                    <p>Nekorektna izmena</p>
+                @elseif($message=='4')
+                    <p style="font-size: 20px; ">Uspešno uneta/izmenjena lokacija!</p>
+                @endif
             </div>
             <div class="card mb-4">
                 <div class="card-body">
                     <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Senzor</a>
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#homee" role="tab" aria-controls="home" aria-selected="true">Senzor</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Garaža</a>
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profilee" role="tab" aria-controls="profile" aria-selected="false">Garaža</a>
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="tab-pane fade show active" id="homee" role="tabpanel" aria-labelledby="home-tab">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
                                     <thead>
@@ -369,7 +332,7 @@
                                             @endif
                                             <td> {{$location->sensor->Zone}} </td>
                                             <td>
-                                            <button class="btn btn-default btnEdit" onClick="edit(this,1)" ></button>
+                                            <button class="btn btn-default btnEdit" onClick="edit(this,1)" style="background:#000240; color:white">Izmeni</button>
                                             {!! Form::open(['action' => ['LocationsController@delete','idPar'=>$location->idPar], 'method' => 'DELETE']) !!}
                                             {{Form::submit('',['class'=>'btn btnPrimary btnDel'])}}
                                             {!! Form::close() !!}
@@ -381,6 +344,7 @@
                                             <form action="edit"method="post" >
                                                 {{ csrf_field() }}
                                                 <td>
+                                                    <div id='idParEditSTd'></div>
                                                     <div class="control">
                                                         <input name="id"class="form-control disable"type="text" id="idParEditS">
                                                     </div>
@@ -400,9 +364,8 @@
                                                     <div class="control">
                                                         <!-- <input name="dis"class="form-control"type="text"placeholder="Kapacitet"> -->
                                                         <select name="dis"class="custom-select">
-                                                            <option name="dis" id="disEditS"selected>Invalid?</option>
-                                                            <option name="dis"value="1">Da</option>
-                                                            <option name="dis"value="0">Ne</option>
+                                                            <option name="dis"value="1" id="dis1">Da</option>
+                                                            <option name="dis"value="0" id="dis0">Ne</option>
                                                         </select>
                                                     </div>
                                                 </td>
@@ -410,17 +373,16 @@
                                                     <div class="control">
                                                         <!-- <input name="zone"class="form-control"type="text"placeholder="Kapacitet" id = "zoneEditS"> -->
                                                         <select name="zone"class="custom-select">
-                                                            <option name="zone"selected id="zoneEditS">Zona?</option>
-                                                            <option name="zone"value="Plava">Plava</option>
-                                                            <option name="zone"value="Zelena">Zelena</option>
-                                                            <option name="zone"value="Crvena">Crvena</option>
+                                                            <option name="zone"value="Plava" id="Plava">Plava</option>
+                                                            <option name="zone"value="Zelena" id="Zelena">Zelena</option>
+                                                            <option name="zone"value="Crvena" id="Crvena">Crvena</option>
                                                         </select>
                                                     </div>
                                                 </td>
                                                 <td>      
                                                     <div class="fieldis-grouped">
                                                         <div class="control">
-                                                            <button class="btnLogin">Izmeni</button>
+                                                            <button class="btnLogin">Potvrdi</button>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -430,7 +392,7 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="tab-pane fade show" id="profilee" role="tabpanel" aria-labelledby="profile-tab">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable3" width="100%" cellspacing="0">
                                     <thead>
@@ -453,7 +415,7 @@
                                             <td> {{$location->location->y}} </td>
                                             <td> {{$location->garage->Free}} </td>
                                             <td>
-                                            <button class="btn btn-default btnEdit" onClick="edit(this,2)" ></button>
+                                            <button class="btn btn-default" onClick="edit(this,2)" style="background:#000240; color:white" >Izmeni</button>
                                                 {!! Form::open(['action' => ['LocationsController@delete','idPar'=>$location->idPar], 'method' => 'DELETE']) !!}
                                                 {{Form::submit('',['class'=>'btn btnPrimary btnDel'])}}
                                                 {!! Form::close() !!}
@@ -467,6 +429,7 @@
                                             <form action="edit"method="post" >
                                             {{ csrf_field() }}
                                                 <td>
+                                                    <div id='idParEditTd'></div>
                                                     <div class="control">
                                                         <!-- <div id="idParEdit" name ="id" class="form-control"></div> -->
                                                         <input name="id"class="form-control disable"type="text" id="idParEdit">
@@ -491,7 +454,7 @@
                                                 <td>      
                                                     <div class="fieldis-grouped">
                                                         <div class="control">
-                                                            <button class="btnLogin">Izmeni</button>
+                                                            <button class="btnLogin">Potvrdi</button>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -517,6 +480,7 @@
         Tim: <a>Sportaši</a>
 
     </div>
+    
     <div class="user">
         <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                document.getElementById('logout-form').submit();">
@@ -557,7 +521,9 @@
         $(document).ready(function() {
             $('#dataTable3').dataTable();
         });
-        
+        $(document).ready(function() {
+            $('#dataTable4').dataTable();
+        });
     </script>
 </body>
 

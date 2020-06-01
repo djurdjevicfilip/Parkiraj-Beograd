@@ -9,14 +9,20 @@ use App\Sensor;
 use App\Garage;
 use Validator;
 use Redirect;
+/**
+ * Locaions Controller
+ * Author: Danilo Dabovic
+ */
 class LocationsController extends Controller
 {
    
     /** Storing parking locations
      *  & delegating to GarageController and SensorController
+     * @param Request $request
+     * @return page
      */
     public function store(Request $request){
-        //validation
+        //Validation
         $type=request('parkingType');
         if($type=="sensor"){
             $validator = Validator::make($request->all(), [
@@ -53,8 +59,7 @@ class LocationsController extends Controller
                 ]);
         }
         if ($validator->fails()) {
-            \Log::debug("pao");
-            return Redirect::to(route('admin',['message'=>'2']) . "#add-location");
+            return Redirect::to(route('admin',['message'=>'3']) . "#add-location");
         }
 
 
@@ -74,48 +79,97 @@ class LocationsController extends Controller
         else{
             GarageController::store($parkinglocation);
         }
-        return Redirect::to(route('admin',['message'=>'2']) . "#locations");
+        return Redirect::to(route('admin',['message'=>'4']) . "#locations");
     }
-
+    /**
+     * Deleting locations
+     * @param Request $request 
+     * @param $idPar
+     * @return admin.blade.php
+     */
     public function delete(Request $request,$idPar){
-        \Log::debug($request);
-        $location = ParkingLocation::find($idPar);
-        if($location->sensor!=null){
-            $sensor=Sensor::find($idPar);
+        $parkinglocation = ParkingLocation::find($idPar);
+        if($parkinglocation->sensor!=null){
+            $sensor=$parkinglocation->sensor;
             $sensor->delete();
         }else{
-            $garage=Garage::find($idPar);
+            $garage=$parkinglocation->garage;
             $garage->delete();
         }
+        $parkinglocation->delete();
+        $location = $parkinglocation->location();
         $location->delete();
-
         return redirect()->to(route('admin').'#locations');
     }
-
+    /**
+     * Editing locations
+     * @param Request $request
+     * @return admin.blade.php
+     */
     public function edit(Request $request){
+        //Validation of inputs.
+
         $idPar=request('id');
         $x=request('x');
         $y=request('y');
-        \Log::debug($x);
-        \Log::debug($y);
         $location = ParkingLocation::find($idPar);
         if($location->sensor!=null){
-            $dis=request('dis');
-            $zone=request('zone');
-            $sensor = $location->sensor;
-            $sensor->store($idPar,$dis,$zone);
-            \Log::debug($sensor);
+            $validator = Validator::make($request->all(), [
+                'x' => [
+                    'required', 
+                    'string',
+                    'regex:/^(-?\d+(\.\d+)?)/',      
+                    ],
+                'y' => [
+                    'required', 
+                    'string',
+                    'regex:/^(-?\d+(\.\d+)?)/',      
+                ],
+                'zone' => [
+                    'regex:/Zelena|Plava|Crvena/',
+                ],
+                
+                ]);
         }else{
-            $cap = request('cap');
-            $garage = $location->garage;
-            $garage->store($idPar,$cap);
-            \Log::debug($garage);
+            $validator = Validator::make($request->all(), [
+                'x' => [
+                    'required', 
+                    'string',
+                    'regex:/^(-?\d+(\.\d+)?)/',      
+                    ],
+                'y' => [
+                    'required', 
+                    'string',
+                    'regex:/^(-?\d+(\.\d+)?)/',      
+                ],
+                'cap' => [
+                    'regex:/^[0-9]*$/',
+                ]
+                ]);
         }
-        $coord = $location->location;
-        $coord->store($x,$y);
-        \Log::debug($coord);
-        return redirect()->to(route('admin').'#locations');
-    }
+        if ($validator->fails()) {
+            return Redirect::to(route('admin',['message'=>'5']) . "#locations");
+        }
+
+        //Editing in database.
+
+       if($location->sensor!=null){
+           $dis=request('dis');
+           $zone=request('zone');
+           $sensor = $location->sensor;
+           $sensor->store($idPar,$dis,$zone);
+           \Log::debug($sensor);
+       }else{
+           $cap = request('cap');
+           $garage = $location->garage;
+           $garage->store($idPar,$cap);
+           \Log::debug($garage);
+       }
+       $coord = $location->location;
+       $coord->store($x,$y);
+       return redirect()->to(route('admin',['message'=>'4']).'#locations');
+   }
+
 
 
 }

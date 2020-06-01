@@ -1,4 +1,7 @@
 
+![image](https://github.com/djurdjevicfilip/Parkiraj-Beograd/blob/master/Implementacija/app/Parkiraj_Beograd.png?raw=true)
+# Implementacija aplikacije
+## Simuliranje senzora
 #### Windows - *Task Scheduler*.
 #### Linux  - *CRON*
 ### Uputstvo za simuliranje senzora na Windows platformi

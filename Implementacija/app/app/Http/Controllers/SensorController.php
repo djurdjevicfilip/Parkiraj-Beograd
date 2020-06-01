@@ -7,11 +7,17 @@ use App\ParkingLocation;
 use App\Location;
 use App\Sensor;
 use App\Garage;
-
+/**
+ * SensorController controls sensors
+ * Authors: Filip Djurdjevic
+ */
 class SensorController extends Controller
 {
     
-    //Storing sensors 
+    /**
+     * Storing sensors
+     * @param ParkingLocation $parkinglocation
+     */
     public static function store($parkinglocation){
         $disabled=request('disabled');
         if($disabled=="on"){
@@ -24,26 +30,28 @@ class SensorController extends Controller
         $sensor->store($parkinglocation->idPar,$disabled,$zone);
     }
 
-    /** Update random sensor(s)
+    /** 
+     * Update random sensor(s)
      * This is used for sensor simulation
+     * (The same sensor is permitted to be updated twice in this function)
      */
     public function update(){
-        \Log::debug("OCCUPY");
         //Take random sensor
         $sensor=Sensor::all()->random(1)->first();
-        \Log::debug($sensor);
+        
         //Occupy it
         $sensor->occupy();
-        \Log::debug($sensor);
 
-       \Log::debug("FREE");
         //Take random sensor
         $sensor=Sensor::all()->random(1)->first();
         //Free it
         $sensor->free();
-        \Log::debug($sensor);
+
     }
-    //Update sensor when a car arrives
+    /**
+     * Update sensor when a car arrives
+     * This is used for 
+     * */
     public function occupyOnArrival(){
         $idPar=request('idPar');
         $sensor=Sensor::where('idPar',$idPar)->first();
@@ -51,13 +59,15 @@ class SensorController extends Controller
         $sensor->occupy();
 
     }
-    /** Get sensor data 
-     * (for now)
+    /**
+     *  Get sensor data 
+     * @param Sensor $sensor
+     * @return array $dataMerge
      */
-    public static function sensorUpdateData($subclass){
-        $parkinglocation=ParkingLocation::where('idPar',$subclass->idPar)->first();
+    public static function sensorUpdateData($sensor){
+        $parkinglocation=ParkingLocation::where('idPar',$sensor->idPar)->first();
         $location=Location::where('idLoc',$parkinglocation->idLoc)->first();
-        $dataA = $subclass->toArray();
+        $dataA = $sensor->toArray();
         $dataB = $location->toArray();
         $dataMerge = array_merge($dataA, $dataB);
         return $dataMerge;

@@ -1,16 +1,24 @@
-//Setting up map
+/**
+ * Setting up the map, and adding all the necessary features
+ * Author: Milan Ciganovic
+ */
 var directionsService;
 var directionsRenderer;
 var locations=[];
 var markers = [];
 var i = 0;
-
+var location_now2 = 0;
+var marker_now2;
 var marker_now;
 var location_now=0;
 var position=[];
+var dst=false;
+var dstx,dsty;
+/**
+ * Retreive location data from the sent data
+ */
 function retrieveLocations(){
 	//Retrieve location data from the sent data
-	console.log(data);
 	for(var i=0;i<data.length;i++){
 		locations[i]=[];
 		locations[i].x=data[i].location.x;
@@ -28,8 +36,12 @@ function retrieveLocations(){
 			locations[i].type="garage";
 		}
 	}
+	console.log(locations);
 
 }
+/**
+ * Initialize map and all it's features
+ */
 function initMap() {
 	
 	
@@ -37,36 +49,36 @@ function initMap() {
 	retrieveLocations();
 	
 	if(map==null){
-	map = new google.maps.Map(document.getElementById('map'), {
-		center: { lat: 44.80401, lng: 20.46513 },
-		zoom: 13.5,
-		disableDefaultUI: true,
-		zoomControl: true,
-		//Add style to the map
-		styles:[
-			{
-				"featureType": "all",
-				"elementType": "all",
-				"stylers": [
-					{
-						"invert_lightness": true
-					},
-					{
-						"saturation": 10
-					},
-					{
-						"lightness": 30
-					},
-					{
-						"gamma": 0.5
-					},
-					{
-						"hue": "#435158"
-					}
-				]
-			}
-		]
-	});
+		map = new google.maps.Map(document.getElementById('map'), {
+			center: { lat: 44.80401, lng: 20.46513 },
+			zoom: 13.5,
+			disableDefaultUI: true,
+			zoomControl: true,
+			//Add style to the map
+			styles:[
+				{
+					"featureType": "all",
+					"elementType": "all",
+					"stylers": [
+						{
+							"invert_lightness": true
+						},
+						{
+							"saturation": 10
+						},
+						{
+							"lightness": 30
+						},
+						{
+							"gamma": 0.5
+						},
+						{
+							"hue": "#435158"
+						}
+					]
+				}
+			]
+		});
 	
 	markers=[];
 	//Add controls to the map
@@ -127,19 +139,30 @@ function CenterControl(controlDiv, map, text) {
 	
 
 }
+
 function addCustomControls(){
 	centerControlDiv = document.createElement('div');
-	centerControl = new CenterControl(centerControlDiv, map, 'Route');
+	centerControl = new CenterControl(centerControlDiv, map, 'Ruta');
 	centerControlDiv.index = 1;
 	centerControlDiv.onclick=findNearestOSRM;
 	map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
 
 	
 	centerControlDiv = document.createElement('div');
-	centerControl = new CenterControl(centerControlDiv, map, 'Stop Simulation');
+	centerControl = new CenterControl(centerControlDiv, map, 'Zaustavi Simulaciju');
 	centerControlDiv.index = 1;
 	centerControlDiv.onclick=stopSimulation;
 	map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
+
+	centerControlDiv = document.createElement('div');
+	centerControl = new CenterControl(centerControlDiv, map, 'Ukloni krajnji marker');
+	centerControlDiv.index = 1;
+	centerControlDiv.onclick=removeEnd;
+	map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
+}
+function removeEnd(){
+	marker_now2.setMap(null);
+	dst=false;
 }
 //Find the location that the user searched for
 function findLocation(){
@@ -192,7 +215,12 @@ function findLocation(){
 			title: place.name,
 			position: place.geometry.location
 			}));
-
+			//Place marker
+			placeMarkerAndPanTo(place.geometry.location, map);
+			location_now = 1;
+			srcy = place.geometry.location.lng();
+			srcx = place.geometry.location.lat();
+			
 			if (place.geometry.viewport) {
 			// Only geocodes have viewport.
 			bounds.union(place.geometry.viewport);
@@ -242,6 +270,11 @@ function placeMarkers(){
 		imagePath: 'img/markerClusters/m'
 	});
 }
+/**
+ * Add new marker
+ * @param location 
+ * @param infowindow 
+ */
 function newMarker(location,infowindow){
 	var green_icon = {
 		url:
@@ -285,17 +318,71 @@ function newMarker(location,infowindow){
 			
 			//Info windows
 			google.maps.event.addListener(marker, 'click', function () {
-				var additionalContent='<div style="color:black">Zona:</div>'+this.zone+'<br/><div style="color:black">Invalidsko:</div>'+this.disabled;
+				var disabled="Da";
+				var free="Da";
+				var type="Senzor";
+				if(this.disabled==false)
+					disabled="Ne";
+				var additionalContent='<div style="color:black">Zona:</div>'+this.zone+'<br/><div style="color:black">Invalidsko:</div>'+disabled;
+				
+				if(this.free==false)
+					free="Ne";
 				if(this.type=="garage"){
 					additionalContent="";
+					type="Garaža";
+					free=this.free;
 				}
 				nearest_marker=this;
-				infowindow.setContent('<h5 style="color:black">' + this.type + '</h5><hr/><h6 style="color:blue; text-align:center"><div style="color:black">Slobodno:</div>'+this.free+additionalContent+'</h6><button onclick="sim()"class="btn btnPrimary"style="width:100%;background-color:#000240;color:white">Ruta</button>');
+				infowindow.setContent('<h5 style="color:black">' + type + '</h5><hr/><h6 style="color:blue; text-align:center"><div style="color:black">Slobodno:</div>'+free+additionalContent+'</h6><button onclick="sim()"class="btn btnPrimary"style="width:100%;background-color:#000240;color:white">Ruta</button>');
 				infowindow.open(map, this);
 			});
+	
 			
 }
-function placeMarkerOnClick(){
+function placeMarkerAndPanToDbl(latLng, map) {
+	var marker = new google.maps.Marker({
+		position: latLng,
+		map: map,
+		animation: google.maps.Animation.DROP,
+		icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+	});
+	marker_now2 = marker;
+	marker_now.setMap(null);
+}
+function placeMarkerOnClick() {
+	map.addListener('click', function(e) {
+		if (location_now == 0) {
+			placeMarkerAndPanTo(e.latLng, map);
+			location_now = 1;
+			srcy = e.latLng.lng();
+			srcx = e.latLng.lat();
+		} else {
+			marker_now.setMap(null);
+			placeMarkerAndPanTo(e.latLng, map);
+			srcy = e.latLng.lng();
+			srcx = e.latLng.lat();
+		}
+	});
+	map.addListener('dblclick', function(e) {
+		if (location_now2 == 0) {
+			placeMarkerAndPanToDbl(e.latLng, map);
+			location_now2 = 1;
+			dsty = e.latLng.lng();
+			dstx = e.latLng.lat();
+		} else {
+			marker_now2.setMap(null);
+			placeMarkerAndPanToDbl(e.latLng, map);
+			dsty = e.latLng.lng();
+			dstx = e.latLng.lat();
+
+		}
+		dst=true;
+	});
+}
+/**
+ * Place marker when you click on the map
+ */
+/*function placeMarkerOnClick(){
 	map.addListener('click', function(e) {
 		if (location_now == 0) {
 			placeMarkerAndPanTo(e.latLng, map);
@@ -310,10 +397,14 @@ function placeMarkerOnClick(){
 		}
 	});
 	
-}
+}*/
 var srcx;
 var srcy;
-
+/**
+ * Place marker and then pan to the location
+ * @param latLng 
+ * @param  map 
+ */
 function placeMarkerAndPanTo(latLng, map) {
 	var marker = new google.maps.Marker({
 		position: latLng,
@@ -321,7 +412,10 @@ function placeMarkerAndPanTo(latLng, map) {
 	});
 	marker_now = marker;
 }
-
+/**
+ * Make a copy of the mainObj
+ * @param  mainObj 
+ */
 function copy(mainObj) {
 	let objCopy = {};
 	let key;

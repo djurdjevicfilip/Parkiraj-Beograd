@@ -1,4 +1,7 @@
-
+/**
+ * travel.js - This file is used for the travel simulation
+ * Author: Filip Djurdjevic
+ */
 var src = {x:0,y:0};
 var going_to=null;
 var numDeltas = 200;
@@ -13,7 +16,9 @@ function httpGet(theUrl)
     xmlHttp.send( null );
     return xmlHttp.responseText;
 }
-
+/**
+ * Write route to the map
+ */
 function put_direction_on_map() {
 	setTimeout(function() {
 		write_direction_on_map(src, nearest_marker.x, nearest_marker.y);
@@ -37,13 +42,21 @@ function writeDirectionOnMap(src, dst_x, dst_y) {
 			response_simulation=response;
 		}
 	});}
-	
+//Sleep	
 function sleep (time) {
 	return new Promise((resolve) => setTimeout(resolve, time));
   }
   
+/**
+ * Simulate travel from source to destinaton
+ * @param  srcx 
+ * @param  srcy 
+ * @param dstx 
+ * @param  dsty 
+ */
 function simulateTravel(srcx,srcy,dstx,dsty){
 	if(cancel)return;
+	
 	//Decode route polyline using polyline.js
 	var polylineArray=polyline.decode(response_simulation.routes[0].overview_polyline);
 	
@@ -51,6 +64,7 @@ function simulateTravel(srcx,srcy,dstx,dsty){
 	moveAlongPolyline(0,polylineArray.length,polylineArray);
 	sleep(pointDelay*polylineArray.length).then(()=> {
 		going_to=null;
+		//On finish post to the server
 		var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 		$.ajax({
 			type:'post',
@@ -83,12 +97,14 @@ function moveAlongPolyline(i,n,coordinates){
 		//writeDirectionOnMap(src,nearest_marker.x,nearest_marker.y);
 
 		moveAlongPolyline(i+1,n,coordinates);
-	});
-	
+	});	
 }
 
-//Smoothly move marker
-
+/**
+ * Smoothly move marker from current position to result position
+ * @param  result0 
+ * @param  result1 
+ */
 function transition(result0,result1){
 	if(cancel)return;
 	position[0]=src.x;

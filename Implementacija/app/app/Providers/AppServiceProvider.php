@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use App\Sensor;
+use App\Garage;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -16,6 +17,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         Sensor::observe(\App\Observers\SensorObserver::class);
+        Garage::observe(\App\Observers\GarageObserver::class);
     }
 
     /**

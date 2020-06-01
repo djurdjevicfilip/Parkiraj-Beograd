@@ -10,12 +10,9 @@ class PagesController extends Controller
 {
     //Guest index page
     public function index(){
-       /* $locations = Location::all()->first();
-        if($locations!=null)
-            $locations=$locations->parkinglocation;*/
-        return view('pages.index');//with('locations',$locations);
+        return view('pages.index');
     }
-    //Guest index page
+    
     public function register(){
         return view('auth.register');
     }

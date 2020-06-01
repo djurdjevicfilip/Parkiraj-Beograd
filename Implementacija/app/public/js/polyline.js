@@ -1,3 +1,6 @@
+/**
+ * Polyline decoding library
+ */
 'use strict';
 
 /**

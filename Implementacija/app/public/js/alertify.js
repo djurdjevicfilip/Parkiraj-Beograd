@@ -3,6 +3,10 @@
  * AlertifyJS is a javascript framework for developing pretty browser dialogs and notifications.
  * Copyright 2019 Mohammad Younes <Mohammad@alertifyjs.com> (http://alertifyjs.com) 
  * Licensed under GPL 3 <https://opensource.org/licenses/gpl-3.0>*/
+
+ /**
+  * Alert library
+  */
 ( function ( window ) {
     'use strict';
     var NOT_DISABLED_NOT_RESET = ':not(:disabled):not(.ajs-reset)';

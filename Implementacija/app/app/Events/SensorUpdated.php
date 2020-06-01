@@ -11,11 +11,14 @@ class SensorUpdated implements ShouldBroadcast
   use Dispatchable, InteractsWithSockets, SerializesModels;
 
   public $message;
-
-  public function __construct($message)
+  public $del;
+  public $sensor;
+  public function __construct($message,$del,$sensor)
   {
 
       $this->message = $message;
+      $this->del=$del;
+      $this->sensor=$sensor;
   }
 
   public function broadcastOn()

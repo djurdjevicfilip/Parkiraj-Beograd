@@ -11,8 +11,10 @@ use App\Location;
 use App\Sensor;
 use Session;
 use App\Garage;
+
 /**
  *  FOR AUTHENTICATED USERS
+ *  Authors: Danilo Dabovic & Filip Djurdjevic
  */
 class HomeController extends Controller
 {
@@ -25,22 +27,33 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-    /* User page */
+    /**
+     * User page 
+     * @param int $message
+     * @return user.blade.php
+    */
     public function user($message=0)
     {
         $joined_locations=ParkingLocation::with(['location','sensor','garage'])->get();
         return view('pages.user')->with('data',$joined_locations)->with('message',$message);
     }
-    /* Admin page */ 
+    /**
+     * Admin page 
+     * @param int $message
+     * @return user.blade.php
+    */
     public function admin($message=0)
     {
-        
-       
         $users=User::with('administration')->get();
+		$joined_locations=ParkingLocation::with(['location','sensor','garage'])->get();
         //Passing all users as a parameter for the table
-        return view('pages.admin')->with('users',$users)->with('message',$message);
+        return view('pages.admin')->with('users',$users)->with('message',$message)->with('locations',$joined_locations);
     }
-    /* Moderator page */
+    /**
+     * Moderator page 
+     * @param int $message
+     * @return user.blade.php
+    */
     public function mod($message=0){
 
         // Should pass locations as parameter

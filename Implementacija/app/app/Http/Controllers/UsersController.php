@@ -11,10 +11,17 @@ use Hash;
 use Redirect;
 use URL;
 use Validator;
+/**
+ * Author: Filip Djurdjevic & Milan Ciganovic
+ */
 class UsersController extends Controller
 {
     /**
     * Update Users, Clients, and Administration tables
+    * @param Request $request
+    * @param int $idUser
+    * @param int $act
+    * @return admin.blade.php
     */
     public function update(Request $request, $idUser,$act=null)
     {
@@ -37,7 +44,10 @@ class UsersController extends Controller
         return redirect()->to(route('admin').'#users');
     }
     /**
-     * Delete user
+     * Delete user (Deletes everything that is necessary)
+     * @param Request $request
+     * @param int $idUser
+     * @return admin.blade.php
      */
     public function delete(Request $request,$idUser){
         
@@ -53,8 +63,11 @@ class UsersController extends Controller
 
         return redirect()->to(route('admin').'#users');
     }
+
     /**
-     * Change user password
+     * Change user password, but first check if it's ok to update
+     * @param Request $request
+     * @return (*).blade.php
      */
     public function passchange(Request $request){
         //Validate input

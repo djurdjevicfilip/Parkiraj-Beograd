@@ -1,3 +1,7 @@
+/**
+ * filtering.js - Filtering markers based on user selection
+ * Milan Ciganović and Filip Đurđević
+ */
 var map=null;
 
 var free_markers = [];
@@ -5,8 +9,11 @@ var old_markers = [];
 var garage_markers=[];
 var sensor_markers=[];
 var zone_markers=[];
-var mixed_markers=[];
-
+var disabled_markers=[];
+/**
+ * Set marker cluster - this is called when you need to update the cluster
+ * e.g. when a filter is set, the clustering won't change on it's own, so we need to call this function to update it
+ */
 function setMarkerCluster(){
     if(markerCluster){
         markerCluster.setMap(null);
@@ -15,6 +22,9 @@ function setMarkerCluster(){
         });
     }
 }
+/**
+ * Set of functions used for filtering
+ */
 function showOnlyFree() {
 	showAll();
 	free_markers = [];
@@ -72,9 +82,27 @@ function showZone(zone){
 	}
 	old_markers = markers;
 	markers = zone_markers;
-	btn="red";
+	btn=zone;
 	setMarkerCluster();
 }
+function showOnlyDisabled(){
+	showAll();
+	disabled_markers = [];
+	for (var i = 0; i < markers.length; i++) {
+		if (markers[i].disabled == 1&&markers[i].type=="sensor") {
+			disabled_markers.push(markers[i]);
+		} else {
+			markers[i].setMap(null);
+		}
+	}
+	old_markers = markers;
+	markers = disabled_markers;
+	btn='dis';
+	setMarkerCluster();
+}
+/**
+ * Show all sensors (turn off filters)
+ */
 function showAll() {
 	markers = old_markers;
 	for (var i = 0; i < markers.length; i++) {
@@ -83,11 +111,10 @@ function showAll() {
 	btn=null;
 	setMarkerCluster();
 }
-function showRemaining(){
-	if(zone==true){
 
-	}
-}
+/**
+ * Set of functions used for filter manipulation through the checkbox implementation
+ */
 function garageCheck() {
 	var garageCheckBox = document.getElementById('garage');
 	if (garageCheckBox.checked) {
@@ -101,8 +128,12 @@ function garageCheck() {
 	hideZones();
 }
 function invCheck() {
-	var garageCheckBox = document.getElementById('inv');
-	//treba da se ubaci pretraga za invalidska mesta
+	var disabledCheckBox = document.getElementById('inv');
+	if (disabledCheckBox.checked) {
+		showOnlyDisabled();
+	} else {
+		showAll();
+	}
 	
 	document.getElementById('garage').checked=false;
 	document.getElementById('free').checked=false;
@@ -111,8 +142,8 @@ function invCheck() {
 }
 
 function freeCheck() {
-	var garageCheckBox = document.getElementById('free');
-	if (garageCheckBox.checked) {
+	var freeCheckBox = document.getElementById('free');
+	if (freeCheckBox.checked) {
 		showOnlyFree();
 	} else {
 		showAll();
@@ -123,13 +154,14 @@ function freeCheck() {
 	document.getElementById('zone').checked=false;
 	hideZones();
 }
+
 var zone=false;
 function zoneCheck() {
-	var garageCheckBox = document.getElementById('zone');
+	var zoneCheckBox = document.getElementById('zone');
 	var label1=document.getElementById('lab1');
 	var label2=document.getElementById('lab2');
 	var label3=document.getElementById('lab3');
-	if (garageCheckBox.checked) {
+	if (zoneCheckBox.checked) {
 		label1.style.visibility = 'visible';
 
 		label2.style.top = '140px';
@@ -150,6 +182,9 @@ function zoneCheck() {
 	document.getElementById('free').checked=false;
 	document.getElementById('garage').checked=false;
 }
+/**
+ * Hide all zone checkboxes
+ */
 function hideZones(){
 	
 	var label1=document.getElementById('lab1');
@@ -159,7 +194,9 @@ function hideZones(){
 	label2.style.visibility = 'hidden';
 	label3.style.visibility = 'hidden';
 }
-
+/**
+ * Uncheck other checkboxes
+ */
 $(document).ready(function(){
 	$('._checkbox').click(function(){
 		if(this.checked){

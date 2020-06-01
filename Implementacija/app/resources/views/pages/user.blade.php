@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Korisnik</title>
     <meta content="" name="descriptison">
     <meta content="" name="keywords"> 
@@ -26,17 +26,22 @@
     <link href="/css/button.css" rel="stylesheet">
     
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-     
+    <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
     <!-- Pass locations data to javascript -->
     <script type="text/javascript">
         var data = {!! $data !!};
     </script>
     <script src="/js/polyline.js"></script>
-    <script src="/js/map.js"></script>
-    <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBOr3eB1bffutoazOYCopJncLycz2DHik&callback=initMap&libraries=places"
-    async defer></script>
-
+        async defer></script>
+    <script src="https://js.pusher.com/6.0/pusher.min.js"></script>
+    
+    <script src="/js/alertify.js"></script>
+    <script src="/js/filtering.js"></script>
+    <script src="/js/travel.js"></script>
+    <script src="/js/nearestLocation.js"></script>
+    <script src="/js/mapSetup.js"></script>
+    <script src="/js/update.js"></script>
 </head>
 
 <body id="user-body">
@@ -67,13 +72,11 @@
         </div>
     </header>
     <!-- End Header -->
-
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
-
         <!-- ======= About Me ======= -->
         <div class="about-me container">
-
+ 
             <div class="section-title">
                 <h2>Nalog</h2>
                 <p>Informacije o korisniku</p>
@@ -175,7 +178,7 @@
     <section id="mapSection" class="col-12 services">
         <div class="container-fluid" id="map-container" style="display:none">
         <div class="row">
-        <div id="map" class="col-12"style="left:-20px;top:0px;height:81vh;width:105vw;"></div> 
+        <div id="map" class="col-12"style="left:-20px;top:0px;height:87vh;width:105vw;"></div> 
         <input id="pac-input" class="controls" type="text" placeholder="Pretraga mesta"> 
         </div>
         <div id="floating-panel">
@@ -197,15 +200,11 @@
                 <div class="tick_mark" id="c3"></div>
             </label>
             
-
         </div>
     </div>
     </section>
     <!-- End Map Section -->
-    <div>></div>
-    <div class="credits">
-        Tim: <a>Sportaši</a>
-    </div>
+
 
     <div class="user">
         <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();

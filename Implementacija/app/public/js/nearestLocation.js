@@ -1,3 +1,8 @@
+/**
+ * nearestLocation.js - Finding the nearest location, based on the current user location or on the currently selected location
+ * (This replaced the google maps Distance Matrix API)
+ * Authors: Filip Djurdjevic & Milan Ciganovic
+ */
 
 //Find closest location by duration using the OSRM API (Distance isn't supported by default, but there should be a workaround)
 var cancel=false;
@@ -9,8 +14,13 @@ function findNearestOSRM(){
 	//Prepare the string for httpGet request
 	if(going_to==null){
 		var str='http://router.project-osrm.org/table/v1/driving/';
-		str+=srcy+",";
-		str+=srcx+";";
+		if(!dst){
+			str+=srcy+",";
+			str+=srcx+";";
+		}else{
+			str+=dsty+",";
+			str+=dstx+";";
+		}
 		for(var i=0;i<markers.length;i++){
 			str+=markers[i].y+","+markers[i].x;
 			if(i!=markers.length-1){
@@ -45,7 +55,6 @@ function findNearestOSRM(){
 		}, 500);
 	}
 }
-
 
 function sim(){
 	src.x=srcx;
