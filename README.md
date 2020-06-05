@@ -89,7 +89,7 @@ Bitno je da se poštuju određene paradigme. Takođe, veoma je bitno da kod bude
 ## Performanse
 Korisnička stranica sadrži mapu koju je često potrebno osvežavati i menjati. Trudili smo se da poboljšamo performanse stranice i da je što manje preopteretimo. Iz tog razloga je umesto Ajax-a korišćene su Laravel-ove dodatne mogućnosti. **Observing** nam služi za praćenje promena u bazi, a **Broadcasting** i **Pusher API** nam služe za slanje poruka korisničkim stranicama. Ovim dobijamo bolje performanse korisničke stranice, jer se stranica ne osvežava na fiksan vremenski period. Takođe, ovo nam omogućava i trenutno vidljive promene, dok bi kod većeg fiksnog intervala bilo kašnjenja.
 ## Testiranje
-Testiranje je obavezno.
+Testiranje je obavezno. Aplikacija će biti testirana automatski uz pomoć Selenium IDE plugin-a, ali i manuelno.
 ## Ograničenja
 Jedno ograničenje aplikacije javlja se kroz API za mape. Ograničenje je u tome što je broj zahteva ograničen na mesečnoj ili dnevnoj bazi. Ovo ograničenje nama trenutno ne predstavlja problem, ali može uticati na novčane resurse pri velikom porastu korisnika aplikacije. Takođe, nemamo pristup senzorima, tako da će oni biti simulirani.
 ## OSRM API vs. Google Maps API
