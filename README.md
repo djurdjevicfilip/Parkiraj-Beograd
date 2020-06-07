@@ -90,6 +90,22 @@ Bitno je da se poštuju određene paradigme. Takođe, veoma je bitno da kod bude
 Korisnička stranica sadrži mapu koju je često potrebno osvežavati i menjati. Trudili smo se da poboljšamo performanse stranice i da je što manje preopteretimo. Iz tog razloga je umesto Ajax-a korišćene su Laravel-ove dodatne mogućnosti. **Observing** nam služi za praćenje promena u bazi, a **Broadcasting** i **Pusher API** nam služe za slanje poruka korisničkim stranicama. Ovim dobijamo bolje performanse korisničke stranice, jer se stranica ne osvežava na fiksan vremenski period. Takođe, ovo nam omogućava i trenutno vidljive promene, dok bi kod većeg fiksnog intervala bilo kašnjenja.
 ## Testiranje
 Testiranje je obavezno. Aplikacija će biti testirana automatski uz pomoć Selenium IDE plugin-a, ali i manuelno.
+### Testiranje performansi aplikacije
+Potrebno je testirati I performanse aplikacije. Razlozi I dodatna pojašnjenja mogu se pronaći u samoj dokumentaciji projekta. U ovom dokumentu objašnjen je proces testirana performansi, zaključci pri tom procesu, kao I određeni elementi koji nam pomažu pri vizuelizaciji procesa I odnosa podataka.   Uz neke stavke priložena su urađena rešenja ili moguća dodatna rešenja.
+#### Testiranje funkcionalnog ograničenja broja lokacija
+Broj lokacija bio je ograničen na približno 165 lokacija. Testiranje je rađeno ručno. Ograničenje je predstavljala veličina zahteva koji se šalju API-u. Rešenje je jednostavan algoritam koji šalje više zahteva I na osnovu tih zahteva sam traži najbližu lokaciju. Samim ovim procesom unosimo dodatno kašnjenje, ali to nama ne predstavlja veliki problem, kao što se može videti u Tabeli 1. Ovim smo odstranili ograničenja u pogledu API-a.
+#### Testiranje trajanja obrade zahteva
+Rešenje iz prethodne stavke nam omogućava bolje testiranje trajanja obrade zahteva. Umesto da se ograničimo na 165 lokacija, možemo da testiramo performanse za mnogo veći broj lokacija. Testiranje je rađeno ručno. Na osnovu zaključka da je maksimalni broj lokacija u jednom zahtevu 165, dobijamo maksimalni inkrement. Broj zahteva koji se šalju API-u biće ceil(location_number/increment). U tabeli ispod ovog teksta dat je prikaz trajanja celokupnog procesa obrade zahteva (u milisekundama). Može se primetiti da nema velikog odstupanja pri porastu broja lokacija (ukoliko ima preko 600 lokacija), pa možemo da ‘‘pogađamo’’ I neke druge vrednosti. Na primer, recimo za 50 000 lokacija bi po ovoj računici proces trajao 1 minut, za 200 000 4m… U kolonama Test n prikazano je trajanje zahteva pri korišćenju OSRM API-a (API koji se trenutno koristi), dok je u koloni Prosek OSRM API prikazan prosek tih testova. Kolona Predviđeno Directions API označava približno vreme koje bi bilo potrebno za jedan korisnički zahtev da smo nastavili da koristimo isti API.
+
+| Broj lokacija | Test 1 | Test 2 | Test 3 | Test 4 | Test 5 | Prosek OSRM API | Predviđeno Directions API |
+|:----------:|-------------|------:|------:|------:|------:|------:|------:|
+| **1** | 194.351 | 138.090 | 253.323 | 201.660 | 196.126 | **196.708**‬ |**200** |
+| **601** | 865.39 | 1097.33 |993.624 | 879.857 | 960.296 | **959.310** | **601 000 (~10min)** |
+| **901** | 1248.99 | 1452.17 | 1371.94 | 1435.44 | 1244.07 | **1350.522** | **901 000 (~15min)** |
+| **2059** | 2739.269 | 2632.16 | 2790.13 | 2687.78 | 2838.86 | **2737.640** | **2 059 000  (~34min)** |
+
+
+
 ## Ograničenja
 Jedno ograničenje aplikacije javlja se kroz API za mape. Ograničenje je u tome što je broj zahteva ograničen na mesečnoj ili dnevnoj bazi. Ovo ograničenje nama trenutno ne predstavlja problem, ali može uticati na novčane resurse pri velikom porastu korisnika aplikacije. Takođe, nemamo pristup senzorima, tako da će oni biti simulirani.
 ## OSRM API vs. Google Maps API
