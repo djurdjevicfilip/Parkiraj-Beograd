@@ -1,0 +1,500 @@
+{
+  "id": "8652ec43-b3fd-47a2-ac5e-06d8d238b694",
+  "version": "2.0",
+  "name": "Parkiraj!Beograd - Filip (testira Milanov deo)",
+  "url": "http://laravel.me",
+  "tests": [{
+    "id": "b52ee092-0b24-4cff-af39-b081d802e67a",
+    "name": "SSU9_filtriranje_lokacija_dugmici",
+    "commands": [{
+      "id": "febcd82d-1795-48e8-aab3-82d5756cc0c3",
+      "comment": "",
+      "command": "open",
+      "target": "/home",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "beb0a1fb-7b98-4a7f-bd94-66389762b545",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "960x864",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "756b451f-0157-4fc4-b31c-aa15b51b82e8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.icofont-navigation-menu",
+      "targets": [
+        ["css=.icofont-navigation-menu", "css:finder"],
+        ["xpath=//body[@id='user-body']/button/i", "xpath:idRelative"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d80dfac3-a720-4e36-b25f-83384f4f3e90",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Mapa",
+      "targets": [
+        ["linkText=Mapa", "linkText"],
+        ["css=.mobile-nav #mapSec", "css:finder"],
+        ["xpath=(//a[contains(text(),'Mapa')])[2]", "xpath:link"],
+        ["xpath=(//a[@id='mapSec'])[2]", "xpath:attributes"],
+        ["xpath=//body[@id='user-body']/nav/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#mapSection')])[2]", "xpath:href"],
+        ["xpath=//body/nav/ul/li[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b035e8bb-afac-4e56-b8d5-50a1b091f7d3",
+      "comment": "",
+      "command": "click",
+      "target": "id=garage",
+      "targets": [
+        ["id=garage", "id"],
+        ["name=m", "name"],
+        ["css=#garage", "css:finder"],
+        ["xpath=//input[@id='garage']", "xpath:attributes"],
+        ["xpath=//div[@id='floating-panel']/input", "xpath:idRelative"],
+        ["xpath=//section[3]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "99509791-98b0-4e34-bebd-c30d07cb5144",
+      "comment": "",
+      "command": "assertChecked",
+      "target": "id=garage",
+      "targets": [
+        ["id=garage", "id"],
+        ["name=m", "name"],
+        ["css=#garage", "css:finder"],
+        ["xpath=//input[@id='garage']", "xpath:attributes"],
+        ["xpath=//div[@id='floating-panel']/input", "xpath:idRelative"],
+        ["xpath=//section[3]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "41a3aa0a-1f02-482d-b841-71fd1ff5b06c",
+      "comment": "",
+      "command": "click",
+      "target": "id=garage",
+      "targets": [
+        ["id=garage", "id"],
+        ["name=m", "name"],
+        ["css=#garage", "css:finder"],
+        ["xpath=//input[@id='garage']", "xpath:attributes"],
+        ["xpath=//div[@id='floating-panel']/input", "xpath:idRelative"],
+        ["xpath=//section[3]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc0ad33c-0074-4e33-bd7a-9edab0fccc83",
+      "comment": "",
+      "command": "click",
+      "target": "id=garage",
+      "targets": [
+        ["id=garage", "id"],
+        ["name=m", "name"],
+        ["css=#garage", "css:finder"],
+        ["xpath=//input[@id='garage']", "xpath:attributes"],
+        ["xpath=//div[@id='floating-panel']/input", "xpath:idRelative"],
+        ["xpath=//section[3]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5cf591b7-8564-4ac5-94d2-52be1b648021",
+      "comment": "",
+      "command": "click",
+      "target": "id=garage",
+      "targets": [
+        ["id=garage", "id"],
+        ["name=m", "name"],
+        ["css=#garage", "css:finder"],
+        ["xpath=//input[@id='garage']", "xpath:attributes"],
+        ["xpath=//div[@id='floating-panel']/input", "xpath:idRelative"],
+        ["xpath=//section[3]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "522c4603-9c16-4a21-9dee-0ebe4aed3dcf",
+      "comment": "",
+      "command": "assertNotChecked",
+      "target": "id=garage",
+      "targets": [
+        ["id=garage", "id"],
+        ["name=m", "name"],
+        ["css=#garage", "css:finder"],
+        ["xpath=//input[@id='garage']", "xpath:attributes"],
+        ["xpath=//div[@id='floating-panel']/input", "xpath:idRelative"],
+        ["xpath=//section[3]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "70ca196c-cc4f-4966-a828-26b10d3968b6",
+      "comment": "",
+      "command": "click",
+      "target": "id=inv",
+      "targets": [
+        ["id=inv", "id"],
+        ["css=#inv", "css:finder"],
+        ["xpath=//input[@id='inv']", "xpath:attributes"],
+        ["xpath=//div[@id='floating-panel']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "42a88f3d-1e73-43c8-a155-42efdf74ae4a",
+      "comment": "",
+      "command": "click",
+      "target": "id=garage",
+      "targets": [
+        ["id=garage", "id"],
+        ["name=m", "name"],
+        ["css=#garage", "css:finder"],
+        ["xpath=//input[@id='garage']", "xpath:attributes"],
+        ["xpath=//div[@id='floating-panel']/input", "xpath:idRelative"],
+        ["xpath=//section[3]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "08ce4678-4d25-4ed6-a524-4f871acb6e52",
+      "comment": "",
+      "command": "assertNotChecked",
+      "target": "id=inv",
+      "targets": [
+        ["id=inv", "id"],
+        ["css=#inv", "css:finder"],
+        ["xpath=//input[@id='inv']", "xpath:attributes"],
+        ["xpath=//div[@id='floating-panel']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cac57758-92b1-4272-8c8f-7f9565511bd5",
+      "comment": "",
+      "command": "click",
+      "target": "id=zone",
+      "targets": [
+        ["id=zone", "id"],
+        ["css=#zone", "css:finder"],
+        ["xpath=//input[@id='zone']", "xpath:attributes"],
+        ["xpath=//div[@id='floating-panel']/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5ba2078a-e45a-4786-891e-9f4cd573f638",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=c1",
+      "targets": [
+        ["id=c1", "id"],
+        ["css=#c1", "css:finder"],
+        ["xpath=//div[@id='c1']", "xpath:attributes"],
+        ["xpath=//label[@id='lab1']/div", "xpath:idRelative"],
+        ["xpath=//label/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6f3a4c2b-bcaa-4d9a-8fde-5480e08df3f0",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=c2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d2b61cb6-bf9d-43a6-b648-42773706b2d7",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=lab3",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "718458ae-572e-4602-8bea-e69f724b9a78",
+      "comment": "",
+      "command": "click",
+      "target": "id=c1",
+      "targets": [
+        ["id=c1", "id"],
+        ["css=#c1", "css:finder"],
+        ["xpath=//div[@id='c1']", "xpath:attributes"],
+        ["xpath=//label[@id='lab1']/div", "xpath:idRelative"],
+        ["xpath=//label/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "fc6419fb-49f0-4529-805f-7cd4663502d3",
+    "name": "SSU5_ruta_dugme",
+    "commands": [{
+      "id": "339226ec-2fb9-4792-af74-fe7c2541d193",
+      "comment": "",
+      "command": "open",
+      "target": "/home",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c8c1a5b3-2330-47ce-b2c6-5ad4188e8ca6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "960x864",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e41ce852-4873-49ee-81c0-471136294b38",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.mobile-nav-toggle",
+      "targets": [
+        ["css=.mobile-nav-toggle", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//body[@id='user-body']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a8863e2d-0241-4a1c-a01c-27a2cbd067a9",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.mobile-nav-toggle",
+      "targets": [
+        ["css=.mobile-nav-toggle", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//body[@id='user-body']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fc8de3b5-821f-4450-80ec-b56c4d45054a",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.icofont-navigation-menu",
+      "targets": [
+        ["css=.icofont-navigation-menu", "css:finder"],
+        ["xpath=//body[@id='user-body']/button/i", "xpath:idRelative"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "26fe8510-d6aa-47e6-98ba-d75110dd71df",
+      "comment": "",
+      "command": "click",
+      "target": "css=.icofont-navigation-menu",
+      "targets": [
+        ["css=.icofont-navigation-menu", "css:finder"],
+        ["xpath=//body[@id='user-body']/button/i", "xpath:idRelative"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "547bcd4b-4958-483b-94a0-667f9df98da0",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.icofont-close",
+      "targets": [
+        ["css=.icofont-close", "css:finder"],
+        ["xpath=//body[@id='user-body']/button/i", "xpath:idRelative"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d7adf77a-67e5-4726-95b1-0155c2e5eb78",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Mapa",
+      "targets": [
+        ["linkText=Mapa", "linkText"],
+        ["css=.mobile-nav #mapSec", "css:finder"],
+        ["xpath=(//a[contains(text(),'Mapa')])[2]", "xpath:link"],
+        ["xpath=(//a[@id='mapSec'])[2]", "xpath:attributes"],
+        ["xpath=//body[@id='user-body']/nav/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#mapSection')])[2]", "xpath:href"],
+        ["xpath=//body/nav/ul/li[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a3f44e1c-6d17-4cee-b392-8d87e43c0c53",
+      "comment": "",
+      "command": "click",
+      "target": "css=.gm-style > div > div:nth-child(3)",
+      "targets": [
+        ["css=.gm-style > div > div:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/div[3]", "xpath:idRelative"],
+        ["xpath=//section[3]/div/div/div/div/div/div/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dc52c898-f3e7-4462-8d8b-0c4980333a33",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=div:nth-child(10) > div > div",
+      "targets": [
+        ["css=div:nth-child(10) > div > div", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div[7]/div/div", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b1a726b6-8377-4f91-bc14-c7e9192ef6af",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(10) > div > div",
+      "targets": [
+        ["css=div:nth-child(10) > div > div", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div[7]/div/div", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "28bf0f1f-5c24-4edb-a291-5443beaa624c",
+      "comment": "",
+      "command": "click",
+      "target": "id=user-body",
+      "targets": [
+        ["id=user-body", "id"],
+        ["css=#user-body", "css:finder"],
+        ["xpath=//body[@id='user-body']", "xpath:attributes"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7e635039-9e3f-44a5-966f-aa974c991ada",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "31812bb5-266d-466c-b47d-c22d42610986",
+    "name": "SSU10_pretraga_mesta",
+    "commands": [{
+      "id": "dbe6dc5a-e380-4af5-9941-b47914f61509",
+      "comment": "",
+      "command": "open",
+      "target": "/home",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7a10e086-c507-4350-a4d1-a38d2213a2f2",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "960x864",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c524529d-7337-4fe9-8df0-97a0fe696586",
+      "comment": "",
+      "command": "click",
+      "target": "css=.icofont-navigation-menu",
+      "targets": [
+        ["css=.icofont-navigation-menu", "css:finder"],
+        ["xpath=//body[@id='user-body']/button/i", "xpath:idRelative"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9440e7e5-171a-4274-a493-c135a8c2b99e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Mapa",
+      "targets": [
+        ["linkText=Mapa", "linkText"],
+        ["css=.mobile-nav #mapSec", "css:finder"],
+        ["xpath=(//a[contains(text(),'Mapa')])[2]", "xpath:link"],
+        ["xpath=(//a[@id='mapSec'])[2]", "xpath:attributes"],
+        ["xpath=//body[@id='user-body']/nav/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#mapSection')])[2]", "xpath:href"],
+        ["xpath=//body/nav/ul/li[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2311bceb-b7fe-4fab-9154-9bd384fe17ea",
+      "comment": "",
+      "command": "click",
+      "target": "id=pac-input",
+      "targets": [
+        ["id=pac-input", "id"],
+        ["css=#pac-input", "css:finder"],
+        ["xpath=//input[@id='pac-input']", "xpath:attributes"],
+        ["xpath=//div[@id='map']/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d5f5ead-3791-4065-8c33-062be2dafd87",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=pac-input",
+      "targets": [
+        ["id=pac-input", "id"],
+        ["css=#pac-input", "css:finder"],
+        ["xpath=//input[@id='pac-input']", "xpath:attributes"],
+        ["xpath=//div[@id='map']/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "51f8c7c1-a827-48cc-b669-19db5d42f4e3",
+      "comment": "",
+      "command": "click",
+      "target": "id=pac-input",
+      "targets": [
+        ["id=pac-input", "id"],
+        ["css=#pac-input", "css:finder"],
+        ["xpath=//input[@id='pac-input']", "xpath:attributes"],
+        ["xpath=//div[@id='map']/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2affd3af-7b99-45af-b6c0-2bd147c7c2e1",
+      "comment": "",
+      "command": "type",
+      "target": "id=pac-input",
+      "targets": [
+        ["id=pac-input", "id"],
+        ["css=#pac-input", "css:finder"],
+        ["xpath=//input[@id='pac-input']", "xpath:attributes"],
+        ["xpath=//div[@id='map']/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": "etf"
+    }, {
+      "id": "5118a7df-1fa6-426a-9dc3-3e5654283789",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.gm-style > div > div:nth-child(3)",
+      "targets": [
+        ["css=.gm-style > div > div:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='map']/div/div/div/div[3]", "xpath:idRelative"],
+        ["xpath=//section[3]/div/div/div/div/div/div/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2747e951-f4c0-4b0f-be9c-43989f206395",
+      "comment": "",
+      "command": "assertValue",
+      "target": "id=pac-input",
+      "targets": [
+        ["id=pac-input", "id"],
+        ["css=#pac-input", "css:finder"],
+        ["xpath=//input[@id='pac-input']", "xpath:attributes"],
+        ["xpath=//div[@id='map']/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": "etf"
+    }]
+  }],
+  "suites": [{
+    "id": "837ca3ba-7336-4a89-bad0-1bd0eabf8632",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://laravel.me/"],
+  "plugins": []
+}
