@@ -1,0 +1,1019 @@
+{
+  "id": "74ee986b-3b42-4c6b-8667-5c173ca9aac2",
+  "version": "2.0",
+  "name": "psi_testiranjessu7",
+  "url": "http://laravel.me/",
+  "tests": [{
+    "id": "8e9acc34-9180-4f52-b175-09bf668431da",
+    "name": "uspesno dodavanje mesta",
+    "commands": [{
+      "id": "dc95632f-86b1-4d0e-8791-191315c3e110",
+      "comment": "",
+      "command": "open",
+      "target": "http://laravel.me/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "11b1c795-c664-461e-b493-f1fc6336498a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1522x808",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2f3dc097-7078-4f8c-85d9-ad9fbacf4c41",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-button",
+      "targets": [
+        ["id=login-button", "id"],
+        ["linkText=Uloguj se", "linkText"],
+        ["css=.nav-menu #login-button", "css:finder"],
+        ["xpath=//a[contains(text(),'Uloguj se')]", "xpath:link"],
+        ["xpath=//a[@id='login-button']", "xpath:attributes"],
+        ["xpath=//header[@id='header']/div/nav/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#login')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Uloguj se')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a918a39a-05fa-4d48-9e9f-87695b3146cc",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(1) #email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div[@id='home']/div/div/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9bbea9e9-5c42-4437-83b0-dc27a4284485",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(1) #email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div[@id='home']/div/div/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "filipdj998@gmail.com"
+    }, {
+      "id": "85a94ce3-ae2f-48f8-be7b-b7e3215d60bd",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=.col-md-12:nth-child(2) > #password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='home']/div/div/form/div/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Filipsed98*"
+    }, {
+      "id": "f1887c07-0fe9-4eab-b770-a99ab8d2e57d",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(1) #email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div[@id='home']/div/div/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "79e7756c-d238-47df-915e-01d1f1248a0e",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(1) #email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div[@id='home']/div/div/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "842a6cbf-4b43-4677-b627-6d7b75bfcd00",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(1) #email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div[@id='home']/div/div/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "82aa1a41-28ea-48df-a0f4-ee4dc3fceb14",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(1) #email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div[@id='home']/div/div/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "db6d3c66-17e8-4b8a-a087-6d6e1fd1be8d",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(1) #email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div[@id='home']/div/div/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "filipdj98@gmail.com"
+    }, {
+      "id": "2b7fba4e-a22d-4c34-bd27-72f92ad10dcc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btnLogin",
+      "targets": [
+        ["css=.btnLogin", "css:finder"],
+        ["xpath=//input[@value='Prijavi se']", "xpath:attributes"],
+        ["xpath=//div[@id='home']/div/div/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b15f72d5-7ca7-498f-8dee-690abce667c9",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Dodaj mesto",
+      "targets": [
+        ["linkText=Dodaj mesto", "linkText"],
+        ["css=.nav-menu li:nth-child(5) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Dodaj mesto')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div/nav/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#add-location')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Dodaj mesto')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2a005bba-02c3-4a83-8592-45b425dcab26",
+      "comment": "",
+      "command": "click",
+      "target": "name=x",
+      "targets": [
+        ["name=x", "name"],
+        ["css=.field > .control:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='x']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//section[2]/div/div/div/div/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "75bf9c43-4765-476e-aa3f-ac51fa00061c",
+      "comment": "",
+      "command": "type",
+      "target": "name=x",
+      "targets": [
+        ["name=x", "name"],
+        ["css=.field > .control:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='x']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//section[2]/div/div/div/div/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": " 44.80617"
+    }, {
+      "id": "6e0e2270-d674-4f40-bc95-5d6360246d85",
+      "comment": "",
+      "command": "click",
+      "target": "name=x",
+      "targets": [
+        ["name=x", "name"],
+        ["css=.field > .control:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='x']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//section[2]/div/div/div/div/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "52b90f37-fa28-4949-a398-2e2c8937f34b",
+      "comment": "",
+      "command": "type",
+      "target": "name=x",
+      "targets": [
+        ["name=x", "name"],
+        ["css=.field > .control:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='x']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//section[2]/div/div/div/div/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": " 44.85617"
+    }, {
+      "id": "a322f0ad-b1a2-464b-a54f-f1ad16124e7c",
+      "comment": "",
+      "command": "click",
+      "target": "name=y",
+      "targets": [
+        ["name=y", "name"],
+        ["css=.field > .control:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='y']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//section[2]/div/div/div/div/div/form/div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4174d547-9585-4000-b345-75a0275aa626",
+      "comment": "",
+      "command": "type",
+      "target": "name=y",
+      "targets": [
+        ["name=y", "name"],
+        ["css=.field > .control:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='y']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//section[2]/div/div/div/div/div/form/div/div[2]/input", "xpath:position"]
+      ],
+      "value": " 20.475066"
+    }, {
+      "id": "1b408ef9-7664-413e-9387-e641c2898662",
+      "comment": "",
+      "command": "click",
+      "target": "name=y",
+      "targets": [
+        ["name=y", "name"],
+        ["css=.field > .control:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='y']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//section[2]/div/div/div/div/div/form/div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "56d9aaa0-a5b2-4f71-b55b-930b9e2247a2",
+      "comment": "",
+      "command": "type",
+      "target": "name=y",
+      "targets": [
+        ["name=y", "name"],
+        ["css=.field > .control:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='y']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//section[2]/div/div/div/div/div/form/div/div[2]/input", "xpath:position"]
+      ],
+      "value": " 20.475566"
+    }, {
+      "id": "868199ca-1c2c-48fd-824e-81bb13a529d0",
+      "comment": "",
+      "command": "click",
+      "target": "name=zone",
+      "targets": [
+        ["name=zone", "name"],
+        ["css=.control:nth-child(6) > .custom-select", "css:finder"],
+        ["xpath=//select[@name='zone']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div[6]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "079b46ae-ec92-4e92-b0cc-b5e8129a0bc8",
+      "comment": "",
+      "command": "select",
+      "target": "name=zone",
+      "targets": [],
+      "value": "label=Plava"
+    }, {
+      "id": "61180f4a-2113-42bf-92fe-062d8923c7c5",
+      "comment": "",
+      "command": "click",
+      "target": "name=zone",
+      "targets": [
+        ["name=zone", "name"],
+        ["css=.control:nth-child(6) > .custom-select", "css:finder"],
+        ["xpath=//select[@name='zone']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div[6]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8e6cf4df-5772-4107-ad9a-d6033d84d58a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fieldis-grouped:nth-child(3) .btnLogin",
+      "targets": [
+        ["css=.fieldis-grouped:nth-child(3) .btnLogin", "css:finder"],
+        ["xpath=//div[@id='hom']/form/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "24da7fea-9d8b-42bc-8dbd-c0c65434ba49",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.odd:nth-child(5) > td:nth-child(2)",
+      "targets": [
+        ["css=.odd:nth-child(5) > td:nth-child(2)", "css:finder"],
+        ["xpath=//table[@id='dataTable2']/tbody/tr[5]/td[2]", "xpath:idRelative"],
+        ["xpath=//tr[5]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'44.85617')]", "xpath:innerText"]
+      ],
+      "value": "44.85617"
+    }, {
+      "id": "439b6433-ca4e-4dfb-b96a-815866157fd9",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "b4ba8325-29f4-4766-b7ed-af19925ce3d5",
+    "name": "neuspesno dodavanje mesta nekompletno uneseni podaci",
+    "commands": [{
+      "id": "485e0fb2-3b2b-4444-9aed-848f0bc7c916",
+      "comment": "",
+      "command": "open",
+      "target": "http://laravel.me/admin4",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1b333c09-8e9f-484e-ae6f-1bb8f01b859a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1522x808",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a8b265b6-0d43-4abc-b324-974ab9e0bd14",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Dodaj mesto",
+      "targets": [
+        ["linkText=Dodaj mesto", "linkText"],
+        ["css=.nav-menu li:nth-child(5) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Dodaj mesto')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div/nav/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#add-location')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Dodaj mesto')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "88fd7774-4411-4982-ae14-912ec673151e",
+      "comment": "",
+      "command": "click",
+      "target": "name=x",
+      "targets": [
+        ["name=x", "name"],
+        ["css=.field > .control:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='x']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//section[2]/div/div/div/div/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e844e875-9229-4b5a-983a-df87c95b3ee4",
+      "comment": "",
+      "command": "type",
+      "target": "name=x",
+      "targets": [
+        ["name=x", "name"],
+        ["css=.field > .control:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='x']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//section[2]/div/div/div/div/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": " 44.80617"
+    }, {
+      "id": "9dadffa8-672c-4fd5-94f3-c94bc87ca1b7",
+      "comment": "",
+      "command": "click",
+      "target": "name=zone",
+      "targets": [
+        ["name=zone", "name"],
+        ["css=.control:nth-child(6) > .custom-select", "css:finder"],
+        ["xpath=//select[@name='zone']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div[6]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "28f8c667-c500-4b9e-a0b0-31dcae84983b",
+      "comment": "",
+      "command": "select",
+      "target": "name=zone",
+      "targets": [],
+      "value": "label=Plava"
+    }, {
+      "id": "1af88dc5-b704-468c-969c-bb7570974071",
+      "comment": "",
+      "command": "click",
+      "target": "name=zone",
+      "targets": [
+        ["name=zone", "name"],
+        ["css=.control:nth-child(6) > .custom-select", "css:finder"],
+        ["xpath=//select[@name='zone']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div[6]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ac328ed9-8b1a-4e9b-8b11-918bd9ae831a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fieldis-grouped:nth-child(3) .btnLogin",
+      "targets": [
+        ["css=.fieldis-grouped:nth-child(3) .btnLogin", "css:finder"],
+        ["xpath=//div[@id='hom']/form/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9f3c9b88-c629-466b-bdae-f2e4a9ead01b",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.col-md-12 > .register-heading",
+      "targets": [
+        ["css=.col-md-12 > .register-heading", "css:finder"],
+        ["xpath=//section[@id='add-location']/div/div/div/h4", "xpath:idRelative"],
+        ["xpath=//h4", "xpath:position"],
+        ["xpath=//h4[contains(.,'Nekorektan unos!')]", "xpath:innerText"]
+      ],
+      "value": "Nekorektan unos!"
+    }, {
+      "id": "67c9d3cb-e516-4fc0-b9b5-a910ccad5dd5",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "1afc5275-787c-4e52-86c3-f82dbb8ba4e3",
+    "name": "neuspesno dodavanje mesta nekompletno uneseni podaci2",
+    "commands": [{
+      "id": "887427b4-2119-42e6-b122-0b2cea7eda35",
+      "comment": "",
+      "command": "open",
+      "target": "http://laravel.me/admin3",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b32b48fd-f2e9-4ba1-85a0-75bcfac4baac",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1522x808",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b34d5c99-2b88-47bb-900a-29e14aaf9ce9",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Dodaj mesto",
+      "targets": [
+        ["linkText=Dodaj mesto", "linkText"],
+        ["css=.nav-menu li:nth-child(5) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Dodaj mesto')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div/nav/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#add-location')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Dodaj mesto')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5a032a25-e6cf-499b-be3e-8b1eb33b157f",
+      "comment": "",
+      "command": "click",
+      "target": "name=y",
+      "targets": [
+        ["name=y", "name"],
+        ["css=.field > .control:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='y']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//section[2]/div/div/div/div/div/form/div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "456c94e5-a837-4f2d-b3c5-bb14a00049ff",
+      "comment": "",
+      "command": "type",
+      "target": "name=y",
+      "targets": [
+        ["name=y", "name"],
+        ["css=.field > .control:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='y']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//section[2]/div/div/div/div/div/form/div/div[2]/input", "xpath:position"]
+      ],
+      "value": " 20.4591698 "
+    }, {
+      "id": "da44654f-8d15-4090-81d4-a7bdbf558c4e",
+      "comment": "",
+      "command": "click",
+      "target": "name=zone",
+      "targets": [
+        ["name=zone", "name"],
+        ["css=.control:nth-child(6) > .custom-select", "css:finder"],
+        ["xpath=//select[@name='zone']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div[6]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c2a4ab4-499d-4d96-9e22-c8d172e36af3",
+      "comment": "",
+      "command": "select",
+      "target": "name=zone",
+      "targets": [],
+      "value": "label=Plava"
+    }, {
+      "id": "87d65719-3892-409e-acec-c7dbc599168c",
+      "comment": "",
+      "command": "click",
+      "target": "name=zone",
+      "targets": [
+        ["name=zone", "name"],
+        ["css=.control:nth-child(6) > .custom-select", "css:finder"],
+        ["xpath=//select[@name='zone']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div[6]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "81e108a8-7913-435b-84c1-e4b00af4a2ca",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fieldis-grouped:nth-child(3) .btnLogin",
+      "targets": [
+        ["css=.fieldis-grouped:nth-child(3) .btnLogin", "css:finder"],
+        ["xpath=//div[@id='hom']/form/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5aa02049-f7d1-4aac-837e-ed953d22c86c",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.col-md-12 > .register-heading",
+      "targets": [
+        ["css=.col-md-12 > .register-heading", "css:finder"],
+        ["xpath=//section[@id='add-location']/div/div/div/h4", "xpath:idRelative"],
+        ["xpath=//h4", "xpath:position"],
+        ["xpath=//h4[contains(.,'Nekorektan unos!')]", "xpath:innerText"]
+      ],
+      "value": "Nekorektan unos!"
+    }, {
+      "id": "8d0fc340-2b1e-4621-8096-a9cf9507dd9b",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "764b3f59-3704-4a9e-9509-d535c5956d91",
+    "name": "neuspesno dodavanje mesta nekompletno uneseni podaci3",
+    "commands": [{
+      "id": "7873c642-06b5-4b3f-b286-7bff845b1999",
+      "comment": "",
+      "command": "open",
+      "target": "http://laravel.me/admin3",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f8ccf911-f3df-42b2-add7-f379557b8abc",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1522x808",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "743c504b-ff76-4adc-84de-fce8c10d8814",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Dodaj mesto",
+      "targets": [
+        ["linkText=Dodaj mesto", "linkText"],
+        ["css=.nav-menu li:nth-child(5) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Dodaj mesto')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div/nav/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#add-location')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Dodaj mesto')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "99d8fddd-6d44-42af-80dc-4c7bcd192d19",
+      "comment": "",
+      "command": "click",
+      "target": "name=x",
+      "targets": [
+        ["name=x", "name"],
+        ["css=.field > .control:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='x']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//section[2]/div/div/div/div/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9760d64d-4be7-497b-ab21-f39ff59ba450",
+      "comment": "",
+      "command": "type",
+      "target": "name=x",
+      "targets": [
+        ["name=x", "name"],
+        ["css=.field > .control:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='x']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//section[2]/div/div/div/div/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": " 44.827823 "
+    }, {
+      "id": "7facf744-d78e-453d-9ea8-a3df924b2ae0",
+      "comment": "",
+      "command": "click",
+      "target": "name=y",
+      "targets": [
+        ["name=y", "name"],
+        ["css=.field > .control:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='y']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//section[2]/div/div/div/div/div/form/div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f41acaa2-36c5-4873-831f-4a82136752e7",
+      "comment": "",
+      "command": "type",
+      "target": "name=y",
+      "targets": [
+        ["name=y", "name"],
+        ["css=.field > .control:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='y']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//section[2]/div/div/div/div/div/form/div/div[2]/input", "xpath:position"]
+      ],
+      "value": " 20.475566"
+    }, {
+      "id": "0f89316e-b803-4b17-bc7d-111f9c9feac7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fieldis-grouped:nth-child(3) .btnLogin",
+      "targets": [
+        ["css=.fieldis-grouped:nth-child(3) .btnLogin", "css:finder"],
+        ["xpath=//div[@id='hom']/form/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "56ef4877-d742-4fab-9f07-f02378c58350",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.col-md-12 > .register-heading",
+      "targets": [
+        ["css=.col-md-12 > .register-heading", "css:finder"],
+        ["xpath=//section[@id='add-location']/div/div/div/h4", "xpath:idRelative"],
+        ["xpath=//h4", "xpath:position"],
+        ["xpath=//h4[contains(.,'Nekorektan unos!')]", "xpath:innerText"]
+      ],
+      "value": "Nekorektan unos!"
+    }, {
+      "id": "800fb86f-46f8-4752-8cb5-4e93fc44d1ff",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "5517554d-a321-4e5c-ac27-15fdf15c9f36",
+    "name": "neuspesno dodavanje mesta nekorektno uneseni podaci",
+    "commands": [{
+      "id": "f996a279-9efc-48a5-ba99-d3dc775b3094",
+      "comment": "",
+      "command": "open",
+      "target": "http://laravel.me/admin3",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "594bf85e-3d34-4175-8997-34ca97109160",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1522x808",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b2e354d3-8e10-42fc-90a6-98569dbdfefd",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Dodaj mesto",
+      "targets": [
+        ["linkText=Dodaj mesto", "linkText"],
+        ["css=.nav-menu li:nth-child(5) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Dodaj mesto')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div/nav/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#add-location')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Dodaj mesto')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "02b1aa1b-cfde-4c69-a7c4-af1d37035ab4",
+      "comment": "",
+      "command": "click",
+      "target": "name=x",
+      "targets": [
+        ["name=x", "name"],
+        ["css=.field > .control:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='x']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//section[2]/div/div/div/div/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "09dfb8fd-1b44-4634-8a77-fca1771d2794",
+      "comment": "",
+      "command": "type",
+      "target": "name=x",
+      "targets": [
+        ["name=x", "name"],
+        ["css=.field > .control:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='x']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//section[2]/div/div/div/div/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": "x"
+    }, {
+      "id": "5a5262aa-293f-4b05-8af2-e3ef6435da04",
+      "comment": "",
+      "command": "click",
+      "target": "name=y",
+      "targets": [
+        ["name=y", "name"],
+        ["css=.field > .control:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='y']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//section[2]/div/div/div/div/div/form/div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bbe3f211-a7cf-4b7c-874d-8ffbb1a53faf",
+      "comment": "",
+      "command": "type",
+      "target": "name=y",
+      "targets": [
+        ["name=y", "name"],
+        ["css=.field > .control:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='y']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//section[2]/div/div/div/div/div/form/div/div[2]/input", "xpath:position"]
+      ],
+      "value": " 20.4591698 "
+    }, {
+      "id": "3ccb4955-a985-4419-8961-1b0b388fcee8",
+      "comment": "",
+      "command": "click",
+      "target": "name=zone",
+      "targets": [
+        ["name=zone", "name"],
+        ["css=.control:nth-child(6) > .custom-select", "css:finder"],
+        ["xpath=//select[@name='zone']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div[6]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5bf589bb-8344-49d4-9a06-df106cc0d650",
+      "comment": "",
+      "command": "select",
+      "target": "name=zone",
+      "targets": [],
+      "value": "label=Plava"
+    }, {
+      "id": "d47fb8d5-eab0-455d-9f11-9a24eb435dd5",
+      "comment": "",
+      "command": "click",
+      "target": "name=zone",
+      "targets": [
+        ["name=zone", "name"],
+        ["css=.control:nth-child(6) > .custom-select", "css:finder"],
+        ["xpath=//select[@name='zone']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div[6]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aed122a5-71d0-4291-a344-a440825fabe1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fieldis-grouped:nth-child(3) .btnLogin",
+      "targets": [
+        ["css=.fieldis-grouped:nth-child(3) .btnLogin", "css:finder"],
+        ["xpath=//div[@id='hom']/form/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c791f53d-ed71-4740-8d74-afd8b10448ea",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.col-md-12 > .register-heading",
+      "targets": [
+        ["css=.col-md-12 > .register-heading", "css:finder"],
+        ["xpath=//section[@id='add-location']/div/div/div/h4", "xpath:idRelative"],
+        ["xpath=//h4", "xpath:position"],
+        ["xpath=//h4[contains(.,'Nekorektan unos!')]", "xpath:innerText"]
+      ],
+      "value": "Nekorektan unos!"
+    }, {
+      "id": "b4147080-80ff-4dee-a8a1-c61467bd3308",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "d84d1469-2e54-469e-bfdc-0a8c82f6f40b",
+    "name": "neuspesno dodavanje mesta nekorektno uneseni podaci2",
+    "commands": [{
+      "id": "94cb6222-9119-4401-9d91-5fdff4fde90a",
+      "comment": "",
+      "command": "open",
+      "target": "http://laravel.me/admin3",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5d3fdfd1-7f66-4b44-9904-2d7bc5b8a696",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1522x808",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5a656e6f-b8f8-40ea-82e1-791b7cdcc4fd",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Dodaj mesto",
+      "targets": [
+        ["linkText=Dodaj mesto", "linkText"],
+        ["css=.nav-menu li:nth-child(5) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Dodaj mesto')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div/nav/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#add-location')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Dodaj mesto')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cd0772ee-9aa4-4bf2-95e2-a253928733dd",
+      "comment": "",
+      "command": "click",
+      "target": "name=x",
+      "targets": [
+        ["name=x", "name"],
+        ["css=.field > .control:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='x']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//section[2]/div/div/div/div/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "09729857-792d-44c9-92cd-e162aa2815f2",
+      "comment": "",
+      "command": "type",
+      "target": "name=x",
+      "targets": [
+        ["name=x", "name"],
+        ["css=.field > .control:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='x']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//section[2]/div/div/div/div/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": " 44.80617"
+    }, {
+      "id": "3f173a3d-7793-46f6-b2f5-0a3a2d057f40",
+      "comment": "",
+      "command": "click",
+      "target": "name=y",
+      "targets": [
+        ["name=y", "name"],
+        ["css=.field > .control:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='y']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//section[2]/div/div/div/div/div/form/div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc6c3665-ec92-4685-bdb9-840787b15d81",
+      "comment": "",
+      "command": "type",
+      "target": "name=y",
+      "targets": [
+        ["name=y", "name"],
+        ["css=.field > .control:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='y']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//section[2]/div/div/div/div/div/form/div/div[2]/input", "xpath:position"]
+      ],
+      "value": "y"
+    }, {
+      "id": "86d5751d-1443-4838-ae3a-43d3f25e654c",
+      "comment": "",
+      "command": "click",
+      "target": "name=zone",
+      "targets": [
+        ["name=zone", "name"],
+        ["css=.control:nth-child(6) > .custom-select", "css:finder"],
+        ["xpath=//select[@name='zone']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div[6]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2d50dd5c-3ad8-4fd4-8392-5eed2cd16f32",
+      "comment": "",
+      "command": "select",
+      "target": "name=zone",
+      "targets": [],
+      "value": "label=Plava"
+    }, {
+      "id": "3f8cfce6-0fa5-4138-b29c-bcc7ba226396",
+      "comment": "",
+      "command": "click",
+      "target": "name=zone",
+      "targets": [
+        ["name=zone", "name"],
+        ["css=.control:nth-child(6) > .custom-select", "css:finder"],
+        ["xpath=//select[@name='zone']", "xpath:attributes"],
+        ["xpath=//div[@id='hom']/form/div/div[6]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ee52c1f2-cd76-4c94-8da9-42af72b68f3d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fieldis-grouped:nth-child(3) .btnLogin",
+      "targets": [
+        ["css=.fieldis-grouped:nth-child(3) .btnLogin", "css:finder"],
+        ["xpath=//div[@id='hom']/form/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3da3e62e-018e-4050-a9c0-24bc404affa1",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.col-md-12 > .register-heading",
+      "targets": [
+        ["css=.col-md-12 > .register-heading", "css:finder"],
+        ["xpath=//section[@id='add-location']/div/div/div/h4", "xpath:idRelative"],
+        ["xpath=//h4", "xpath:position"],
+        ["xpath=//h4[contains(.,'Nekorektan unos!')]", "xpath:innerText"]
+      ],
+      "value": "Nekorektan unos!"
+    }, {
+      "id": "4f226027-1ef0-4f5f-a2a3-0b278fc622ea",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "483e19b3-c79e-4b95-8d2b-e4feffe37933",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": [],
+  "plugins": []
+}

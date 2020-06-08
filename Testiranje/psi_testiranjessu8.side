@@ -1,0 +1,359 @@
+{
+  "id": "0749b6d9-09e3-4a48-8221-d858b94fa626",
+  "version": "2.0",
+  "name": "psi_testiranjessu8",
+  "url": "http://laravel.me/",
+  "tests": [{
+    "id": "bd1d8096-e3d8-4126-b4b7-2bdb67a7692a",
+    "name": "neuspesno unapredjenje kornisnika",
+    "commands": [{
+      "id": "dc2450ef-a0ae-4c6c-9098-b9e9bafe6a90",
+      "comment": "",
+      "command": "open",
+      "target": "http://laravel.me/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7f4c944c-d514-4800-85ac-59f2cc219afc",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1522x808",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7c5ea7cc-4888-4cdd-91d4-507a4250b452",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-button",
+      "targets": [
+        ["id=login-button", "id"],
+        ["linkText=Uloguj se", "linkText"],
+        ["css=.nav-menu #login-button", "css:finder"],
+        ["xpath=//a[contains(text(),'Uloguj se')]", "xpath:link"],
+        ["xpath=//a[@id='login-button']", "xpath:attributes"],
+        ["xpath=//header[@id='header']/div/nav/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#login')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Uloguj se')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "19e560d8-4682-4151-866d-b45a3977a0d3",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(1) #email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div[@id='home']/div/div/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "893f2ad8-a328-415f-ada8-ee3cccb12b50",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(1) #email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div[@id='home']/div/div/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "filipdj998@gmail.com"
+    }, {
+      "id": "0eaaa905-ad68-4b4a-9bce-b55dca843d18",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=.col-md-12:nth-child(2) > #password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='home']/div/div/form/div/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Filipsed98*"
+    }, {
+      "id": "de061b7e-6f4b-40b7-b5c7-a238ca97bdab",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-md-3:nth-child(2)",
+      "targets": [
+        ["css=.col-md-3:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='home']/div/div/form/div/div[2]", "xpath:idRelative"],
+        ["xpath=//form/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "12dd2fdc-e683-4d91-b5f4-4ce1878b1c3c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btnLogin",
+      "targets": [
+        ["css=.btnLogin", "css:finder"],
+        ["xpath=//input[@value='Prijavi se']", "xpath:attributes"],
+        ["xpath=//div[@id='home']/div/div/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fbc18300-60a4-405a-bfd0-ae9f1009afab",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Nalozi",
+      "targets": [
+        ["linkText=Nalozi", "linkText"],
+        ["css=.nav-menu li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Nalozi')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div/nav/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#users')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Nalozi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f1904e49-d844-46af-8d0d-1c7714eeafc6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btnUp",
+      "targets": [
+        ["css=.btnUp", "css:finder"],
+        ["xpath=(//input[@value=''])[3]", "xpath:attributes"],
+        ["xpath=//table[@id='dataTable']/tbody/tr[3]/td[5]/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "570515b3-52c2-4457-b511-6488032efa47",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "576bcd7b-8f0b-43ed-9744-1708aa219a32",
+    "name": "uspesno unapredjenje korisnika",
+    "commands": [{
+      "id": "4a85a288-da83-4ac2-b8e6-941dcd8c438e",
+      "comment": "",
+      "command": "open",
+      "target": "http://laravel.me/admin",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e536c2f9-66ce-4466-87a6-6c6dff053a28",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1522x808",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "906a4fe4-2c11-40c4-975b-5b72992958f3",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Nalozi",
+      "targets": [
+        ["linkText=Nalozi", "linkText"],
+        ["css=.nav-menu li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Nalozi')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div/nav/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#users')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Nalozi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f5275ebf-0bc4-4095-a4d0-3cbbdae26fed",
+      "comment": "",
+      "command": "click",
+      "target": "id=profile-tab",
+      "targets": [
+        ["id=profile-tab", "id"],
+        ["linkText=Neaktivirani", "linkText"],
+        ["css=.container > #myTab #profile-tab", "css:finder"],
+        ["xpath=//a[contains(text(),'Neaktivirani')]", "xpath:link"],
+        ["xpath=//a[@id='profile-tab']", "xpath:attributes"],
+        ["xpath=//ul[@id='myTab']/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#profile')]", "xpath:href"],
+        ["xpath=//div/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Neaktivirani')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b9241d0f-8174-4146-84e7-92858cebdcb3",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(1) > .btn",
+      "targets": [
+        ["css=form:nth-child(1) > .btn", "css:finder"],
+        ["xpath=//input[@value='Aktiviraj']", "xpath:attributes"],
+        ["xpath=//table[@id='dataTable4']/tbody/tr/td[4]/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0a09d669-5a78-41c2-8eb9-16ca3beaed6e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btnUp",
+      "targets": [
+        ["css=.btnUp", "css:finder"],
+        ["xpath=(//input[@value=''])[3]", "xpath:attributes"],
+        ["xpath=//table[@id='dataTable']/tbody/tr[3]/td[5]/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "edac534f-1181-4219-bd98-42962e03387d",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=#dataTable .odd:nth-child(3) > td:nth-child(4)",
+      "targets": [
+        ["css=#dataTable .odd:nth-child(3) > td:nth-child(4)", "css:finder"],
+        ["xpath=//table[@id='dataTable']/tbody/tr[3]/td[4]", "xpath:idRelative"],
+        ["xpath=//tr[3]/td[4]", "xpath:position"]
+      ],
+      "value": "Administrator"
+    }, {
+      "id": "f877232e-2cbc-4b9f-b0c0-84d0a1e9d431",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "7b2f8765-6220-43a0-b553-eb738a969217",
+    "name": "uspesno degradiranje korisnika",
+    "commands": [{
+      "id": "be4bd6d5-5e2d-4269-8f8f-9c4c9f443326",
+      "comment": "",
+      "command": "open",
+      "target": "http://laravel.me/admin",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a07afed4-6178-4f66-93ed-89479bf5e30a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1522x808",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9a96ed0a-d179-4628-9227-3433ff1bdf64",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Nalozi",
+      "targets": [
+        ["linkText=Nalozi", "linkText"],
+        ["css=.nav-menu li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Nalozi')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div/nav/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#users')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Nalozi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "74108405-94eb-434b-a5e5-60780868a0d0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btnDown",
+      "targets": [
+        ["css=.btnDown", "css:finder"],
+        ["xpath=(//input[@value=''])[4]", "xpath:attributes"],
+        ["xpath=//table[@id='dataTable']/tbody/tr[4]/td[5]/form[2]/input[3]", "xpath:idRelative"],
+        ["xpath=//form[2]/input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c88a1363-119c-4159-a13c-7b9acddf9813",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=#dataTable .even:nth-child(4) > td:nth-child(4)",
+      "targets": [
+        ["css=#dataTable .even:nth-child(4) > td:nth-child(4)", "css:finder"],
+        ["xpath=//table[@id='dataTable']/tbody/tr[4]/td[4]", "xpath:idRelative"],
+        ["xpath=//tr[4]/td[4]", "xpath:position"],
+        ["xpath=//td[contains(.,'Korisnik')]", "xpath:innerText"]
+      ],
+      "value": "Korisnik"
+    }, {
+      "id": "3fdfc550-dd18-4752-9e0e-b521a328fbf5",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "694da168-0e87-4962-a13d-dbc84cda9296",
+    "name": "uspesno brisanje korisnika",
+    "commands": [{
+      "id": "d23e37f3-a8d3-4912-b12e-3bc8fb886e6d",
+      "comment": "",
+      "command": "open",
+      "target": "http://laravel.me/admin",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4fd1cbc7-adaf-4975-bc6c-b169a928ed49",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1522x808",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "53f897ae-20b6-430c-bbb7-2e5bcbc63905",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Nalozi",
+      "targets": [
+        ["linkText=Nalozi", "linkText"],
+        ["css=.nav-menu li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Nalozi')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div/nav/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#users')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Nalozi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3b5f129-b7fd-40e9-a37d-5f6a3a8c05ea",
+      "comment": "",
+      "command": "click",
+      "target": "css=.even:nth-child(4) > td:nth-child(5) .btnDel",
+      "targets": [
+        ["css=.even:nth-child(4) > td:nth-child(5) .btnDel", "css:finder"],
+        ["xpath=(//input[@value=''])[4]", "xpath:attributes"],
+        ["xpath=//table[@id='dataTable']/tbody/tr[4]/td[5]/form[2]/input[3]", "xpath:idRelative"],
+        ["xpath=//form[2]/input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3ad851c8-d3dd-49be-9bf1-46b1cecc0bfe",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "1c32b389-2fc2-4972-9cae-4ae1aea1bb39",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["bd1d8096-e3d8-4126-b4b7-2bdb67a7692a"]
+  }],
+  "urls": [],
+  "plugins": []
+}

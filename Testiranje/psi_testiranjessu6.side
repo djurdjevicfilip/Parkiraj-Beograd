@@ -1,0 +1,681 @@
+{
+  "id": "ce7bd36c-8348-4282-b17d-c9d3963b2549",
+  "version": "2.0",
+  "name": "psi_testiranje",
+  "url": "http://laravel.me/",
+  "tests": [{
+    "id": "c2a23b03-3dae-4e58-a927-5dcf672939a7",
+    "name": "Uspesna promena mesta",
+    "commands": [{
+      "id": "3ad421a9-5c6d-4c9b-82c0-e584003d54ce",
+      "comment": "",
+      "command": "open",
+      "target": "http://laravel.me/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5811851f-c900-49db-990f-1607af66faef",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1523x811",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fcd9212f-3bca-489d-91ae-2c10e4784573",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-button",
+      "targets": [
+        ["id=login-button", "id"],
+        ["linkText=Uloguj se", "linkText"],
+        ["css=.nav-menu #login-button", "css:finder"],
+        ["xpath=//a[contains(text(),'Uloguj se')]", "xpath:link"],
+        ["xpath=//a[@id='login-button']", "xpath:attributes"],
+        ["xpath=//header[@id='header']/div/nav/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#login')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Uloguj se')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bf454715-4412-4dc5-8a1a-4c8bd3fff2fa",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(1) #email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div[@id='home']/div/div/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "35f65e0f-cac9-489d-9211-ea7cd450debf",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(1) #email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div[@id='home']/div/div/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "filipdj998@gmail.com"
+    }, {
+      "id": "d5bd86a6-a632-45bf-95bf-16d6159b287c",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=.col-md-12:nth-child(2) > #password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='home']/div/div/form/div/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Filipsed98*"
+    }, {
+      "id": "50b59652-9414-4c48-bafe-23fbe97d654b",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(1) #email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div[@id='home']/div/div/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4374d343-a78c-4dba-8c1e-27fc73bfe82c",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=.form-group:nth-child(1) #email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div[@id='home']/div/div/form/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "filipdj98@gmail.com"
+    }, {
+      "id": "ea5c1957-ab0f-4226-8f7c-680cc873501f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btnLogin",
+      "targets": [
+        ["css=.btnLogin", "css:finder"],
+        ["xpath=//input[@value='Prijavi se']", "xpath:attributes"],
+        ["xpath=//div[@id='home']/div/div/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f05b27ca-d838-4ff8-bd91-988fe9695595",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Lokacije",
+      "targets": [
+        ["linkText=Lokacije", "linkText"],
+        ["css=.nav-menu li:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Lokacije')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div/nav/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#locations')]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Lokacije')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d1ffe9ec-b763-4cf8-b399-5544a05c0679",
+      "comment": "",
+      "command": "click",
+      "target": "css=.even:nth-child(2) .btnEdit",
+      "targets": [
+        ["css=.even:nth-child(2) .btnEdit", "css:finder"],
+        ["xpath=//button[@onclick='edit(this,1)']", "xpath:attributes"],
+        ["xpath=//table[@id='dataTable2']/tbody/tr[2]/td[6]/button", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[6]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Izmeni')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4fa2af7-0341-4486-913a-67f4089d3def",
+      "comment": "",
+      "command": "click",
+      "target": "id=xEditS",
+      "targets": [
+        ["id=xEditS", "id"],
+        ["css=#xEditS", "css:finder"],
+        ["xpath=//input[@id='xEditS']", "xpath:attributes"],
+        ["xpath=//tr[@id='edit1']/td[2]/div/input", "xpath:idRelative"],
+        ["xpath=//td[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "459c66ec-29f2-4c1b-adf9-164a1b6de0c3",
+      "comment": "",
+      "command": "type",
+      "target": "id=xEditS",
+      "targets": [
+        ["id=xEditS", "id"],
+        ["css=#xEditS", "css:finder"],
+        ["xpath=//input[@id='xEditS']", "xpath:attributes"],
+        ["xpath=//tr[@id='edit1']/td[2]/div/input", "xpath:idRelative"],
+        ["xpath=//td[2]/div/input", "xpath:position"]
+      ],
+      "value": " 44.80617"
+    }, {
+      "id": "dd39c27d-ee38-4259-81cc-7d31a8d0d7ca",
+      "comment": "",
+      "command": "click",
+      "target": "id=yEditS",
+      "targets": [
+        ["id=yEditS", "id"],
+        ["css=#yEditS", "css:finder"],
+        ["xpath=//input[@id='yEditS']", "xpath:attributes"],
+        ["xpath=//tr[@id='edit1']/td[3]/div/input", "xpath:idRelative"],
+        ["xpath=//td[3]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "712775d9-cedf-48f0-a877-b2bd2d1487a9",
+      "comment": "",
+      "command": "type",
+      "target": "id=yEditS",
+      "targets": [
+        ["id=yEditS", "id"],
+        ["css=#yEditS", "css:finder"],
+        ["xpath=//input[@id='yEditS']", "xpath:attributes"],
+        ["xpath=//tr[@id='edit1']/td[3]/div/input", "xpath:idRelative"],
+        ["xpath=//td[3]/div/input", "xpath:position"]
+      ],
+      "value": " 20.475066"
+    }, {
+      "id": "aff4ba8d-4ed7-4703-9418-c95d995da58b",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(8) .btnLogin",
+      "targets": [
+        ["css=td:nth-child(8) .btnLogin", "css:finder"],
+        ["xpath=//tr[@id='edit1']/td[6]/div/div/button", "xpath:idRelative"],
+        ["xpath=//td[6]/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Potvrdi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6942e478-b6dc-4858-874d-fc9ff7e060fd",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=#dataTable2 .even:nth-child(2) > td:nth-child(2)",
+      "targets": [
+        ["css=#dataTable2 .even:nth-child(2) > td:nth-child(2)", "css:finder"],
+        ["xpath=//table[@id='dataTable2']/tbody/tr[2]/td[2]", "xpath:idRelative"],
+        ["xpath=//section[4]/div/div[2]/div/div/div/div/div/div[2]/div/table/tbody/tr[2]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'44.80617')]", "xpath:innerText"]
+      ],
+      "value": "44.80617"
+    }]
+  }, {
+    "id": "2e894e3f-1553-4a13-b0ee-1a57fd09b456",
+    "name": "Uspesno brisanje mesta",
+    "commands": [{
+      "id": "08db8be3-4130-467e-b18e-8830fbe5cd4f",
+      "comment": "",
+      "command": "open",
+      "target": "http://laravel.me/admin",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ba9b5f37-566f-4a99-9a76-9679733771a7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1522x808",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d991b315-9aac-406d-8685-cd0a5292b6fc",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Lokacije",
+      "targets": [
+        ["linkText=Lokacije", "linkText"],
+        ["css=.nav-menu li:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Lokacije')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div/nav/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#locations')]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Lokacije')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "58961cb6-1074-4af7-9f6e-deb0ed87346d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.even:nth-child(2) > td:nth-child(6) > form > .btn",
+      "targets": [
+        ["css=.even:nth-child(2) > td:nth-child(6) > form > .btn", "css:finder"],
+        ["xpath=(//input[@value=''])[5]", "xpath:attributes"],
+        ["xpath=//table[@id='dataTable2']/tbody/tr[2]/td[6]/form/input[3]", "xpath:idRelative"],
+        ["xpath=//td[6]/form/input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "240949ab-1e2c-49c8-83bc-a21c9da56246",
+    "name": "Neuspesna promena mesta prazno polje",
+    "commands": [{
+      "id": "272d4e12-c824-45f5-99f3-b032be8044d5",
+      "comment": "",
+      "command": "open",
+      "target": "http://laravel.me/admin",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "36b0aeff-7988-4b69-ae19-a8f783a7a683",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1523x808",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2453f916-12ef-499e-8ad1-80e099aa2803",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Lokacije",
+      "targets": [
+        ["linkText=Lokacije", "linkText"],
+        ["css=.nav-menu li:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Lokacije')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div/nav/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#locations')]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Lokacije')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "14ebb51e-480d-47e6-84a9-bb987f903537",
+      "comment": "",
+      "command": "click",
+      "target": "css=.even:nth-child(2) .btnEdit",
+      "targets": [
+        ["css=.even:nth-child(2) .btnEdit", "css:finder"],
+        ["xpath=//button[@onclick='edit(this,1)']", "xpath:attributes"],
+        ["xpath=//table[@id='dataTable2']/tbody/tr[2]/td[6]/button", "xpath:idRelative"],
+        ["xpath=//td[6]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Izmeni')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "52a888f9-0fd6-4963-b14c-e64c727275e6",
+      "comment": "",
+      "command": "click",
+      "target": "id=edit1",
+      "targets": [
+        ["id=edit1", "id"],
+        ["css=#edit1", "css:finder"],
+        ["xpath=//tr[@id='edit1']", "xpath:attributes"],
+        ["xpath=//table[@id='dataTable2']/tbody/tr", "xpath:idRelative"],
+        ["xpath=//section[4]/div/div[2]/div/div/div/div/div/div[2]/div/table/tbody/tr", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b717b63e-fbe1-4580-8119-1f32d9b4906f",
+      "comment": "",
+      "command": "type",
+      "target": "id=xEditS",
+      "targets": [
+        ["id=xEditS", "id"],
+        ["css=#xEditS", "css:finder"],
+        ["xpath=//input[@id='xEditS']", "xpath:attributes"],
+        ["xpath=//tr[@id='edit1']/td[2]/div/input", "xpath:idRelative"],
+        ["xpath=//td[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6852dbc2-5e07-4b11-8857-4954d9e746d6",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(8) .btnLogin",
+      "targets": [
+        ["css=td:nth-child(8) .btnLogin", "css:finder"],
+        ["xpath=//tr[@id='edit1']/td[6]/div/div/button", "xpath:idRelative"],
+        ["xpath=//td[6]/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Potvrdi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8a1271bf-8946-4849-914b-eee45629e519",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=#dataTable2 .even:nth-child(2) > td:nth-child(2)",
+      "targets": [
+        ["css=#dataTable2 .even:nth-child(2) > td:nth-child(2)", "css:finder"],
+        ["xpath=//table[@id='dataTable2']/tbody/tr[2]/td[2]", "xpath:idRelative"],
+        ["xpath=//section[4]/div/div[2]/div/div/div/div/div/div[2]/div/table/tbody/tr[2]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'44.824847')]", "xpath:innerText"]
+      ],
+      "value": "44.824847"
+    }]
+  }, {
+    "id": "26a425e2-58d3-4544-8f61-6dcb8bef57d0",
+    "name": "Neuspesna promena mesta prazno polje2",
+    "commands": [{
+      "id": "d74f53d9-aedb-4295-9163-ba0cd93fe012",
+      "comment": "",
+      "command": "open",
+      "target": "http://laravel.me/admin5",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "684b1992-d8f5-4bd5-b787-5b97650aee68",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1524x808",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c3d7f0c7-5fb9-4fb5-930d-d3af1c0507ce",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Lokacije",
+      "targets": [
+        ["linkText=Lokacije", "linkText"],
+        ["css=.nav-menu li:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Lokacije')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div/nav/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#locations')]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Lokacije')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dc07ec73-fa0c-42ee-affc-b8e551c02207",
+      "comment": "",
+      "command": "click",
+      "target": "css=.even:nth-child(2) .btnEdit",
+      "targets": [
+        ["css=.even:nth-child(2) .btnEdit", "css:finder"],
+        ["xpath=//button[@onclick='edit(this,1)']", "xpath:attributes"],
+        ["xpath=//table[@id='dataTable2']/tbody/tr[2]/td[6]/button", "xpath:idRelative"],
+        ["xpath=//td[6]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Izmeni')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "aaacc034-1936-4f3a-840a-9cd61db51e35",
+      "comment": "",
+      "command": "click",
+      "target": "id=edit1",
+      "targets": [
+        ["id=edit1", "id"],
+        ["css=#edit1", "css:finder"],
+        ["xpath=//tr[@id='edit1']", "xpath:attributes"],
+        ["xpath=//table[@id='dataTable2']/tbody/tr", "xpath:idRelative"],
+        ["xpath=//section[4]/div/div[2]/div/div/div/div/div/div[2]/div/table/tbody/tr", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "112b3dc9-0d2a-4388-b0d8-3624a5485d98",
+      "comment": "",
+      "command": "type",
+      "target": "id=yEditS",
+      "targets": [
+        ["id=yEditS", "id"],
+        ["css=#yEditS", "css:finder"],
+        ["xpath=//input[@id='yEditS']", "xpath:attributes"],
+        ["xpath=//tr[@id='edit1']/td[3]/div/input", "xpath:idRelative"],
+        ["xpath=//td[3]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "623b62d2-ea93-43c1-9e18-0e571e3ec18c",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(8) .btnLogin",
+      "targets": [
+        ["css=td:nth-child(8) .btnLogin", "css:finder"],
+        ["xpath=//tr[@id='edit1']/td[6]/div/div/button", "xpath:idRelative"],
+        ["xpath=//td[6]/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Potvrdi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "215a3fd7-fbb8-4cf2-ae55-83470014a794",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=#dataTable2 .even:nth-child(2) > td:nth-child(3)",
+      "targets": [
+        ["css=#dataTable2 .even:nth-child(2) > td:nth-child(3)", "css:finder"],
+        ["xpath=//table[@id='dataTable2']/tbody/tr[2]/td[3]", "xpath:idRelative"],
+        ["xpath=//section[4]/div/div[2]/div/div/div/div/div/div[2]/div/table/tbody/tr[2]/td[3]", "xpath:position"],
+        ["xpath=//td[contains(.,'20.4561593')]", "xpath:innerText"]
+      ],
+      "value": "20.4561593"
+    }]
+  }, {
+    "id": "86e6ced8-e7db-430d-8283-226f04ee7009",
+    "name": "Neuspesna promena mesta neoddgovarajuca vrednost",
+    "commands": [{
+      "id": "15007726-882d-4f7f-be6f-b0d44f50f84c",
+      "comment": "",
+      "command": "open",
+      "target": "http://laravel.me/admin5",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5f9c2f63-11cf-4fd8-8293-62c0ad904620",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1522x808",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cebabba7-3d27-4c70-98de-293b975355e7",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Lokacije",
+      "targets": [
+        ["linkText=Lokacije", "linkText"],
+        ["css=.nav-menu li:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Lokacije')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div/nav/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#locations')]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Lokacije')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e2195af5-735d-48c9-80c0-94aed9020fe2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.even:nth-child(2) .btnEdit",
+      "targets": [
+        ["css=.even:nth-child(2) .btnEdit", "css:finder"],
+        ["xpath=//button[@onclick='edit(this,1)']", "xpath:attributes"],
+        ["xpath=//table[@id='dataTable2']/tbody/tr[2]/td[6]/button", "xpath:idRelative"],
+        ["xpath=//td[6]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Izmeni')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "13d8092e-3aa2-4af8-a432-738de3f7891e",
+      "comment": "",
+      "command": "click",
+      "target": "id=edit1",
+      "targets": [
+        ["id=edit1", "id"],
+        ["css=#edit1", "css:finder"],
+        ["xpath=//tr[@id='edit1']", "xpath:attributes"],
+        ["xpath=//table[@id='dataTable2']/tbody/tr", "xpath:idRelative"],
+        ["xpath=//section[4]/div/div[2]/div/div/div/div/div/div[2]/div/table/tbody/tr", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "80407a05-81d0-4510-8a3e-9a26fed2210f",
+      "comment": "",
+      "command": "type",
+      "target": "id=xEditS",
+      "targets": [
+        ["id=xEditS", "id"],
+        ["css=#xEditS", "css:finder"],
+        ["xpath=//input[@id='xEditS']", "xpath:attributes"],
+        ["xpath=//tr[@id='edit1']/td[2]/div/input", "xpath:idRelative"],
+        ["xpath=//td[2]/div/input", "xpath:position"]
+      ],
+      "value": "m "
+    }, {
+      "id": "0019decd-edda-427b-addd-6398ec6119ab",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(8) .btnLogin",
+      "targets": [
+        ["css=td:nth-child(8) .btnLogin", "css:finder"],
+        ["xpath=//tr[@id='edit1']/td[6]/div/div/button", "xpath:idRelative"],
+        ["xpath=//td[6]/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Potvrdi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce6e264e-0e81-499d-9917-185aa95dfd76",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=#dataTable2 .even:nth-child(2) > td:nth-child(2)",
+      "targets": [
+        ["css=#dataTable2 .even:nth-child(2) > td:nth-child(2)", "css:finder"],
+        ["xpath=//table[@id='dataTable2']/tbody/tr[2]/td[2]", "xpath:idRelative"],
+        ["xpath=//section[4]/div/div[2]/div/div/div/div/div/div[2]/div/table/tbody/tr[2]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'44.824847')]", "xpath:innerText"]
+      ],
+      "value": "44.824847"
+    }, {
+      "id": "468b992f-2a26-4d00-976a-38fcac96ae51",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "46bb56d0-3151-4aef-aaea-297764e3144d",
+    "name": "Neuspesna promena mesta neodgovarajuca vrednost",
+    "commands": [{
+      "id": "66051a60-4fcf-4fb6-a78e-9e319e4e5e4c",
+      "comment": "",
+      "command": "open",
+      "target": "http://laravel.me/admin5",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e8c4d9f0-1898-4c89-a110-43270aacff5c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1522x808",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7739c95c-f9f8-454a-bdb7-83c46af76535",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Lokacije",
+      "targets": [
+        ["linkText=Lokacije", "linkText"],
+        ["css=.nav-menu li:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Lokacije')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div/nav/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#locations')]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Lokacije')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5a9445a6-59ea-47f6-9fd7-f3ee4b0d6c1f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.even:nth-child(2) .btnEdit",
+      "targets": [
+        ["css=.even:nth-child(2) .btnEdit", "css:finder"],
+        ["xpath=//button[@onclick='edit(this,1)']", "xpath:attributes"],
+        ["xpath=//table[@id='dataTable2']/tbody/tr[2]/td[6]/button", "xpath:idRelative"],
+        ["xpath=//td[6]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Izmeni')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e73494ad-b38d-4cd8-915b-7b5cae5fe2d4",
+      "comment": "",
+      "command": "click",
+      "target": "id=edit1",
+      "targets": [
+        ["id=edit1", "id"],
+        ["css=#edit1", "css:finder"],
+        ["xpath=//tr[@id='edit1']", "xpath:attributes"],
+        ["xpath=//table[@id='dataTable2']/tbody/tr", "xpath:idRelative"],
+        ["xpath=//section[4]/div/div[2]/div/div/div/div/div/div[2]/div/table/tbody/tr", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a18606b3-0559-46be-a0e5-638c9da142b1",
+      "comment": "",
+      "command": "type",
+      "target": "id=yEditS",
+      "targets": [
+        ["id=yEditS", "id"],
+        ["css=#yEditS", "css:finder"],
+        ["xpath=//input[@id='yEditS']", "xpath:attributes"],
+        ["xpath=//tr[@id='edit1']/td[3]/div/input", "xpath:idRelative"],
+        ["xpath=//td[3]/div/input", "xpath:position"]
+      ],
+      "value": "sss"
+    }, {
+      "id": "9ce25194-7d5b-498e-b8e6-3d04e176bc57",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(8) .btnLogin",
+      "targets": [
+        ["css=td:nth-child(8) .btnLogin", "css:finder"],
+        ["xpath=//tr[@id='edit1']/td[6]/div/div/button", "xpath:idRelative"],
+        ["xpath=//td[6]/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Potvrdi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "71869853-db80-4ab0-a7c3-828f8ddbe300",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=#dataTable2 .even:nth-child(2) > td:nth-child(3)",
+      "targets": [
+        ["css=#dataTable2 .even:nth-child(2) > td:nth-child(3)", "css:finder"],
+        ["xpath=//table[@id='dataTable2']/tbody/tr[2]/td[3]", "xpath:idRelative"],
+        ["xpath=//section[4]/div/div[2]/div/div/div/div/div/div[2]/div/table/tbody/tr[2]/td[3]", "xpath:position"],
+        ["xpath=//td[contains(.,'20.4561593')]", "xpath:innerText"]
+      ],
+      "value": "20.4561593"
+    }, {
+      "id": "30dd20ac-d8b4-4073-8965-ba8e55d06975",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "84e4fb78-60ce-448b-bdc3-ce6bc9cd307e",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["c2a23b03-3dae-4e58-a927-5dcf672939a7"]
+  }],
+  "urls": [],
+  "plugins": []
+}
