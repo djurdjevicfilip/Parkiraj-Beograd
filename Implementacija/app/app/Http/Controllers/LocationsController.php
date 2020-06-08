@@ -17,18 +17,15 @@ class LocationsController extends Controller
      */
     public function store(Request $request){
         //validation
+            
         $type=request('parkingType');
         if($type=="sensor"){
             $validator = Validator::make($request->all(), [
-                'x' => [
-                    'required', 
-                    'string',
-                    'regex:/^(-?\d+(\.\d+)?)/',      
+                'xx' => [
+                    'regex:/^(-?\d+(\.\d+)?)$/',      
                     ],
-                'y' => [
-                    'required', 
-                    'string',
-                    'regex:/^(-?\d+(\.\d+)?)/',      
+                'yy' => [
+                    'regex:/^(-?\d+(\.\d+)?)$/',      
                 ],
                 'zone' => [
                     'regex:/Zelena|Plava|Crvena/',
@@ -37,15 +34,11 @@ class LocationsController extends Controller
                 ]);
         }else{
             $validator = Validator::make($request->all(), [
-                'x' => [
-                    'required', 
-                    'string',
-                    'regex:/^(-?\d+(\.\d+)?)/',      
+                'xx' => [
+                    'regex:/^(-?\d+(\.\d+)?)$/',      
                     ],
-                'y' => [
-                    'required', 
-                    'string',
-                    'regex:/^(-?\d+(\.\d+)?)/',      
+                'yy' => [
+                    'regex:/^(-?\d+(\.\d+)?)$/',
                 ],
                 'capacity' => [
                     'regex:/^[0-9]*$/',
@@ -58,8 +51,8 @@ class LocationsController extends Controller
         }
 
 
-        $x=request('x');
-        $y=request('y');
+        $x=request('xx');
+        $y=request('yy');
         
 
         $location=new Location;
@@ -100,12 +93,12 @@ class LocationsController extends Controller
                  'x' => [
                      'required', 
                      'string',
-                     'regex:/^(-?\d+(\.\d+)?)/',      
+                     'regex:/^(-?\d+(\.\d+)?)$/',      
                      ],
                  'y' => [
                      'required', 
                      'string',
-                     'regex:/^(-?\d+(\.\d+)?)/',      
+                     'regex:/^(-?\d+(\.\d+)?)$/',      
                  ],
                  'zone' => [
                      'regex:/Zelena|Plava|Crvena/',
@@ -113,24 +106,21 @@ class LocationsController extends Controller
                  
                  ]);
          }else{
-             $validator = Validator::make($request->all(), [
-                 'x' => [
-                     'required', 
-                     'string',
-                     'regex:/^(-?\d+(\.\d+)?)/',      
-                     ],
-                 'y' => [
-                     'required', 
-                     'string',
-                     'regex:/^(-?\d+(\.\d+)?)/',      
-                 ],
-                 'cap' => [
+             $validator = Validator::make($request->all(), array(
+                 'x' => array(
+                     'required',
+                     'regex:/^(-?\d+(\.\d+)?)$/',      
+                 ),
+                 'y' => array(
+                     'required',
+                     'regex:/^(-?\d+(\.\d+)?)$/',     
+                    ),
+                 'cap' => array(
                      'regex:/^[0-9]*$/',
-                 ]
-                 ]);
+                 )
+             ));
          }
          if ($validator->fails()) {
-             \Log::debug("pao");
              return Redirect::to(route('admin',['message'=>'5']) . "#locations");
          }
 

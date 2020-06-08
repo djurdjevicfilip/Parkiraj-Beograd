@@ -117,11 +117,11 @@
                                     {{ csrf_field() }}
                                     <div class="field">
                                         <div class="control">
-                                            <input name="x"class="form-control"type="text"placeholder="X Koordinata*">
+                                            <input name="xx"class="form-control"type="text"placeholder="X Koordinata*">
                                         </div>
                                         
                                         <div class="control">
-                                            <input name="y"class="form-control"type="text"placeholder="Y Koordinata*">
+                                            <input name="yy"class="form-control"type="text"placeholder="Y Koordinata*">
                                         </div>
 
                                         <div class="control">
