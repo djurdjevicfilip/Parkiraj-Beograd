@@ -56,7 +56,9 @@ class HomeController extends Controller
     */
     public function mod($message=0){
 
+        $users=User::with('administration')->get();
+		$joined_locations=ParkingLocation::with(['location','sensor','garage'])->get();
         // Should pass locations as parameter
-        return view('pages.moderator')->with('message',$message);
+        return view('pages.moderator')->with('message',$message)->with('locations',$joined_locations);
     }
 }

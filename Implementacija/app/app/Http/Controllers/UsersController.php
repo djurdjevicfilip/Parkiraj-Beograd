@@ -91,6 +91,7 @@ class UsersController extends Controller
             else
                 return Redirect::to(route('home',['message'=>'2']) . "#passchange");
         }
+
         $user = Auth::user();
 
         //Get input passwords

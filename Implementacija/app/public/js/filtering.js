@@ -175,6 +175,7 @@ function zoneCheck() {
 		zone=true;
 	} else {
 		hideZones();
+		showAll();
 		zone=false;
 	}
 	
@@ -190,6 +191,9 @@ function hideZones(){
 	var label1=document.getElementById('lab1');
 	var label2=document.getElementById('lab2');
 	var label3=document.getElementById('lab3');
+	document.getElementById('cb1').checked=false;
+	document.getElementById('cb2').checked=false;
+	document.getElementById('cb3').checked=false;
 	label1.style.visibility = 'hidden';
 	label2.style.visibility = 'hidden';
 	label3.style.visibility = 'hidden';

@@ -216,10 +216,10 @@ function findLocation(){
 			position: place.geometry.location
 			}));
 			//Place marker
-			placeMarkerAndPanTo(place.geometry.location, map);
-			location_now = 1;
-			srcy = place.geometry.location.lng();
-			srcx = place.geometry.location.lat();
+			placeMarkerAndPanToDbl(place.geometry.location, map);
+			location_now2 = 1;
+			dsty = place.geometry.location.lng();
+			dstx = place.geometry.location.lat();
 			
 			if (place.geometry.viewport) {
 			// Only geocodes have viewport.
@@ -312,7 +312,8 @@ function newMarker(location,infowindow){
 				type:location.type,
 				zone:location.zone,
 				disabled:location.disabled,
-				id:location.id
+				id:location.id,
+				
 			});	
 			markers.push(marker);
 			
@@ -339,15 +340,18 @@ function newMarker(location,infowindow){
 	
 			
 }
+
 function placeMarkerAndPanToDbl(latLng, map) {
 	var marker = new google.maps.Marker({
 		position: latLng,
 		map: map,
 		animation: google.maps.Animation.DROP,
-		icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+		icon: 'img/flag.png'
 	});
 	marker_now2 = marker;
-	marker_now.setMap(null);
+
+	if(marker_now!=null)
+		marker_now.setMap(null);
 }
 function placeMarkerOnClick() {
 	map.addListener('click', function(e) {
@@ -363,7 +367,7 @@ function placeMarkerOnClick() {
 			srcx = e.latLng.lat();
 		}
 	});
-	map.addListener('dblclick', function(e) {
+	map.addListener('rightclick', function(e) {
 		if (location_now2 == 0) {
 			placeMarkerAndPanToDbl(e.latLng, map);
 			location_now2 = 1;
@@ -376,6 +380,7 @@ function placeMarkerOnClick() {
 			dstx = e.latLng.lat();
 
 		}
+		console.log("DOUBLE");
 		dst=true;
 	});
 }
