@@ -112,11 +112,11 @@
                                     {{ csrf_field() }}
                                     <div class="field">
                                         <div class="control">
-                                            <input name="x"class="form-control"type="text"placeholder="X Koordinata*">
+                                            <input name="xx"class="form-control"type="text"placeholder="X Koordinata*">
                                         </div>
                                         
                                         <div class="control">
-                                            <input name="y"class="form-control"type="text"placeholder="Y Koordinata*">
+                                            <input name="yy"class="form-control"type="text"placeholder="Y Koordinata*">
                                         </div>
 
                                         <div class="control">
@@ -317,28 +317,6 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($locations as $location)
-                                        @if($location->sensor != null )
-                                                
-                                        <tr>
-                                            <td> {{$location->idPar}} </td>
-                                            <td> {{$location->location->x}} </td>
-                                            <td> {{$location->location->y}} </td>
-                                            @if($location->sensor->Disabled)
-                                            <td>Da</td>
-                                            @else
-                                            <td>Ne</td>
-                                            @endif
-                                            <td> {{$location->sensor->Zone}} </td>
-                                            <td>
-                                            <button class="btn btn-default btnEdit" onClick="edit(this,1)" style="background:#000240; color:white">Izmeni</button>
-                                            {!! Form::open(['action' => ['LocationsController@delete','idPar'=>$location->idPar], 'method' => 'DELETE']) !!}
-                                            {{Form::submit('',['class'=>'btn btnPrimary btnDel'])}}
-                                            {!! Form::close() !!}
-                                            </td>
-                                        </tr>
-                                        @endif
-                                        @endforeach
                                         <tr id="edit1">
                                             <form action="edit"method="post" >
                                                 {{ csrf_field() }}
@@ -351,12 +329,12 @@
                                                 <td>
                                                     
                                                     <div class="control">
-                                                        <input name="x"class="form-control"type="text"placeholder="X Koordinata*" id="xEditS">
+                                                        <input name="xSensor"class="form-control"type="text"placeholder="X Koordinata*" id="xEditS">
                                                     </div>
                                                 </td>
                                                 <td>           
                                                     <div class="control">
-                                                        <input name="y"class="form-control"type="text"placeholder="Y Koordinata*" id="yEditS">
+                                                        <input name="ySensor"class="form-control"type="text"placeholder="Y Koordinata*" id="yEditS">
                                                     </div>
                                                 </td>
                                                 <td>           
@@ -383,10 +361,35 @@
                                                         <div class="control">
                                                             <button class="btnLogin">Potvrdi</button>
                                                         </div>
+                                       
                                                     </div>
                                                 </td>
+                                                
                                             </form>
                                         </tr>
+                                        @foreach($locations as $location)
+                                        @if($location->sensor != null )
+                                                
+                                        <tr>
+                                            <td> {{$location->idPar}} </td>
+                                            <td> {{$location->location->x}} </td>
+                                            <td> {{$location->location->y}} </td>
+                                            @if($location->sensor->Disabled)
+                                            <td>Da</td>
+                                            @else
+                                            <td>Ne</td>
+                                            @endif
+                                            <td> {{$location->sensor->Zone}} </td>
+                                            <td>
+                                            <button class="btn btn-default btnEdit" onClick="edit(this,1)" style="background:#000240; color:white">Izmeni</button>
+                                            {!! Form::open(['action' => ['LocationsController@delete','idPar'=>$location->idPar], 'method' => 'DELETE']) !!}
+                                            {{Form::submit('',['class'=>'btn btnPrimary btnDel'])}}
+                                            {!! Form::close() !!}
+                                            </td>
+                                        </tr>
+                                        @endif
+                                        @endforeach
+                                       
                                     </tbody>
                                 </table>
                             </div>
@@ -437,12 +440,12 @@
                                                 <td>
                                                     
                                                     <div class="control">
-                                                        <input name="x"class="form-control"type="text"placeholder="X Koordinata*" id="xEdit">
+                                                        <input name="xSensor"class="form-control"type="text"placeholder="X Koordinata*" id="xEdit">
                                                     </div>
                                                 </td>
                                                 <td>           
                                                     <div class="control">
-                                                        <input name="y"class="form-control"type="text"placeholder="Y Koordinata*" id="yEdit">
+                                                        <input name="ySensor"class="form-control"type="text"placeholder="Y Koordinata*" id="yEdit">
                                                     </div>
                                                 </td>
                                                 <td>           

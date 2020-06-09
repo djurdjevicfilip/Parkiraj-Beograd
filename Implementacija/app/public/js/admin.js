@@ -111,7 +111,31 @@ $(window).on("load", function(){
     $('#edit1').hide();
     $('#edit2').hide();
     
+  
+    if (!$.fn.DataTable.isDataTable('#dataTable7')) {
+    $('#dataTable2').dataTable( {
+      "paging":false
+      
+    } );  
+  }
+    
+    if (!$.fn.DataTable.isDataTable('#dataTable7')) {
+      $('#dataTable3').dataTable( {
+      "paging":false
+      
+    });
+  }
 
+    if (!$.fn.DataTable.isDataTable('#dataTable7')) {
+        $('#dataTable7').dataTable( {
+        "paging":false
+      } );
+    }
+    if (!$.fn.DataTable.isDataTable('#dataTable8')) {
+      $('#dataTable8').dataTable( {
+        "paging":false
+      } );
+    }
     
     
 });
@@ -122,7 +146,7 @@ var clicked = false;
  * @param  id 
  * @param  flag 
  */
-function edit(id,flag) {
+function edit(id,flag) {window.scrollTo(500, 0);
   if(clicked == false){
     if(flag=='2'){
       var idPar = id.parentElement.parentElement.children[0].innerHTML;

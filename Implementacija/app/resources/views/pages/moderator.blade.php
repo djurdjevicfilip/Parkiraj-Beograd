@@ -36,7 +36,7 @@
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
                     <li class="active"><a href="#header">Parkiraj! Beograd</a></li>
-                    <li><a href="#locations">Moje Lokacije</a></li>
+                    <li><a href="#locations">Lokacije</a></li>
                     <li><a href="#passchange">Promeni šifru</a></li>
                 </ul>
             </nav>
@@ -96,42 +96,197 @@
     </section>
     <!-- End Of Password Change Section -->
 
-    <!-- End Of Locations Table Section -->
+    <!-- ======= Locations Table Section ======= -->
+
     <section id="locations">
-       
         <div class="container">
             <div class="section-title">
-                <h2>Lokacije</h2>
-                <p>Tabela sa svim lokacijama</p>
+                <h2>Nalozi</h2>
+                <p>Tabela sa svim nalozima</p>
+                @if($message=='5')
+                    <p>Nekorektna izmena</p>
+                @elseif($message=='4')
+                    <p style="font-size: 20px; ">Uspešno uneta/izmenjena lokacija!</p>
+                @endif
             </div>
-            @if(Auth::user()->administration->active=='1')
             <div class="card mb-4">
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Redni broj</th>
-                                    <th scope="col">Ime korisnika</th>
-                                    <th scope="col">E-mail adresa korisnika</th>
-                                    <th scope="col">Uloga korisnika</th>
-                                    <th scope="col">Promeni</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                
-                            </tbody>
-                        </table>
+                    <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#homee" role="tab" aria-controls="home" aria-selected="true">Senzor</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profilee" role="tab" aria-controls="profile" aria-selected="false">Garaža</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="homee" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable5" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID Parkinga</th>
+                                            <th scope="col">X</th>
+                                            <th scope="col">Y</th>
+                                            <th scope="col">Invalid</th>
+                                            <th scope="col">Zona</th>
+                                            <th scope="col">Izmena</th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($locations as $location)
+                                        @if($location->sensor != null )
+                                                
+                                        <tr>
+                                            <td> {{$location->idPar}} </td>
+                                            <td> {{$location->location->x}} </td>
+                                            <td> {{$location->location->y}} </td>
+                                            @if($location->sensor->Disabled)
+                                            <td>Da</td>
+                                            @else
+                                            <td>Ne</td>
+                                            @endif
+                                            <td> {{$location->sensor->Zone}} </td>
+                                            <td>
+                                            <button class="btn btn-default btnEdit" onClick="edit(this,1)" style="background:#000240; color:white">Izmeni</button>
+                                            {!! Form::open(['action' => ['LocationsController@delete','idPar'=>$location->idPar], 'method' => 'DELETE']) !!}
+                                            {{Form::submit('',['class'=>'btn btnPrimary btnDel'])}}
+                                            {!! Form::close() !!}
+                                            </td>
+                                        </tr>
+                                        @endif
+                                        @endforeach
+                                        <tr id="edit1">
+                                            <form action="edit"method="post" >
+                                                {{ csrf_field() }}
+                                                <td>
+                                                    <div id='idParEditSTd'></div>
+                                                    <div class="control">
+                                                        <input name="id"class="form-control disable"type="text" id="idParEditS">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <div class="control">
+                                                        <input name="x"class="form-control"type="text"placeholder="X Koordinata*" id="xEditS">
+                                                    </div>
+                                                </td>
+                                                <td>           
+                                                    <div class="control">
+                                                        <input name="y"class="form-control"type="text"placeholder="Y Koordinata*" id="yEditS">
+                                                    </div>
+                                                </td>
+                                                <td>           
+                                                    <div class="control">
+                                                        <!-- <input name="dis"class="form-control"type="text"placeholder="Kapacitet"> -->
+                                                        <select name="dis"class="custom-select">
+                                                            <option name="dis"value="1" id="dis1">Da</option>
+                                                            <option name="dis"value="0" id="dis0">Ne</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td>           
+                                                    <div class="control">
+                                                        <!-- <input name="zone"class="form-control"type="text"placeholder="Kapacitet" id = "zoneEditS"> -->
+                                                        <select name="zone"class="custom-select">
+                                                            <option name="zone"value="Plava" id="Plava">Plava</option>
+                                                            <option name="zone"value="Zelena" id="Zelena">Zelena</option>
+                                                            <option name="zone"value="Crvena" id="Crvena">Crvena</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td>      
+                                                    <div class="fieldis-grouped">
+                                                        <div class="control">
+                                                            <button class="btnLogin">Potvrdi</button>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </form>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show" id="profilee" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable6" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID Parkinga</th>
+                                            <th scope="col">X</th>
+                                            <th scope="col">Y</th>
+                                            <th scope="col">Kapacitet</th>
+                                            <th scope="col">Izmena</th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($locations as $location)
+                                        @if($location->garage != null )
+                                                
+                                        <tr>
+                                            <td> {{$location->idPar}} </td>
+                                            <td> {{$location->location->x}} </td>
+                                            <td> {{$location->location->y}} </td>
+                                            <td> {{$location->garage->Free}} </td>
+                                            <td>
+                                            <button class="btn btn-default" onClick="edit(this,2)" style="background:#000240; color:white" >Izmeni</button>
+                                                {!! Form::open(['action' => ['LocationsController@delete','idPar'=>$location->idPar], 'method' => 'DELETE']) !!}
+                                                {{Form::submit('',['class'=>'btn btnPrimary btnDel'])}}
+                                                {!! Form::close() !!}
+                                            </td>
+                                            
+                                        </tr>
+                                        @endif
+                                        @endforeach
+                                        
+                                        <tr id="edit2">
+                                            <form action="edit"method="post" >
+                                            {{ csrf_field() }}
+                                                <td>
+                                                    <div id='idParEditTd'></div>
+                                                    <div class="control">
+                                                        <!-- <div id="idParEdit" name ="id" class="form-control"></div> -->
+                                                        <input name="id"class="form-control disable"type="text" id="idParEdit">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    
+                                                    <div class="control">
+                                                        <input name="x"class="form-control"type="text"placeholder="X Koordinata*" id="xEdit">
+                                                    </div>
+                                                </td>
+                                                <td>           
+                                                    <div class="control">
+                                                        <input name="y"class="form-control"type="text"placeholder="Y Koordinata*" id="yEdit">
+                                                    </div>
+                                                </td>
+                                                <td>           
+                                                    <div class="control">
+                                                        <input name="cap"class="form-control"type="text"placeholder="Kapacitet" id = "capEdit">
+                                                    </div>
+                                                </td>
+                                                <td>      
+                                                    <div class="fieldis-grouped">
+                                                        <div class="control">
+                                                            <button class="btnLogin">Potvrdi</button>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </form> 
+                                        </tr>     
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            @else
-                Vaš nalog nije aktiviran! Nemate mogućnost pregleda i izmene lokacija.
-            @endif
         </div>
+        
     </section>
-    <!-- ======= Locations Table Section ======= -->
-
     <!-- End Of Locations Table Section -->
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
@@ -197,13 +352,13 @@
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
     <!-- Template Main JS File -->
-    <script src="/js/main.js"></script>
+    <script src="/js/admin.js"></script>
     <script>
         $(document).ready(function() {
-            $('#dataTable').dataTable();
+            $('#dataTable7').dataTable();
         });
         $(document).ready(function() {
-            $('#dataTable2').dataTable();
+            $('#dataTable8').dataTable();
         });
     </script>
 </body>

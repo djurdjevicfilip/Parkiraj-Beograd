@@ -214,36 +214,36 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
                     <div class="icon-box">
                         <div class="icon"><i class="bx bx-file"></i></div>
-                        <h4><a href="">Sed ut perspiciatis</a></h4>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                        <h4><a href="">Prikazivanje mape</a></h4>
+                        <p>Prikazivanje mape sa raznim markerima, clustering funkcijom i rutama </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
                     <div class="icon-box">
                         <div class="icon"><i class="bx bx-tachometer"></i></div>
-                        <h4><a href="">Magni Dolores</a></h4>
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                        <h4><a href="">Pronalazak najbližeg mesta</a></h4>
+                        <p>Brz pronalazak najbližeg mesta u odnosu na trenutno ili izabrano mesto</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
                     <div class="icon-box">
                         <div class="icon"><i class="bx bx-world"></i></div>
-                        <h4><a href="">Nemo Enim</a></h4>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                        <h4><a href="">Simulacija</a></h4>
+                        <p>Simulacija vožnje na mapi i simulacija senzora preko Task Scheduler-a</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
                     <div class="icon-box">
                         <div class="icon"><i class="bx bx-slideshow"></i></div>
-                        <h4><a href="">Dele cardo</a></h4>
-                        <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
+                        <h4><a href="">Upravljanje nalozima i lokacijama</a></h4>
+                        <p>Administrator ima mogućnost upravljanja nalozima i lokacijama</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
                     <div class="icon-box">
                         <div class="icon"><i class="bx bx-arch"></i></div>
-                        <h4><a href="">Divera don</a></h4>
-                        <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+                        <h4><a href="">Upozorenje</a></h4>
+                        <p>Korisniku može da stigne upozorenje ako senzor do kog ide postane zauzet</p>
                     </div>
                 </div>
             </div>
